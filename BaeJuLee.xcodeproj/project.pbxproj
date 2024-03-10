@@ -20,6 +20,17 @@
 		2E14CE022B9E1AF3007A0A11 /* UIColor+CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E14CE012B9E1AF3007A0A11 /* UIColor+CustomColor.swift */; };
 		2E14CE072B9E3262007A0A11 /* OverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E14CE062B9E3262007A0A11 /* OverviewViewController.swift */; };
 		2E14CE0D2B9E34B2007A0A11 /* AddMealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E14CE0C2B9E34B2007A0A11 /* AddMealViewController.swift */; };
+		2E14CE102B9E3C73007A0A11 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 2E14CE0F2B9E3C73007A0A11 /* Realm */; };
+		2E14CE122B9E3C73007A0A11 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2E14CE112B9E3C73007A0A11 /* RealmSwift */; };
+		2E14CE152B9E3C90007A0A11 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 2E14CE142B9E3C90007A0A11 /* Kingfisher */; };
+		2E14CE182B9E3C99007A0A11 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 2E14CE172B9E3C99007A0A11 /* Then */; };
+		2E14CE1B2B9E3CB0007A0A11 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2E14CE1A2B9E3CB0007A0A11 /* SnapKit */; };
+		2E14CE1E2B9E3CE8007A0A11 /* DGCharts in Frameworks */ = {isa = PBXBuildFile; productRef = 2E14CE1D2B9E3CE8007A0A11 /* DGCharts */; };
+		2E14CE212B9E3CFF007A0A11 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 2E14CE202B9E3CFF007A0A11 /* Alamofire */; };
+		2E14CE232B9E3CFF007A0A11 /* AlamofireDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 2E14CE222B9E3CFF007A0A11 /* AlamofireDynamic */; };
+		2E14CE262B9E3D28007A0A11 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 2E14CE252B9E3D28007A0A11 /* Lottie */; };
+		2E14CE292B9E3D3E007A0A11 /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 2E14CE282B9E3D3E007A0A11 /* FSCalendar */; };
+		2E14CE2C2B9E3D9F007A0A11 /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = 2E14CE2B2B9E3D9F007A0A11 /* SkeletonView */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +56,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E14CE2C2B9E3D9F007A0A11 /* SkeletonView in Frameworks */,
+				2E14CE152B9E3C90007A0A11 /* Kingfisher in Frameworks */,
+				2E14CE212B9E3CFF007A0A11 /* Alamofire in Frameworks */,
+				2E14CE262B9E3D28007A0A11 /* Lottie in Frameworks */,
+				2E14CE292B9E3D3E007A0A11 /* FSCalendar in Frameworks */,
+				2E14CE122B9E3C73007A0A11 /* RealmSwift in Frameworks */,
+				2E14CE102B9E3C73007A0A11 /* Realm in Frameworks */,
+				2E14CE182B9E3C99007A0A11 /* Then in Frameworks */,
+				2E14CE232B9E3CFF007A0A11 /* AlamofireDynamic in Frameworks */,
+				2E14CE1E2B9E3CE8007A0A11 /* DGCharts in Frameworks */,
+				2E14CE1B2B9E3CB0007A0A11 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,6 +414,19 @@
 			dependencies = (
 			);
 			name = BaeJuLee;
+			packageProductDependencies = (
+				2E14CE0F2B9E3C73007A0A11 /* Realm */,
+				2E14CE112B9E3C73007A0A11 /* RealmSwift */,
+				2E14CE142B9E3C90007A0A11 /* Kingfisher */,
+				2E14CE172B9E3C99007A0A11 /* Then */,
+				2E14CE1A2B9E3CB0007A0A11 /* SnapKit */,
+				2E14CE1D2B9E3CE8007A0A11 /* DGCharts */,
+				2E14CE202B9E3CFF007A0A11 /* Alamofire */,
+				2E14CE222B9E3CFF007A0A11 /* AlamofireDynamic */,
+				2E14CE252B9E3D28007A0A11 /* Lottie */,
+				2E14CE282B9E3D3E007A0A11 /* FSCalendar */,
+				2E14CE2B2B9E3D9F007A0A11 /* SkeletonView */,
+			);
 			productName = BaeJuLee;
 			productReference = 2E1005AC2B99838800B9BED1 /* BaeJuLee.app */;
 			productType = "com.apple.product-type.application";
@@ -420,6 +455,17 @@
 				Base,
 			);
 			mainGroup = 2E1005A32B99838700B9BED1;
+			packageReferences = (
+				2E14CE0E2B9E3C73007A0A11 /* XCRemoteSwiftPackageReference "realm-swift" */,
+				2E14CE132B9E3C8F007A0A11 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				2E14CE162B9E3C99007A0A11 /* XCRemoteSwiftPackageReference "Then" */,
+				2E14CE192B9E3CB0007A0A11 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				2E14CE1C2B9E3CE8007A0A11 /* XCRemoteSwiftPackageReference "Charts" */,
+				2E14CE1F2B9E3CFF007A0A11 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				2E14CE242B9E3D28007A0A11 /* XCRemoteSwiftPackageReference "lottie-spm" */,
+				2E14CE272B9E3D3E007A0A11 /* XCRemoteSwiftPackageReference "FSCalendar" */,
+				2E14CE2A2B9E3D9F007A0A11 /* XCRemoteSwiftPackageReference "SkeletonView" */,
+			);
 			productRefGroup = 2E1005AD2B99838800B9BED1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -681,6 +727,139 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2E14CE0E2B9E3C73007A0A11 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		2E14CE132B9E3C8F007A0A11 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.11.0;
+			};
+		};
+		2E14CE162B9E3C99007A0A11 /* XCRemoteSwiftPackageReference "Then" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devxoul/Then";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+		2E14CE192B9E3CB0007A0A11 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+		2E14CE1C2B9E3CE8007A0A11 /* XCRemoteSwiftPackageReference "Charts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/danielgindi/Charts.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.0;
+			};
+		};
+		2E14CE1F2B9E3CFF007A0A11 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.9.0;
+			};
+		};
+		2E14CE242B9E3D28007A0A11 /* XCRemoteSwiftPackageReference "lottie-spm" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-spm.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.4.1;
+			};
+		};
+		2E14CE272B9E3D3E007A0A11 /* XCRemoteSwiftPackageReference "FSCalendar" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/WenchaoD/FSCalendar";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.8.4;
+			};
+		};
+		2E14CE2A2B9E3D9F007A0A11 /* XCRemoteSwiftPackageReference "SkeletonView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Juanpe/SkeletonView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.30.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2E14CE0F2B9E3C73007A0A11 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2E14CE0E2B9E3C73007A0A11 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		2E14CE112B9E3C73007A0A11 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2E14CE0E2B9E3C73007A0A11 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+		2E14CE142B9E3C90007A0A11 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2E14CE132B9E3C8F007A0A11 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		2E14CE172B9E3C99007A0A11 /* Then */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2E14CE162B9E3C99007A0A11 /* XCRemoteSwiftPackageReference "Then" */;
+			productName = Then;
+		};
+		2E14CE1A2B9E3CB0007A0A11 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2E14CE192B9E3CB0007A0A11 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		2E14CE1D2B9E3CE8007A0A11 /* DGCharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2E14CE1C2B9E3CE8007A0A11 /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = DGCharts;
+		};
+		2E14CE202B9E3CFF007A0A11 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2E14CE1F2B9E3CFF007A0A11 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		2E14CE222B9E3CFF007A0A11 /* AlamofireDynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2E14CE1F2B9E3CFF007A0A11 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = AlamofireDynamic;
+		};
+		2E14CE252B9E3D28007A0A11 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2E14CE242B9E3D28007A0A11 /* XCRemoteSwiftPackageReference "lottie-spm" */;
+			productName = Lottie;
+		};
+		2E14CE282B9E3D3E007A0A11 /* FSCalendar */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2E14CE272B9E3D3E007A0A11 /* XCRemoteSwiftPackageReference "FSCalendar" */;
+			productName = FSCalendar;
+		};
+		2E14CE2B2B9E3D9F007A0A11 /* SkeletonView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2E14CE2A2B9E3D9F007A0A11 /* XCRemoteSwiftPackageReference "SkeletonView" */;
+			productName = SkeletonView;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2E1005A42B99838700B9BED1 /* Project object */;
 }
