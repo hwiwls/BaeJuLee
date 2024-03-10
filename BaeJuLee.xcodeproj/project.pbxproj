@@ -9,21 +9,35 @@
 /* Begin PBXBuildFile section */
 		2E1005B02B99838800B9BED1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1005AF2B99838800B9BED1 /* AppDelegate.swift */; };
 		2E1005B22B99838800B9BED1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1005B12B99838800B9BED1 /* SceneDelegate.swift */; };
-		2E1005B42B99838800B9BED1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1005B32B99838800B9BED1 /* ViewController.swift */; };
 		2E1005B92B99838900B9BED1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E1005B82B99838900B9BED1 /* Assets.xcassets */; };
 		2E1005BC2B99838900B9BED1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E1005BA2B99838900B9BED1 /* LaunchScreen.storyboard */; };
 		2E1005C42B99860100B9BED1 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 2E1005C32B99860000B9BED1 /* .gitignore */; };
+		2E14CDE92B9E14AA007A0A11 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E14CDE82B9E14AA007A0A11 /* TabBarViewController.swift */; };
+		2E14CDEF2B9E1523007A0A11 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E14CDEE2B9E1523007A0A11 /* CalendarViewController.swift */; };
+		2E14CDFA2B9E1A66007A0A11 /* LikeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E14CDF92B9E1A66007A0A11 /* LikeViewController.swift */; };
+		2E14CDFC2B9E1A71007A0A11 /* RecipeRecommendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E14CDFB2B9E1A71007A0A11 /* RecipeRecommendViewController.swift */; };
+		2E14CDFE2B9E1A8A007A0A11 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E14CDFD2B9E1A8A007A0A11 /* BaseViewController.swift */; };
+		2E14CE022B9E1AF3007A0A11 /* UIColor+CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E14CE012B9E1AF3007A0A11 /* UIColor+CustomColor.swift */; };
+		2E14CE072B9E3262007A0A11 /* OverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E14CE062B9E3262007A0A11 /* OverviewViewController.swift */; };
+		2E14CE0D2B9E34B2007A0A11 /* AddMealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E14CE0C2B9E34B2007A0A11 /* AddMealViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2E1005AC2B99838800B9BED1 /* BaeJuLee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BaeJuLee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E1005AF2B99838800B9BED1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2E1005B12B99838800B9BED1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2E1005B32B99838800B9BED1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2E1005B82B99838900B9BED1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2E1005BB2B99838900B9BED1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2E1005BD2B99838900B9BED1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2E1005C32B99860000B9BED1 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		2E14CDE82B9E14AA007A0A11 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		2E14CDEE2B9E1523007A0A11 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		2E14CDF92B9E1A66007A0A11 /* LikeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeViewController.swift; sourceTree = "<group>"; };
+		2E14CDFB2B9E1A71007A0A11 /* RecipeRecommendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeRecommendViewController.swift; sourceTree = "<group>"; };
+		2E14CDFD2B9E1A8A007A0A11 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		2E14CE012B9E1AF3007A0A11 /* UIColor+CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+CustomColor.swift"; sourceTree = "<group>"; };
+		2E14CE062B9E3262007A0A11 /* OverviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewViewController.swift; sourceTree = "<group>"; };
+		2E14CE0C2B9E34B2007A0A11 /* AddMealViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMealViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,7 +73,6 @@
 			children = (
 				2E14CDD82B9E0AAC007A0A11 /* Resources */,
 				2E14CDD92B9E0AB6007A0A11 /* Source */,
-				2E1005B32B99838800B9BED1 /* ViewController.swift */,
 			);
 			path = BaeJuLee;
 			sourceTree = "<group>";
@@ -82,6 +95,7 @@
 				2E14CDDE2B9E0AED007A0A11 /* Observable */,
 				2E14CDDD2B9E0AE7007A0A11 /* Realm */,
 				2E14CDDF2B9E0AF3007A0A11 /* Presentation */,
+				2E14CDFF2B9E1ADD007A0A11 /* Util */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -119,6 +133,11 @@
 		2E14CDDF2B9E0AF3007A0A11 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				2E14CE082B9E348F007A0A11 /* AddMeal */,
+				2E14CDF82B9E174C007A0A11 /* Overview */,
+				2E14CDF42B9E16AF007A0A11 /* Like */,
+				2E14CDF02B9E1535007A0A11 /* RecipeRecommend */,
+				2E14CDEA2B9E1502007A0A11 /* Calendar */,
 				2E14CDE02B9E0B28007A0A11 /* Base */,
 				2E14CDE12B9E0B35007A0A11 /* TabBar */,
 			);
@@ -147,6 +166,7 @@
 		2E14CDE22B9E138C007A0A11 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				2E14CDFD2B9E1A8A007A0A11 /* BaseViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -154,6 +174,7 @@
 		2E14CDE32B9E1396007A0A11 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				2E14CDE82B9E14AA007A0A11 /* TabBarViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -177,6 +198,182 @@
 			children = (
 			);
 			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		2E14CDEA2B9E1502007A0A11 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				2E14CDED2B9E1515007A0A11 /* ViewModel */,
+				2E14CDEB2B9E150A007A0A11 /* ViewController */,
+				2E14CDEC2B9E1511007A0A11 /* View */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
+		2E14CDEB2B9E150A007A0A11 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2E14CDEE2B9E1523007A0A11 /* CalendarViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		2E14CDEC2B9E1511007A0A11 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2E14CDED2B9E1515007A0A11 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		2E14CDF02B9E1535007A0A11 /* RecipeRecommend */ = {
+			isa = PBXGroup;
+			children = (
+				2E14CDF32B9E168F007A0A11 /* ViewModel */,
+				2E14CDF22B9E1689007A0A11 /* ViewController */,
+				2E14CDF12B9E1683007A0A11 /* View */,
+			);
+			path = RecipeRecommend;
+			sourceTree = "<group>";
+		};
+		2E14CDF12B9E1683007A0A11 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2E14CDF22B9E1689007A0A11 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2E14CDFB2B9E1A71007A0A11 /* RecipeRecommendViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		2E14CDF32B9E168F007A0A11 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		2E14CDF42B9E16AF007A0A11 /* Like */ = {
+			isa = PBXGroup;
+			children = (
+				2E14CDF72B9E16BF007A0A11 /* ViewModel */,
+				2E14CDF62B9E16B8007A0A11 /* ViewController */,
+				2E14CDF52B9E16B5007A0A11 /* View */,
+			);
+			path = Like;
+			sourceTree = "<group>";
+		};
+		2E14CDF52B9E16B5007A0A11 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2E14CDF62B9E16B8007A0A11 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2E14CDF92B9E1A66007A0A11 /* LikeViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		2E14CDF72B9E16BF007A0A11 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		2E14CDF82B9E174C007A0A11 /* Overview */ = {
+			isa = PBXGroup;
+			children = (
+				2E14CE052B9E3258007A0A11 /* ViewModel */,
+				2E14CE042B9E3253007A0A11 /* ViewController */,
+				2E14CE032B9E324E007A0A11 /* View */,
+			);
+			path = Overview;
+			sourceTree = "<group>";
+		};
+		2E14CDFF2B9E1ADD007A0A11 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				2E14CE002B9E1AE7007A0A11 /* Extension */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		2E14CE002B9E1AE7007A0A11 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				2E14CE012B9E1AF3007A0A11 /* UIColor+CustomColor.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		2E14CE032B9E324E007A0A11 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2E14CE042B9E3253007A0A11 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2E14CE062B9E3262007A0A11 /* OverviewViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		2E14CE052B9E3258007A0A11 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		2E14CE082B9E348F007A0A11 /* AddMeal */ = {
+			isa = PBXGroup;
+			children = (
+				2E14CE0B2B9E34A4007A0A11 /* ViewModel */,
+				2E14CE0A2B9E349E007A0A11 /* ViewController */,
+				2E14CE092B9E3498007A0A11 /* View */,
+			);
+			path = AddMeal;
+			sourceTree = "<group>";
+		};
+		2E14CE092B9E3498007A0A11 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2E14CE0A2B9E349E007A0A11 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2E14CE0C2B9E34B2007A0A11 /* AddMealViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		2E14CE0B2B9E34A4007A0A11 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -250,9 +447,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2E1005B42B99838800B9BED1 /* ViewController.swift in Sources */,
+				2E14CDEF2B9E1523007A0A11 /* CalendarViewController.swift in Sources */,
+				2E14CDFC2B9E1A71007A0A11 /* RecipeRecommendViewController.swift in Sources */,
+				2E14CE072B9E3262007A0A11 /* OverviewViewController.swift in Sources */,
 				2E1005B02B99838800B9BED1 /* AppDelegate.swift in Sources */,
+				2E14CDE92B9E14AA007A0A11 /* TabBarViewController.swift in Sources */,
 				2E1005B22B99838800B9BED1 /* SceneDelegate.swift in Sources */,
+				2E14CDFE2B9E1A8A007A0A11 /* BaseViewController.swift in Sources */,
+				2E14CE0D2B9E34B2007A0A11 /* AddMealViewController.swift in Sources */,
+				2E14CE022B9E1AF3007A0A11 /* UIColor+CustomColor.swift in Sources */,
+				2E14CDFA2B9E1A66007A0A11 /* LikeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -398,12 +602,13 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Q37X3LG46V;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = BaeJuLee/Info.plist;
+				INFOPLIST_FILE = BaeJuLee/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -411,9 +616,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = hwijin.BaeJuLee;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -426,12 +635,13 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Q37X3LG46V;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = BaeJuLee/Info.plist;
+				INFOPLIST_FILE = BaeJuLee/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -439,9 +649,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = hwijin.BaeJuLee;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
