@@ -36,7 +36,11 @@
 		2ED30DC82B9F4B5E00786ACE /* MealRealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED30DC72B9F4B5E00786ACE /* MealRealmModel.swift */; };
 		2ED30DD02B9F5A0D00786ACE /* OrderCountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED30DCF2B9F5A0D00786ACE /* OrderCountViewController.swift */; };
 		2ED30DD22B9F5CDC00786ACE /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED30DD12B9F5CDC00786ACE /* BaseView.swift */; };
-		2ED30DD42B9F5D5500786ACE /* OrderInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED30DD32B9F5D5500786ACE /* OrderInputView.swift */; };
+		2ED30DD42B9F5D5500786ACE /* OrderCountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED30DD32B9F5D5500786ACE /* OrderCountView.swift */; };
+		2ED30DD62B9F61E800786ACE /* UIView+addSubViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED30DD52B9F61E800786ACE /* UIView+addSubViews.swift */; };
+		2ED30DD82B9F6AA400786ACE /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED30DD72B9F6AA400786ACE /* Observable.swift */; };
+		2ED30DDA2B9F6CD800786ACE /* OrderCountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED30DD92B9F6CD800786ACE /* OrderCountViewModel.swift */; };
+		2ED30DDC2B9F728700786ACE /* UITextField+PlaceholderColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED30DDB2B9F728700786ACE /* UITextField+PlaceholderColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,7 +64,11 @@
 		2ED30DC72B9F4B5E00786ACE /* MealRealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealRealmModel.swift; sourceTree = "<group>"; };
 		2ED30DCF2B9F5A0D00786ACE /* OrderCountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCountViewController.swift; sourceTree = "<group>"; };
 		2ED30DD12B9F5CDC00786ACE /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
-		2ED30DD32B9F5D5500786ACE /* OrderInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderInputView.swift; sourceTree = "<group>"; };
+		2ED30DD32B9F5D5500786ACE /* OrderCountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCountView.swift; sourceTree = "<group>"; };
+		2ED30DD52B9F61E800786ACE /* UIView+addSubViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+addSubViews.swift"; sourceTree = "<group>"; };
+		2ED30DD72B9F6AA400786ACE /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		2ED30DD92B9F6CD800786ACE /* OrderCountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCountViewModel.swift; sourceTree = "<group>"; };
+		2ED30DDB2B9F728700786ACE /* UITextField+PlaceholderColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+PlaceholderColor.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +170,7 @@
 		2E14CDDE2B9E0AED007A0A11 /* Observable */ = {
 			isa = PBXGroup;
 			children = (
+				2ED30DD72B9F6AA400786ACE /* Observable.swift */,
 			);
 			path = Observable;
 			sourceTree = "<group>";
@@ -357,6 +366,8 @@
 			isa = PBXGroup;
 			children = (
 				2E14CE012B9E1AF3007A0A11 /* UIColor+CustomColor.swift */,
+				2ED30DD52B9F61E800786ACE /* UIView+addSubViews.swift */,
+				2ED30DDB2B9F728700786ACE /* UITextField+PlaceholderColor.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -452,7 +463,7 @@
 		2ED30DCC2B9F59F600786ACE /* View */ = {
 			isa = PBXGroup;
 			children = (
-				2ED30DD32B9F5D5500786ACE /* OrderInputView.swift */,
+				2ED30DD32B9F5D5500786ACE /* OrderCountView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -468,6 +479,7 @@
 		2ED30DCE2B9F5A0000786ACE /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				2ED30DD92B9F6CD800786ACE /* OrderCountViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -569,17 +581,21 @@
 			files = (
 				2E14CDEF2B9E1523007A0A11 /* CalendarViewController.swift in Sources */,
 				2E14CDFC2B9E1A71007A0A11 /* RecipeRecommendViewController.swift in Sources */,
+				2ED30DDA2B9F6CD800786ACE /* OrderCountViewModel.swift in Sources */,
 				2E14CE072B9E3262007A0A11 /* OverviewViewController.swift in Sources */,
 				2E1005B02B99838800B9BED1 /* AppDelegate.swift in Sources */,
+				2ED30DD82B9F6AA400786ACE /* Observable.swift in Sources */,
 				2ED30DC52B9F4A2200786ACE /* UserRealmModel.swift in Sources */,
 				2E14CDE92B9E14AA007A0A11 /* CustomTabBarController.swift in Sources */,
-				2ED30DD42B9F5D5500786ACE /* OrderInputView.swift in Sources */,
+				2ED30DD42B9F5D5500786ACE /* OrderCountView.swift in Sources */,
 				2E1005B22B99838800B9BED1 /* SceneDelegate.swift in Sources */,
 				2E14CDFE2B9E1A8A007A0A11 /* BaseViewController.swift in Sources */,
 				2E14CE0D2B9E34B2007A0A11 /* AddMealViewController.swift in Sources */,
 				2ED30DC32B9F389200786ACE /* CustomTabBar.swift in Sources */,
+				2ED30DDC2B9F728700786ACE /* UITextField+PlaceholderColor.swift in Sources */,
 				2ED30DC82B9F4B5E00786ACE /* MealRealmModel.swift in Sources */,
 				2ED30DD02B9F5A0D00786ACE /* OrderCountViewController.swift in Sources */,
+				2ED30DD62B9F61E800786ACE /* UIView+addSubViews.swift in Sources */,
 				2ED30DD22B9F5CDC00786ACE /* BaseView.swift in Sources */,
 				2E14CE022B9E1AF3007A0A11 /* UIColor+CustomColor.swift in Sources */,
 				2E14CDFA2B9E1A66007A0A11 /* LikeViewController.swift in Sources */,

@@ -16,5 +16,6 @@ extension UIColor {
         let pointNavyColor = UIColor(named: "PointNavyColor") ?? .white
         let pointPinkColor = UIColor(named: "PointPinkColor") ?? .white
         let superLightGrayColor = UIColor(named: "SuperLightGrayolor") ?? .white
+        let pointRegularLightGrayColor = UIColor(named: "PointRegularLightGrayolor") ?? .white
     }
 }

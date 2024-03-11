@@ -18,10 +18,10 @@ final class OverviewViewController: BaseViewController {
     }
     
     override func configHierarchy() {
-        <#code#>
+        
     }
 
     override func configLayout() {
-        <#code#>
+        
     }
 }
