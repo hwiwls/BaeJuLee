@@ -12,7 +12,7 @@
 		2E1005B92B99838900B9BED1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E1005B82B99838900B9BED1 /* Assets.xcassets */; };
 		2E1005BC2B99838900B9BED1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E1005BA2B99838900B9BED1 /* LaunchScreen.storyboard */; };
 		2E1005C42B99860100B9BED1 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 2E1005C32B99860000B9BED1 /* .gitignore */; };
-		2E14CDE92B9E14AA007A0A11 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E14CDE82B9E14AA007A0A11 /* TabBarViewController.swift */; };
+		2E14CDE92B9E14AA007A0A11 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E14CDE82B9E14AA007A0A11 /* CustomTabBarController.swift */; };
 		2E14CDEF2B9E1523007A0A11 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E14CDEE2B9E1523007A0A11 /* CalendarViewController.swift */; };
 		2E14CDFA2B9E1A66007A0A11 /* LikeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E14CDF92B9E1A66007A0A11 /* LikeViewController.swift */; };
 		2E14CDFC2B9E1A71007A0A11 /* RecipeRecommendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E14CDFB2B9E1A71007A0A11 /* RecipeRecommendViewController.swift */; };
@@ -31,7 +31,7 @@
 		2E14CE262B9E3D28007A0A11 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 2E14CE252B9E3D28007A0A11 /* Lottie */; };
 		2E14CE292B9E3D3E007A0A11 /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 2E14CE282B9E3D3E007A0A11 /* FSCalendar */; };
 		2E14CE2C2B9E3D9F007A0A11 /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = 2E14CE2B2B9E3D9F007A0A11 /* SkeletonView */; };
-		2EBACADF2B9E94150058A8F2 /* ESTabBarController in Frameworks */ = {isa = PBXBuildFile; productRef = 2EBACADE2B9E94150058A8F2 /* ESTabBarController */; };
+		2ED30DC32B9F389200786ACE /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED30DC22B9F389200786ACE /* CustomTabBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,7 +42,7 @@
 		2E1005BB2B99838900B9BED1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2E1005BD2B99838900B9BED1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2E1005C32B99860000B9BED1 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
-		2E14CDE82B9E14AA007A0A11 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		2E14CDE82B9E14AA007A0A11 /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
 		2E14CDEE2B9E1523007A0A11 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		2E14CDF92B9E1A66007A0A11 /* LikeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeViewController.swift; sourceTree = "<group>"; };
 		2E14CDFB2B9E1A71007A0A11 /* RecipeRecommendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeRecommendViewController.swift; sourceTree = "<group>"; };
@@ -50,6 +50,7 @@
 		2E14CE012B9E1AF3007A0A11 /* UIColor+CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+CustomColor.swift"; sourceTree = "<group>"; };
 		2E14CE062B9E3262007A0A11 /* OverviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewViewController.swift; sourceTree = "<group>"; };
 		2E14CE0C2B9E34B2007A0A11 /* AddMealViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMealViewController.swift; sourceTree = "<group>"; };
+		2ED30DC22B9F389200786ACE /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,7 +68,6 @@
 				2E14CE182B9E3C99007A0A11 /* Then in Frameworks */,
 				2E14CE232B9E3CFF007A0A11 /* AlamofireDynamic in Frameworks */,
 				2E14CE1E2B9E3CE8007A0A11 /* DGCharts in Frameworks */,
-				2EBACADF2B9E94150058A8F2 /* ESTabBarController in Frameworks */,
 				2E14CE1B2B9E3CB0007A0A11 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -182,6 +182,7 @@
 		2E14CDE12B9E0B35007A0A11 /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
+				2ED30DC12B9F387B00786ACE /* View */,
 				2E14CDE32B9E1396007A0A11 /* ViewController */,
 			);
 			path = TabBar;
@@ -198,7 +199,7 @@
 		2E14CDE32B9E1396007A0A11 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				2E14CDE82B9E14AA007A0A11 /* TabBarViewController.swift */,
+				2E14CDE82B9E14AA007A0A11 /* CustomTabBarController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -400,6 +401,14 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		2ED30DC12B9F387B00786ACE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2ED30DC22B9F389200786ACE /* CustomTabBar.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -428,7 +437,6 @@
 				2E14CE252B9E3D28007A0A11 /* Lottie */,
 				2E14CE282B9E3D3E007A0A11 /* FSCalendar */,
 				2E14CE2B2B9E3D9F007A0A11 /* SkeletonView */,
-				2EBACADE2B9E94150058A8F2 /* ESTabBarController */,
 			);
 			productName = BaeJuLee;
 			productReference = 2E1005AC2B99838800B9BED1 /* BaeJuLee.app */;
@@ -468,7 +476,6 @@
 				2E14CE242B9E3D28007A0A11 /* XCRemoteSwiftPackageReference "lottie-spm" */,
 				2E14CE272B9E3D3E007A0A11 /* XCRemoteSwiftPackageReference "FSCalendar" */,
 				2E14CE2A2B9E3D9F007A0A11 /* XCRemoteSwiftPackageReference "SkeletonView" */,
-				2EBACADD2B9E94150058A8F2 /* XCRemoteSwiftPackageReference "ESTabBarController" */,
 			);
 			productRefGroup = 2E1005AD2B99838800B9BED1 /* Products */;
 			projectDirPath = "";
@@ -501,10 +508,11 @@
 				2E14CDFC2B9E1A71007A0A11 /* RecipeRecommendViewController.swift in Sources */,
 				2E14CE072B9E3262007A0A11 /* OverviewViewController.swift in Sources */,
 				2E1005B02B99838800B9BED1 /* AppDelegate.swift in Sources */,
-				2E14CDE92B9E14AA007A0A11 /* TabBarViewController.swift in Sources */,
+				2E14CDE92B9E14AA007A0A11 /* CustomTabBarController.swift in Sources */,
 				2E1005B22B99838800B9BED1 /* SceneDelegate.swift in Sources */,
 				2E14CDFE2B9E1A8A007A0A11 /* BaseViewController.swift in Sources */,
 				2E14CE0D2B9E34B2007A0A11 /* AddMealViewController.swift in Sources */,
+				2ED30DC32B9F389200786ACE /* CustomTabBar.swift in Sources */,
 				2E14CE022B9E1AF3007A0A11 /* UIColor+CustomColor.swift in Sources */,
 				2E14CDFA2B9E1A66007A0A11 /* LikeViewController.swift in Sources */,
 			);
@@ -805,14 +813,6 @@
 				minimumVersion = 1.30.4;
 			};
 		};
-		2EBACADD2B9E94150058A8F2 /* XCRemoteSwiftPackageReference "ESTabBarController" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/eggswift/ESTabBarController.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.9.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -870,11 +870,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2E14CE2A2B9E3D9F007A0A11 /* XCRemoteSwiftPackageReference "SkeletonView" */;
 			productName = SkeletonView;
-		};
-		2EBACADE2B9E94150058A8F2 /* ESTabBarController */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 2EBACADD2B9E94150058A8F2 /* XCRemoteSwiftPackageReference "ESTabBarController" */;
-			productName = ESTabBarController;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -7,19 +7,27 @@
 
 import UIKit
 
-final class TabBarViewController: UITabBarController {
+final class CustomTabBarController: UITabBarController {
+    
+    private let middleButton = UIButton().then {
+        $0.frame = CGRect(x: 0, y: 0, width: 52, height: 52)
+        $0.backgroundColor = .pointNavy
+        $0.layer.cornerRadius = 26
+        $0.setImage(UIImage(systemName: "plus")?.withTintColor(.white, renderingMode: .alwaysOriginal), for: .normal)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tabBarConfig()
-        
-        view.backgroundColor = .white
+        setupMiddleButton()
+        view.backgroundColor = .red
     }
     
     private func tabBarConfig() {
-        tabBar.barTintColor = UIColor.customColor.backgroundColor
-        tabBar.tintColor = UIColor.customColor.pointGreenColor
+        tabBar.barTintColor = .white
+        tabBar.backgroundColor = .white
+        tabBar.tintColor = .pointGreen
         tabBar.isTranslucent = false
         
         let overviewViewController = UINavigationController(
@@ -28,6 +36,10 @@ final class TabBarViewController: UITabBarController {
         
         let calendarViewController = UINavigationController(
             rootViewController: CalendarViewController()
+        )
+        
+        let addMealViewController = UINavigationController(
+            rootViewController: AddMealViewController()
         )
         
         let recipeRecommendViewController = UINavigationController(
@@ -55,6 +67,14 @@ final class TabBarViewController: UITabBarController {
             selectedImage: UIImage(systemName: "calendar")
         )
         
+        addMealViewController.tabBarItem = UITabBarItem(
+            title: nil,
+            image: UIImage(systemName: "plus")?
+                .withRenderingMode(.alwaysOriginal)
+                .withTintColor(.black),
+            selectedImage: UIImage(systemName: "plus")
+        )
+        
         recipeRecommendViewController.tabBarItem = UITabBarItem(
             title: nil,
             image: UIImage(systemName: "fork.knife")?
@@ -75,6 +95,7 @@ final class TabBarViewController: UITabBarController {
         let tabItems = [
             overviewViewController,
             calendarViewController,
+            addMealViewController,
             recipeRecommendViewController,
             likeViewController
         ]
@@ -82,5 +103,21 @@ final class TabBarViewController: UITabBarController {
         setViewControllers(tabItems, animated: true)
     }
     
+    private func setupMiddleButton() {
+        var middleButtonFrame = middleButton.frame
+        middleButtonFrame.origin.y = view.bounds.height - middleButtonFrame.height - tabBar.frame.height
+        middleButtonFrame.origin.x = view.bounds.width/2 - middleButtonFrame.width/2
+        middleButton.frame = middleButtonFrame
+        
+        middleButton.addTarget(self, action: #selector(middleButtonAction), for: .touchUpInside)
+        
+        view.addSubview(middleButton)
+        view.layoutIfNeeded()
+    }
     
+    @objc func middleButtonAction(sender: UIButton) {
+        let vc = AddMealViewController()
+        present(vc, animated:  true)
+    }
 }
+
