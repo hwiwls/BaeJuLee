@@ -31,6 +31,7 @@
 		2E14CE262B9E3D28007A0A11 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 2E14CE252B9E3D28007A0A11 /* Lottie */; };
 		2E14CE292B9E3D3E007A0A11 /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 2E14CE282B9E3D3E007A0A11 /* FSCalendar */; };
 		2E14CE2C2B9E3D9F007A0A11 /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = 2E14CE2B2B9E3D9F007A0A11 /* SkeletonView */; };
+		2EBACADF2B9E94150058A8F2 /* ESTabBarController in Frameworks */ = {isa = PBXBuildFile; productRef = 2EBACADE2B9E94150058A8F2 /* ESTabBarController */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,7 @@
 				2E14CE182B9E3C99007A0A11 /* Then in Frameworks */,
 				2E14CE232B9E3CFF007A0A11 /* AlamofireDynamic in Frameworks */,
 				2E14CE1E2B9E3CE8007A0A11 /* DGCharts in Frameworks */,
+				2EBACADF2B9E94150058A8F2 /* ESTabBarController in Frameworks */,
 				2E14CE1B2B9E3CB0007A0A11 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -426,6 +428,7 @@
 				2E14CE252B9E3D28007A0A11 /* Lottie */,
 				2E14CE282B9E3D3E007A0A11 /* FSCalendar */,
 				2E14CE2B2B9E3D9F007A0A11 /* SkeletonView */,
+				2EBACADE2B9E94150058A8F2 /* ESTabBarController */,
 			);
 			productName = BaeJuLee;
 			productReference = 2E1005AC2B99838800B9BED1 /* BaeJuLee.app */;
@@ -465,6 +468,7 @@
 				2E14CE242B9E3D28007A0A11 /* XCRemoteSwiftPackageReference "lottie-spm" */,
 				2E14CE272B9E3D3E007A0A11 /* XCRemoteSwiftPackageReference "FSCalendar" */,
 				2E14CE2A2B9E3D9F007A0A11 /* XCRemoteSwiftPackageReference "SkeletonView" */,
+				2EBACADD2B9E94150058A8F2 /* XCRemoteSwiftPackageReference "ESTabBarController" */,
 			);
 			productRefGroup = 2E1005AD2B99838800B9BED1 /* Products */;
 			projectDirPath = "";
@@ -801,6 +805,14 @@
 				minimumVersion = 1.30.4;
 			};
 		};
+		2EBACADD2B9E94150058A8F2 /* XCRemoteSwiftPackageReference "ESTabBarController" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/eggswift/ESTabBarController.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.9.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -858,6 +870,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2E14CE2A2B9E3D9F007A0A11 /* XCRemoteSwiftPackageReference "SkeletonView" */;
 			productName = SkeletonView;
+		};
+		2EBACADE2B9E94150058A8F2 /* ESTabBarController */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2EBACADD2B9E94150058A8F2 /* XCRemoteSwiftPackageReference "ESTabBarController" */;
+			productName = ESTabBarController;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
