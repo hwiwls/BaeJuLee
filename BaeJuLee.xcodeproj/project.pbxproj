@@ -32,6 +32,15 @@
 		2E14CE292B9E3D3E007A0A11 /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 2E14CE282B9E3D3E007A0A11 /* FSCalendar */; };
 		2E14CE2C2B9E3D9F007A0A11 /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = 2E14CE2B2B9E3D9F007A0A11 /* SkeletonView */; };
 		2ED30DC32B9F389200786ACE /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED30DC22B9F389200786ACE /* CustomTabBar.swift */; };
+		2ED30DC52B9F4A2200786ACE /* UserRealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED30DC42B9F4A2200786ACE /* UserRealmModel.swift */; };
+		2ED30DC82B9F4B5E00786ACE /* MealRealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED30DC72B9F4B5E00786ACE /* MealRealmModel.swift */; };
+		2ED30DD02B9F5A0D00786ACE /* OrderCountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED30DCF2B9F5A0D00786ACE /* OrderCountViewController.swift */; };
+		2ED30DD22B9F5CDC00786ACE /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED30DD12B9F5CDC00786ACE /* BaseView.swift */; };
+		2ED30DD42B9F5D5500786ACE /* OrderCountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED30DD32B9F5D5500786ACE /* OrderCountView.swift */; };
+		2ED30DD62B9F61E800786ACE /* UIView+addSubViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED30DD52B9F61E800786ACE /* UIView+addSubViews.swift */; };
+		2ED30DD82B9F6AA400786ACE /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED30DD72B9F6AA400786ACE /* Observable.swift */; };
+		2ED30DDA2B9F6CD800786ACE /* OrderCountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED30DD92B9F6CD800786ACE /* OrderCountViewModel.swift */; };
+		2ED30DDC2B9F728700786ACE /* UITextField+PlaceholderColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED30DDB2B9F728700786ACE /* UITextField+PlaceholderColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +60,15 @@
 		2E14CE062B9E3262007A0A11 /* OverviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewViewController.swift; sourceTree = "<group>"; };
 		2E14CE0C2B9E34B2007A0A11 /* AddMealViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMealViewController.swift; sourceTree = "<group>"; };
 		2ED30DC22B9F389200786ACE /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
+		2ED30DC42B9F4A2200786ACE /* UserRealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRealmModel.swift; sourceTree = "<group>"; };
+		2ED30DC72B9F4B5E00786ACE /* MealRealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealRealmModel.swift; sourceTree = "<group>"; };
+		2ED30DCF2B9F5A0D00786ACE /* OrderCountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCountViewController.swift; sourceTree = "<group>"; };
+		2ED30DD12B9F5CDC00786ACE /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		2ED30DD32B9F5D5500786ACE /* OrderCountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCountView.swift; sourceTree = "<group>"; };
+		2ED30DD52B9F61E800786ACE /* UIView+addSubViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+addSubViews.swift"; sourceTree = "<group>"; };
+		2ED30DD72B9F6AA400786ACE /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		2ED30DD92B9F6CD800786ACE /* OrderCountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCountViewModel.swift; sourceTree = "<group>"; };
+		2ED30DDB2B9F728700786ACE /* UITextField+PlaceholderColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+PlaceholderColor.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +161,8 @@
 		2E14CDDD2B9E0AE7007A0A11 /* Realm */ = {
 			isa = PBXGroup;
 			children = (
+				2ED30DCA2B9F4C8300786ACE /* Repository */,
+				2ED30DC92B9F4C7C00786ACE /* Model */,
 			);
 			path = Realm;
 			sourceTree = "<group>";
@@ -150,6 +170,7 @@
 		2E14CDDE2B9E0AED007A0A11 /* Observable */ = {
 			isa = PBXGroup;
 			children = (
+				2ED30DD72B9F6AA400786ACE /* Observable.swift */,
 			);
 			path = Observable;
 			sourceTree = "<group>";
@@ -157,13 +178,14 @@
 		2E14CDDF2B9E0AF3007A0A11 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				2E14CDE02B9E0B28007A0A11 /* Base */,
+				2E14CDE12B9E0B35007A0A11 /* TabBar */,
+				2ED30DCB2B9F59EF00786ACE /* Onboarding */,
 				2E14CE082B9E348F007A0A11 /* AddMeal */,
 				2E14CDF82B9E174C007A0A11 /* Overview */,
 				2E14CDF42B9E16AF007A0A11 /* Like */,
 				2E14CDF02B9E1535007A0A11 /* RecipeRecommend */,
 				2E14CDEA2B9E1502007A0A11 /* Calendar */,
-				2E14CDE02B9E0B28007A0A11 /* Base */,
-				2E14CDE12B9E0B35007A0A11 /* TabBar */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -207,6 +229,7 @@
 		2E14CDE42B9E139F007A0A11 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2ED30DD12B9F5CDC00786ACE /* BaseView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -343,6 +366,8 @@
 			isa = PBXGroup;
 			children = (
 				2E14CE012B9E1AF3007A0A11 /* UIColor+CustomColor.swift */,
+				2ED30DD52B9F61E800786ACE /* UIView+addSubViews.swift */,
+				2ED30DDB2B9F728700786ACE /* UITextField+PlaceholderColor.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -407,6 +432,56 @@
 				2ED30DC22B9F389200786ACE /* CustomTabBar.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		2ED30DC92B9F4C7C00786ACE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2ED30DC72B9F4B5E00786ACE /* MealRealmModel.swift */,
+				2ED30DC42B9F4A2200786ACE /* UserRealmModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2ED30DCA2B9F4C8300786ACE /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		2ED30DCB2B9F59EF00786ACE /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				2ED30DCE2B9F5A0000786ACE /* ViewModel */,
+				2ED30DCD2B9F59FC00786ACE /* ViewController */,
+				2ED30DCC2B9F59F600786ACE /* View */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		2ED30DCC2B9F59F600786ACE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2ED30DD32B9F5D5500786ACE /* OrderCountView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2ED30DCD2B9F59FC00786ACE /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2ED30DCF2B9F5A0D00786ACE /* OrderCountViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		2ED30DCE2B9F5A0000786ACE /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				2ED30DD92B9F6CD800786ACE /* OrderCountViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -506,13 +581,22 @@
 			files = (
 				2E14CDEF2B9E1523007A0A11 /* CalendarViewController.swift in Sources */,
 				2E14CDFC2B9E1A71007A0A11 /* RecipeRecommendViewController.swift in Sources */,
+				2ED30DDA2B9F6CD800786ACE /* OrderCountViewModel.swift in Sources */,
 				2E14CE072B9E3262007A0A11 /* OverviewViewController.swift in Sources */,
 				2E1005B02B99838800B9BED1 /* AppDelegate.swift in Sources */,
+				2ED30DD82B9F6AA400786ACE /* Observable.swift in Sources */,
+				2ED30DC52B9F4A2200786ACE /* UserRealmModel.swift in Sources */,
 				2E14CDE92B9E14AA007A0A11 /* CustomTabBarController.swift in Sources */,
+				2ED30DD42B9F5D5500786ACE /* OrderCountView.swift in Sources */,
 				2E1005B22B99838800B9BED1 /* SceneDelegate.swift in Sources */,
 				2E14CDFE2B9E1A8A007A0A11 /* BaseViewController.swift in Sources */,
 				2E14CE0D2B9E34B2007A0A11 /* AddMealViewController.swift in Sources */,
 				2ED30DC32B9F389200786ACE /* CustomTabBar.swift in Sources */,
+				2ED30DDC2B9F728700786ACE /* UITextField+PlaceholderColor.swift in Sources */,
+				2ED30DC82B9F4B5E00786ACE /* MealRealmModel.swift in Sources */,
+				2ED30DD02B9F5A0D00786ACE /* OrderCountViewController.swift in Sources */,
+				2ED30DD62B9F61E800786ACE /* UIView+addSubViews.swift in Sources */,
+				2ED30DD22B9F5CDC00786ACE /* BaseView.swift in Sources */,
 				2E14CE022B9E1AF3007A0A11 /* UIColor+CustomColor.swift in Sources */,
 				2E14CDFA2B9E1A66007A0A11 /* LikeViewController.swift in Sources */,
 			);
