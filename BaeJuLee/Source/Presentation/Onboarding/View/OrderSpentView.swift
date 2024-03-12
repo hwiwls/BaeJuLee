@@ -1,18 +1,15 @@
 //
-//  OrderInputView.swift
+//  OrderSpentView.swift
 //  BaeJuLee
 //
 //  Created by hwijinjeong on 3/12/24.
 //
 
 import UIKit
-import SnapKit
-import Then
 
-final class OrderCountView: BaseView {
-    
+final class OrderSpentView: BaseView {
     private let orderCntTitleLabel = UILabel().then {
-        $0.text = "저번주 배달 음식\n주문 횟수를 알려주세요!"
+        $0.text = "저번주 배달 음식\n지출 비용은 총 얼마인가요?"
         $0.font = .boldSystemFont(ofSize: 25)
         $0.textColor = .black
         $0.textAlignment = .left
@@ -27,7 +24,7 @@ final class OrderCountView: BaseView {
     }
     
     let orderCntTextField = UITextField().then {
-        $0.placeholder = "횟수"
+        $0.placeholder = "금액"
         $0.backgroundColor = .clear
         $0.textColor = .black
         $0.keyboardType = .numberPad
