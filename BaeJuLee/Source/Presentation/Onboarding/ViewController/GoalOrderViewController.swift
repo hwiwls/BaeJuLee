@@ -12,6 +12,9 @@ final class GoalOrderViewController: BaseViewController {
     
     private let goalOrderView = GoalOrderView()
     
+    var orderCount: String?
+    var orderSpent: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         bindViewModel()
@@ -32,14 +35,23 @@ final class GoalOrderViewController: BaseViewController {
     }
     
     @objc func completeBtnClicked() {
-        print("clicked")
+        let repository = UserRepository()
+        
+        let onboardingData = OnboardingDataModel()
+        onboardingData.initialDeliveryCountLastWeek = Int(orderCount ?? "0") ?? 0
+        onboardingData.initialDeliveryCostLastWeek = Double(orderSpent ?? "0.0") ?? 0
+
+        let targetDeliveryCount = Int(viewModel.goalOrderCntText.value ?? "0") ?? 0
+        
+        repository.createUser(onboardingData: onboardingData, goalOrderCnt: targetDeliveryCount)
+        repository.updateUserOnboardingCompletion()
+        
         let vc = CustomTabBarController()
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
     override func configHierarchy() {
         view.addSubview(goalOrderView)
-        
     }
     
     override func configLayout() {

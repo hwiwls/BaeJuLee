@@ -16,9 +16,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.windowScene = windowScene
-        let vc = OrderCountViewController()
-        let navigationController = UINavigationController(rootViewController: vc)
-        window?.rootViewController = navigationController
+        let repository = UserRepository()
+        
+        if repository.checkUserOnboardingCompletion() {
+            self.window?.rootViewController = CustomTabBarController()
+        } else {
+            self.window?.rootViewController = UINavigationController(rootViewController: OrderCountViewController())
+        }
         window?.makeKeyAndVisible()
     }
 

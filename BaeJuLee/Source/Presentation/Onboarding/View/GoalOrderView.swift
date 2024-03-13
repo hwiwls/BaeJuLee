@@ -82,7 +82,7 @@ final class GoalOrderView: BaseView {
     }
     
     override func configView() {
-        
+        completeBtn.layer.cornerRadius = 10
     }
     
     override func configHierarchy() {
@@ -106,7 +106,7 @@ final class GoalOrderView: BaseView {
         
         goalOrderCntTitleLabel.snp.makeConstraints {
             $0.leading.trailing.equalToSuperview().inset(20)
-            $0.top.equalTo(goalOrderTitleLabel.snp.bottom).offset(80)
+            $0.top.equalTo(goalOrderTitleLabel.snp.bottom).offset(60)
         }
         
         goalOrderCntTextField.snp.makeConstraints {

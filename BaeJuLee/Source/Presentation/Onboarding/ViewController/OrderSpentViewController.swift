@@ -14,6 +14,8 @@ final class OrderSpentViewController: BaseViewController {
     
     private let orderSpentView = OrderSpentView()
     
+    var orderCount: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         bindViewModel()
@@ -21,7 +23,7 @@ final class OrderSpentViewController: BaseViewController {
     }
     
     private func bindViewModel() {
-        orderSpentView.orderCntTextField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
+        orderSpentView.orderSpentTextField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
 
         viewModel.isCompleteButtonEnabled.bind { [weak self] isEnabled in
             self?.orderSpentView.completeBtn.isEnabled = isEnabled
@@ -36,6 +38,8 @@ final class OrderSpentViewController: BaseViewController {
     @objc func completeBtnClicked() {
         print("clicked")
         let vc = GoalOrderViewController()
+        vc.orderCount = self.orderCount 
+        vc.orderSpent = orderSpentView.orderSpentTextField.text
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

@@ -33,6 +33,8 @@ final class OverviewViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .red
+        overviewCollectionView.backgroundColor = .blue
     }
     
     private func createLayout() -> UICollectionViewLayout {

@@ -43,6 +43,7 @@
 		2E88CA5E2BA1D4C40070F6C3 /* OrderCntCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E88CA5D2BA1D4C40070F6C3 /* OrderCntCollectionViewCell.swift */; };
 		2E88CA602BA1D4CA0070F6C3 /* MenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E88CA5F2BA1D4CA0070F6C3 /* MenuCollectionViewCell.swift */; };
 		2E88CA622BA1D5E50070F6C3 /* OnboardingDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E88CA612BA1D5E50070F6C3 /* OnboardingDataModel.swift */; };
+		2E88CA642BA1DE7F0070F6C3 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E88CA632BA1DE7F0070F6C3 /* UserRepository.swift */; };
 		2ED30DC32B9F389200786ACE /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED30DC22B9F389200786ACE /* CustomTabBar.swift */; };
 		2ED30DC52B9F4A2200786ACE /* UserRealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED30DC42B9F4A2200786ACE /* UserRealmModel.swift */; };
 		2ED30DC82B9F4B5E00786ACE /* MealRealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED30DC72B9F4B5E00786ACE /* MealRealmModel.swift */; };
@@ -83,6 +84,7 @@
 		2E88CA5D2BA1D4C40070F6C3 /* OrderCntCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCntCollectionViewCell.swift; sourceTree = "<group>"; };
 		2E88CA5F2BA1D4CA0070F6C3 /* MenuCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCollectionViewCell.swift; sourceTree = "<group>"; };
 		2E88CA612BA1D5E50070F6C3 /* OnboardingDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingDataModel.swift; sourceTree = "<group>"; };
+		2E88CA632BA1DE7F0070F6C3 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		2ED30DC22B9F389200786ACE /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		2ED30DC42B9F4A2200786ACE /* UserRealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRealmModel.swift; sourceTree = "<group>"; };
 		2ED30DC72B9F4B5E00786ACE /* MealRealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealRealmModel.swift; sourceTree = "<group>"; };
@@ -484,6 +486,7 @@
 		2ED30DCA2B9F4C8300786ACE /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				2E88CA632BA1DE7F0070F6C3 /* UserRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -634,6 +637,7 @@
 				2E56D3482BA0243C002B0A6C /* OrderSpentView.swift in Sources */,
 				2ED30DC52B9F4A2200786ACE /* UserRealmModel.swift in Sources */,
 				2E14CDE92B9E14AA007A0A11 /* CustomTabBarController.swift in Sources */,
+				2E88CA642BA1DE7F0070F6C3 /* UserRepository.swift in Sources */,
 				2ED30DD42B9F5D5500786ACE /* OrderCountView.swift in Sources */,
 				2E1005B22B99838800B9BED1 /* SceneDelegate.swift in Sources */,
 				2E56D3462BA0242D002B0A6C /* OrderSpentViewController.swift in Sources */,

@@ -9,7 +9,6 @@ import Foundation
 
 final class OrderSpentViewModel {
     var orderSpentText: Observable<String?> = Observable(nil)
-    
     var isCompleteButtonEnabled: Observable<Bool> = Observable(false)
     
     init() {

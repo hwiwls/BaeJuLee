@@ -8,7 +8,7 @@
 import UIKit
 
 final class OrderSpentView: BaseView {
-    private let orderCntTitleLabel = UILabel().then {
+    private let orderSpentTitleLabel = UILabel().then {
         $0.text = "저번주 배달 음식\n지출 비용은 총 얼마인가요?"
         $0.font = .boldSystemFont(ofSize: 25)
         $0.textColor = .black
@@ -16,14 +16,14 @@ final class OrderSpentView: BaseView {
         $0.numberOfLines = 2
     }
     
-    private let orderCntsubtitleLabel = UILabel().then {
+    private let orderSpentsubtitleLabel = UILabel().then {
         $0.text = "입력하신 값은 지출 계산에 도움이 됩니다 :)"
         $0.font = .boldSystemFont(ofSize: 12)
         $0.textColor = .pointRegularLightGray
         $0.textAlignment = .left
     }
     
-    let orderCntTextField = UITextField().then {
+    let orderSpentTextField = UITextField().then {
         $0.placeholder = "금액"
         $0.backgroundColor = .clear
         $0.textColor = .black
@@ -63,33 +63,33 @@ final class OrderSpentView: BaseView {
     
     override func configHierarchy() {
         self.addSubviews([
-            orderCntTitleLabel,
-            orderCntsubtitleLabel,
-            orderCntTextField,
+            orderSpentTitleLabel,
+            orderSpentsubtitleLabel,
+            orderSpentTextField,
             textfieldBorderView,
             completeBtn
         ])
     }
     
     override func configLayout() {
-        orderCntTitleLabel.snp.makeConstraints {
+        orderSpentTitleLabel.snp.makeConstraints {
             $0.top.equalToSuperview().offset(50)
             $0.leading.trailing.equalToSuperview().inset(20)
         }
         
-        orderCntsubtitleLabel.snp.makeConstraints {
-            $0.top.equalTo(orderCntTitleLabel.snp.bottom).offset(8)
+        orderSpentsubtitleLabel.snp.makeConstraints {
+            $0.top.equalTo(orderSpentTitleLabel.snp.bottom).offset(8)
             $0.leading.trailing.equalToSuperview().inset(20)
         }
         
-        orderCntTextField.snp.makeConstraints {
-            $0.top.equalTo(orderCntsubtitleLabel.snp.bottom).offset(48)
+        orderSpentTextField.snp.makeConstraints {
+            $0.top.equalTo(orderSpentsubtitleLabel.snp.bottom).offset(48)
             $0.leading.trailing.equalToSuperview().inset(20)
             $0.height.equalTo(40)
         }
         
         textfieldBorderView.snp.makeConstraints {
-            $0.top.equalTo(orderCntTextField.snp.bottom)
+            $0.top.equalTo(orderSpentTextField.snp.bottom)
             $0.leading.trailing.equalToSuperview().inset(20)
             $0.height.equalTo(1)
         }
