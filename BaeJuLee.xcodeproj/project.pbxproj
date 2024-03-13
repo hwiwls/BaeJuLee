@@ -34,7 +34,9 @@
 		2E56D3462BA0242D002B0A6C /* OrderSpentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E56D3452BA0242D002B0A6C /* OrderSpentViewController.swift */; };
 		2E56D3482BA0243C002B0A6C /* OrderSpentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E56D3472BA0243C002B0A6C /* OrderSpentView.swift */; };
 		2E56D34A2BA0246B002B0A6C /* OrderSpentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E56D3492BA0246B002B0A6C /* OrderSpentViewModel.swift */; };
-		2E56D34C2BA02A65002B0A6C /* GoalOrderCntViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E56D34B2BA02A65002B0A6C /* GoalOrderCntViewController.swift */; };
+		2E56D34C2BA02A65002B0A6C /* GoalOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E56D34B2BA02A65002B0A6C /* GoalOrderViewController.swift */; };
+		2E56D34E2BA03636002B0A6C /* GoalOrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E56D34D2BA03636002B0A6C /* GoalOrderView.swift */; };
+		2E56D3502BA03E1B002B0A6C /* GoalOrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E56D34F2BA03E1B002B0A6C /* GoalOrderViewModel.swift */; };
 		2ED30DC32B9F389200786ACE /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED30DC22B9F389200786ACE /* CustomTabBar.swift */; };
 		2ED30DC52B9F4A2200786ACE /* UserRealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED30DC42B9F4A2200786ACE /* UserRealmModel.swift */; };
 		2ED30DC82B9F4B5E00786ACE /* MealRealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED30DC72B9F4B5E00786ACE /* MealRealmModel.swift */; };
@@ -66,7 +68,9 @@
 		2E56D3452BA0242D002B0A6C /* OrderSpentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderSpentViewController.swift; sourceTree = "<group>"; };
 		2E56D3472BA0243C002B0A6C /* OrderSpentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderSpentView.swift; sourceTree = "<group>"; };
 		2E56D3492BA0246B002B0A6C /* OrderSpentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderSpentViewModel.swift; sourceTree = "<group>"; };
-		2E56D34B2BA02A65002B0A6C /* GoalOrderCntViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalOrderCntViewController.swift; sourceTree = "<group>"; };
+		2E56D34B2BA02A65002B0A6C /* GoalOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalOrderViewController.swift; sourceTree = "<group>"; };
+		2E56D34D2BA03636002B0A6C /* GoalOrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalOrderView.swift; sourceTree = "<group>"; };
+		2E56D34F2BA03E1B002B0A6C /* GoalOrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalOrderViewModel.swift; sourceTree = "<group>"; };
 		2ED30DC22B9F389200786ACE /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		2ED30DC42B9F4A2200786ACE /* UserRealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRealmModel.swift; sourceTree = "<group>"; };
 		2ED30DC72B9F4B5E00786ACE /* MealRealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealRealmModel.swift; sourceTree = "<group>"; };
@@ -473,6 +477,7 @@
 			children = (
 				2ED30DD32B9F5D5500786ACE /* OrderCountView.swift */,
 				2E56D3472BA0243C002B0A6C /* OrderSpentView.swift */,
+				2E56D34D2BA03636002B0A6C /* GoalOrderView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -482,7 +487,7 @@
 			children = (
 				2ED30DCF2B9F5A0D00786ACE /* OrderCountViewController.swift */,
 				2E56D3452BA0242D002B0A6C /* OrderSpentViewController.swift */,
-				2E56D34B2BA02A65002B0A6C /* GoalOrderCntViewController.swift */,
+				2E56D34B2BA02A65002B0A6C /* GoalOrderViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -492,6 +497,7 @@
 			children = (
 				2ED30DD92B9F6CD800786ACE /* OrderCountViewModel.swift */,
 				2E56D3492BA0246B002B0A6C /* OrderSpentViewModel.swift */,
+				2E56D34F2BA03E1B002B0A6C /* GoalOrderViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -593,6 +599,7 @@
 			files = (
 				2E14CDEF2B9E1523007A0A11 /* CalendarViewController.swift in Sources */,
 				2E14CDFC2B9E1A71007A0A11 /* RecipeRecommendViewController.swift in Sources */,
+				2E56D3502BA03E1B002B0A6C /* GoalOrderViewModel.swift in Sources */,
 				2ED30DDA2B9F6CD800786ACE /* OrderCountViewModel.swift in Sources */,
 				2E14CE072B9E3262007A0A11 /* OverviewViewController.swift in Sources */,
 				2E1005B02B99838800B9BED1 /* AppDelegate.swift in Sources */,
@@ -606,12 +613,13 @@
 				2E14CDFE2B9E1A8A007A0A11 /* BaseViewController.swift in Sources */,
 				2E14CE0D2B9E34B2007A0A11 /* AddMealViewController.swift in Sources */,
 				2ED30DC32B9F389200786ACE /* CustomTabBar.swift in Sources */,
+				2E56D34E2BA03636002B0A6C /* GoalOrderView.swift in Sources */,
 				2ED30DDC2B9F728700786ACE /* UITextField+PlaceholderColor.swift in Sources */,
 				2ED30DC82B9F4B5E00786ACE /* MealRealmModel.swift in Sources */,
 				2E56D34A2BA0246B002B0A6C /* OrderSpentViewModel.swift in Sources */,
 				2ED30DD02B9F5A0D00786ACE /* OrderCountViewController.swift in Sources */,
 				2ED30DD62B9F61E800786ACE /* UIView+addSubViews.swift in Sources */,
-				2E56D34C2BA02A65002B0A6C /* GoalOrderCntViewController.swift in Sources */,
+				2E56D34C2BA02A65002B0A6C /* GoalOrderViewController.swift in Sources */,
 				2ED30DD22B9F5CDC00786ACE /* BaseView.swift in Sources */,
 				2E14CE022B9E1AF3007A0A11 /* UIColor+CustomColor.swift in Sources */,
 				2E14CDFA2B9E1A66007A0A11 /* LikeViewController.swift in Sources */,

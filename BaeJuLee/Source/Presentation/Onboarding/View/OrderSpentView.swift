@@ -37,7 +37,7 @@ final class OrderSpentView: BaseView {
     
     var completeBtn = UIButton().then {
         $0.isEnabled = false
-        $0.backgroundColor = .superLightGray
+        $0.backgroundColor = .pointRegularLightGray
         $0.setTitle("완료", for: .normal)
     }
     

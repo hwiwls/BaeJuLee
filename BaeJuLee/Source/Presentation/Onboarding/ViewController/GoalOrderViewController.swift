@@ -1,18 +1,16 @@
 //
-//  OrderSpentViewController.swift
+//  GoalOrderCntViewController.swift
 //  BaeJuLee
 //
 //  Created by hwijinjeong on 3/12/24.
 //
 
 import UIKit
-import SnapKit
-import Then
 
-final class OrderSpentViewController: BaseViewController {
-    private var viewModel = OrderSpentViewModel()
+final class GoalOrderViewController: BaseViewController {
+    private var viewModel = GoalOrderViewModel()
     
-    private let orderSpentView = OrderSpentView()
+    private let goalOrderView = GoalOrderView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,39 +19,39 @@ final class OrderSpentViewController: BaseViewController {
     }
     
     private func bindViewModel() {
-        orderSpentView.orderCntTextField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
-
+        goalOrderView.goalOrderCntTextField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
+        
         viewModel.isCompleteButtonEnabled.bind { [weak self] isEnabled in
-            self?.orderSpentView.completeBtn.isEnabled = isEnabled
-            self?.orderSpentView.completeBtn.backgroundColor = isEnabled ? .pointGreen : .lightGray
+            self?.goalOrderView.completeBtn.isEnabled = isEnabled
+            self?.goalOrderView.completeBtn.backgroundColor = isEnabled ? .pointGreen : .lightGray
         }
     }
     
     override func configView() {
-        orderSpentView.completeBtn.addTarget(self, action: #selector(completeBtnClicked), for: .touchUpInside)
+        goalOrderView.completeBtn.addTarget(self, action: #selector(completeBtnClicked), for: .touchUpInside)
     }
     
     @objc func completeBtnClicked() {
         print("clicked")
-        let vc = GoalOrderViewController()
+        let vc = CustomTabBarController()
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
     override func configHierarchy() {
-        view.addSubview(orderSpentView)
+        view.addSubview(goalOrderView)
         
     }
     
     override func configLayout() {
-        orderSpentView.snp.makeConstraints {
+        goalOrderView.snp.makeConstraints {
             $0.edges.equalTo(view.safeAreaLayoutGuide)
         }
     }
 }
 
-extension OrderSpentViewController {
+extension GoalOrderViewController {
     @objc private func textFieldDidChange(_ textField: UITextField) {
-        viewModel.orderSpentText.value = textField.text
+        viewModel.goalOrderCntText.value = textField.text
     }
 
     private func setupGestureToHideKeyboard() {
