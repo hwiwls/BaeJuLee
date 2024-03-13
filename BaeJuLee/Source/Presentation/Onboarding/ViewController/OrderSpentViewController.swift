@@ -1,5 +1,5 @@
 //
-//  OnboardingViewController.swift
+//  OrderSpentViewController.swift
 //  BaeJuLee
 //
 //  Created by hwijinjeong on 3/12/24.
@@ -9,10 +9,10 @@ import UIKit
 import SnapKit
 import Then
 
-final class OrderCountViewController: BaseViewController {
-    private var viewModel = OrderCountViewModel()
+final class OrderSpentViewController: BaseViewController {
+    private var viewModel = OrderSpentViewModel()
     
-    private let orderCountView = OrderCountView()
+    private let orderSpentView = OrderSpentView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,39 +21,39 @@ final class OrderCountViewController: BaseViewController {
     }
     
     private func bindViewModel() {
-        orderCountView.orderCntTextField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
+        orderSpentView.orderCntTextField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
 
         viewModel.isCompleteButtonEnabled.bind { [weak self] isEnabled in
-            self?.orderCountView.completeBtn.isEnabled = isEnabled
-            self?.orderCountView.completeBtn.backgroundColor = isEnabled ? .pointGreen : .lightGray
+            self?.orderSpentView.completeBtn.isEnabled = isEnabled
+            self?.orderSpentView.completeBtn.backgroundColor = isEnabled ? .pointGreen : .lightGray
         }
     }
     
     override func configView() {
-        orderCountView.completeBtn.addTarget(self, action: #selector(completeBtnClicked), for: .touchUpInside)
+        orderSpentView.completeBtn.addTarget(self, action: #selector(completeBtnClicked), for: .touchUpInside)
     }
     
     @objc func completeBtnClicked() {
         print("clicked")
-        let vc = OrderSpentViewController()
+        let vc = GoalOrderViewController()
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
     override func configHierarchy() {
-        view.addSubview(orderCountView)
+        view.addSubview(orderSpentView)
         
     }
     
     override func configLayout() {
-        orderCountView.snp.makeConstraints {
+        orderSpentView.snp.makeConstraints {
             $0.edges.equalTo(view.safeAreaLayoutGuide)
         }
     }
 }
 
-extension OrderCountViewController {
+extension OrderSpentViewController {
     @objc private func textFieldDidChange(_ textField: UITextField) {
-        viewModel.orderCountText.value = textField.text
+        viewModel.orderSpentText.value = textField.text
     }
 
     private func setupGestureToHideKeyboard() {
@@ -64,6 +64,4 @@ extension OrderCountViewController {
     @objc private func dismissKeyboard() {
         view.endEditing(true)
     }
-   
 }
-
