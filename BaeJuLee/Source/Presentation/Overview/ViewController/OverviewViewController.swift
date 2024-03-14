@@ -7,91 +7,108 @@
 
 import UIKit
 import SnapKit
-import Then
 import FSCalendar
 
 final class OverviewViewController: BaseViewController {
-    enum SectionLayoutKind: Int, CaseIterable {
-        case calendar, saving, orderCnt, menu
-        
-        var columnInt: Int {
-            switch self {
-            case .calendar:
-                return 1
-            case .saving:
-                return 1
-            case .orderCnt:
-                return 1
-            case .menu:
-                return 3
-            }
-        }
+    private let logoImageView = UIImageView().then {
+        $0.image = UIImage(named: "BBBLogo")
+        $0.contentMode = .scaleAspectFit
     }
-    
-    
-    private lazy var overviewCollectionView = UICollectionView(frame: .zero, collectionViewLayout: createLayout())
+   
+    private lazy var overviewCollectionView = UICollectionView(frame: .zero, collectionViewLayout: OverviewCompositionalLayout.create())
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .red
-        overviewCollectionView.backgroundColor = .blue
-    }
-    
-    private func createLayout() -> UICollectionViewLayout {
-        return UICollectionViewCompositionalLayout { sectionIndex, layoutEnvironment in
-            // 섹션 인덱스를 기반으로 SectionLayoutKind를 결정합니다.
-            guard let sectionLayoutKind = SectionLayoutKind(rawValue: sectionIndex) else { return nil }
-
-            switch sectionLayoutKind {
-            case .calendar: // 첫 번째 섹션
-                let itemSize = NSCollectionLayoutSize(widthDimension: .absolute(360), heightDimension: .absolute(70))
-                let item = NSCollectionLayoutItem(layoutSize: itemSize)
-                let group = NSCollectionLayoutGroup.horizontal(layoutSize: itemSize, subitems: [item])
-                let section = NSCollectionLayoutSection(group: group)
-                return section
-            case .saving: // 두 번째 섹션
-                let itemSize = NSCollectionLayoutSize(widthDimension: .absolute(360), heightDimension: .absolute(300))
-                let item = NSCollectionLayoutItem(layoutSize: itemSize)
-                let group = NSCollectionLayoutGroup.horizontal(layoutSize: itemSize, subitems: [item])
-                let section = NSCollectionLayoutSection(group: group)
-                return section
-            case .orderCnt: // 세 번째 섹션
-                let itemSize = NSCollectionLayoutSize(widthDimension: .absolute(360), heightDimension: .absolute(100))
-                let item = NSCollectionLayoutItem(layoutSize: itemSize)
-                let group = NSCollectionLayoutGroup.horizontal(layoutSize: itemSize, subitems: [item])
-                let section = NSCollectionLayoutSection(group: group)
-                return section
-            case .menu: // 네 번째 섹션, 3개의 셀을 가집니다.
-                let largeItemSize = NSCollectionLayoutSize(widthDimension: .absolute(168), heightDimension: .absolute(208))
-                let smallItemSize = NSCollectionLayoutSize(widthDimension: .absolute(168), heightDimension: .absolute(100))
-                let largeItem = NSCollectionLayoutItem(layoutSize: largeItemSize)
-                let smallItem = NSCollectionLayoutItem(layoutSize: smallItemSize)
-
-                let leadingGroup = NSCollectionLayoutGroup.vertical(layoutSize: largeItemSize, subitems: [largeItem])
-                let trailingGroup = NSCollectionLayoutGroup.vertical(layoutSize: NSCollectionLayoutSize(widthDimension: .absolute(168), heightDimension: .absolute(200)), subitems: [smallItem, smallItem])
-                
-                let combinedGroupSize = NSCollectionLayoutSize(widthDimension: .absolute(360), heightDimension: .absolute(200))
-                let combinedGroup = NSCollectionLayoutGroup.horizontal(layoutSize: combinedGroupSize, subitems: [leadingGroup, trailingGroup])
-                combinedGroup.interItemSpacing = .fixed(10) // 셀 간 간격 설정
-                
-                let section = NSCollectionLayoutSection(group: combinedGroup)
-                section.interGroupSpacing = 10 // 그룹 간 간격 설정
-                return section
-            }
-        }
     }
     
     override func configView() {
-        
+        overviewCollectionView.backgroundColor = .white
+        overviewCollectionView.delegate = self
+        overviewCollectionView.dataSource = self
+        overviewCollectionView.register(SavingCollectionViewCell.self, forCellWithReuseIdentifier: "SavingCollectionViewCell")
+        overviewCollectionView.register(CalendarCollectionViewCell.self, forCellWithReuseIdentifier: "CalendarCollectionViewCell")
+        overviewCollectionView.register(OrderCntCollectionViewCell.self, forCellWithReuseIdentifier: "OrderCntCollectionViewCell")
+        overviewCollectionView.register(MenuCollectionViewCell.self, forCellWithReuseIdentifier: "MenuCollectionViewCell")
     }
     
     override func configHierarchy() {
-        view.addSubview(overviewCollectionView)
+        view.addSubviews([
+            logoImageView,
+            overviewCollectionView
+        ])
     }
 
     override func configLayout() {
-        overviewCollectionView.snp.makeConstraints {
-            $0.edges.equalTo(view.safeAreaLayoutGuide)
+        logoImageView.snp.makeConstraints {
+            $0.top.equalToSuperview().offset(50)
+            $0.leading.equalTo(view.safeAreaLayoutGuide).offset(20)
+            $0.width.equalTo(60)
+            $0.height.equalTo(48)
         }
+        
+        overviewCollectionView.snp.makeConstraints {
+            $0.top.equalTo(logoImageView.snp.bottom)
+            $0.leading.bottom.trailing.equalTo(view.safeAreaLayoutGuide)
+        }
+    }
+}
+
+extension OverviewViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return OverviewCompositionalLayout.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        guard let sectionType = OverviewCompositionalLayout(rawValue: section) else { return 0}
+        
+        switch sectionType {
+        case .calendar:
+            return 1
+        case .saving:
+            return 1
+        case .orderCnt:
+            return 1
+        case .menu:
+            return 3
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let calendarCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CalendarCollectionViewCell", for: indexPath) as? CalendarCollectionViewCell else { return UICollectionViewCell() }
+        
+        guard let savingCell = collectionView.dequeueReusableCell(withReuseIdentifier: "SavingCollectionViewCell", for: indexPath) as? SavingCollectionViewCell else { return UICollectionViewCell() }
+        
+        guard let orderCntCell = collectionView.dequeueReusableCell(withReuseIdentifier: "OrderCntCollectionViewCell", for: indexPath) as? OrderCntCollectionViewCell else { return UICollectionViewCell() }
+        
+        guard let menuCell = collectionView.dequeueReusableCell(withReuseIdentifier: "MenuCollectionViewCell", for: indexPath) as? MenuCollectionViewCell else { return UICollectionViewCell() }
+        
+        if let sectionType = OverviewCompositionalLayout(rawValue: indexPath.section) {
+            switch sectionType {
+            case .calendar:
+                calendarCell.calendar.delegate = self
+                calendarCell.calendar.dataSource = self
+                return calendarCell
+            case .saving:
+                return savingCell
+            case .orderCnt:
+                return orderCntCell
+            case .menu:
+                return menuCell
+            }
+        }
+        
+        return UICollectionViewCell()
+    }
+    
+    
+}
+
+extension OverviewViewController: FSCalendarDelegate, FSCalendarDataSource {
+    func calendar(_ calendar: FSCalendar, boundingRectWillChange bounds: CGRect, animated: Bool) {
+        calendar.snp.remakeConstraints {
+            $0.top.leading.trailing.equalTo(view.safeAreaLayoutGuide)
+            $0.height.equalTo(bounds.height)
+        }
+        self.view.layoutIfNeeded()
     }
 }

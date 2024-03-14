@@ -37,8 +37,10 @@
 		2E56D34C2BA02A65002B0A6C /* GoalOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E56D34B2BA02A65002B0A6C /* GoalOrderViewController.swift */; };
 		2E56D34E2BA03636002B0A6C /* GoalOrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E56D34D2BA03636002B0A6C /* GoalOrderView.swift */; };
 		2E56D3502BA03E1B002B0A6C /* GoalOrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E56D34F2BA03E1B002B0A6C /* GoalOrderViewModel.swift */; };
+		2E5F643A2BA2D464004346E0 /* OverviewCompositionalLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5F64392BA2D464004346E0 /* OverviewCompositionalLayout.swift */; };
+		2E5F643C2BA368D7004346E0 /* CalendarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5F643B2BA368D7004346E0 /* CalendarCollectionViewCell.swift */; };
+		2E5F643E2BA368EC004346E0 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5F643D2BA368EC004346E0 /* BaseCollectionViewCell.swift */; };
 		2E88CA572BA1BD060070F6C3 /* OverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E88CA562BA1BD060070F6C3 /* OverviewView.swift */; };
-		2E88CA5A2BA1D4B30070F6C3 /* CalenderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E88CA592BA1D4B30070F6C3 /* CalenderCollectionViewCell.swift */; };
 		2E88CA5C2BA1D4BB0070F6C3 /* SavingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E88CA5B2BA1D4BB0070F6C3 /* SavingCollectionViewCell.swift */; };
 		2E88CA5E2BA1D4C40070F6C3 /* OrderCntCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E88CA5D2BA1D4C40070F6C3 /* OrderCntCollectionViewCell.swift */; };
 		2E88CA602BA1D4CA0070F6C3 /* MenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E88CA5F2BA1D4CA0070F6C3 /* MenuCollectionViewCell.swift */; };
@@ -78,8 +80,10 @@
 		2E56D34B2BA02A65002B0A6C /* GoalOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalOrderViewController.swift; sourceTree = "<group>"; };
 		2E56D34D2BA03636002B0A6C /* GoalOrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalOrderView.swift; sourceTree = "<group>"; };
 		2E56D34F2BA03E1B002B0A6C /* GoalOrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalOrderViewModel.swift; sourceTree = "<group>"; };
+		2E5F64392BA2D464004346E0 /* OverviewCompositionalLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewCompositionalLayout.swift; sourceTree = "<group>"; };
+		2E5F643B2BA368D7004346E0 /* CalendarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCollectionViewCell.swift; sourceTree = "<group>"; };
+		2E5F643D2BA368EC004346E0 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
 		2E88CA562BA1BD060070F6C3 /* OverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewView.swift; sourceTree = "<group>"; };
-		2E88CA592BA1D4B30070F6C3 /* CalenderCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderCollectionViewCell.swift; sourceTree = "<group>"; };
 		2E88CA5B2BA1D4BB0070F6C3 /* SavingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingCollectionViewCell.swift; sourceTree = "<group>"; };
 		2E88CA5D2BA1D4C40070F6C3 /* OrderCntCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCntCollectionViewCell.swift; sourceTree = "<group>"; };
 		2E88CA5F2BA1D4CA0070F6C3 /* MenuCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -263,6 +267,7 @@
 		2E14CDE52B9E13A4007A0A11 /* CollectionViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				2E5F643D2BA368EC004346E0 /* BaseCollectionViewCell.swift */,
 			);
 			path = CollectionViewCell;
 			sourceTree = "<group>";
@@ -411,6 +416,7 @@
 			isa = PBXGroup;
 			children = (
 				2E14CE062B9E3262007A0A11 /* OverviewViewController.swift */,
+				2E5F64392BA2D464004346E0 /* OverviewCompositionalLayout.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -457,7 +463,7 @@
 		2E88CA582BA1C55C0070F6C3 /* CollectionViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				2E88CA592BA1D4B30070F6C3 /* CalenderCollectionViewCell.swift */,
+				2E5F643B2BA368D7004346E0 /* CalendarCollectionViewCell.swift */,
 				2E88CA5B2BA1D4BB0070F6C3 /* SavingCollectionViewCell.swift */,
 				2E88CA5D2BA1D4C40070F6C3 /* OrderCntCollectionViewCell.swift */,
 				2E88CA5F2BA1D4CA0070F6C3 /* MenuCollectionViewCell.swift */,
@@ -641,6 +647,7 @@
 				2ED30DD42B9F5D5500786ACE /* OrderCountView.swift in Sources */,
 				2E1005B22B99838800B9BED1 /* SceneDelegate.swift in Sources */,
 				2E56D3462BA0242D002B0A6C /* OrderSpentViewController.swift in Sources */,
+				2E5F643E2BA368EC004346E0 /* BaseCollectionViewCell.swift in Sources */,
 				2E88CA572BA1BD060070F6C3 /* OverviewView.swift in Sources */,
 				2E14CDFE2B9E1A8A007A0A11 /* BaseViewController.swift in Sources */,
 				2E14CE0D2B9E34B2007A0A11 /* AddMealViewController.swift in Sources */,
@@ -648,7 +655,7 @@
 				2E56D34E2BA03636002B0A6C /* GoalOrderView.swift in Sources */,
 				2ED30DDC2B9F728700786ACE /* UITextField+PlaceholderColor.swift in Sources */,
 				2ED30DC82B9F4B5E00786ACE /* MealRealmModel.swift in Sources */,
-				2E88CA5A2BA1D4B30070F6C3 /* CalenderCollectionViewCell.swift in Sources */,
+				2E5F643C2BA368D7004346E0 /* CalendarCollectionViewCell.swift in Sources */,
 				2E88CA602BA1D4CA0070F6C3 /* MenuCollectionViewCell.swift in Sources */,
 				2E56D34A2BA0246B002B0A6C /* OrderSpentViewModel.swift in Sources */,
 				2ED30DD02B9F5A0D00786ACE /* OrderCountViewController.swift in Sources */,
@@ -657,6 +664,7 @@
 				2E56D34C2BA02A65002B0A6C /* GoalOrderViewController.swift in Sources */,
 				2E88CA5E2BA1D4C40070F6C3 /* OrderCntCollectionViewCell.swift in Sources */,
 				2ED30DD22B9F5CDC00786ACE /* BaseView.swift in Sources */,
+				2E5F643A2BA2D464004346E0 /* OverviewCompositionalLayout.swift in Sources */,
 				2E14CE022B9E1AF3007A0A11 /* UIColor+CustomColor.swift in Sources */,
 				2E14CDFA2B9E1A66007A0A11 /* LikeViewController.swift in Sources */,
 			);
