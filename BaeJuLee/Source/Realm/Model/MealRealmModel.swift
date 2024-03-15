@@ -8,13 +8,13 @@
 import Foundation
 import RealmSwift
 
-class MealRealmModel: Object {
+final class MealRealmModel: Object {
     @Persisted(primaryKey: true) var id: ObjectId
-    @Persisted var mealRegDate: Date // 식사 날짜
+    @Persisted var mealRegDate: Date
     @Persisted var mealTime: String // 아침, 점심, 저녁, 간식
     @Persisted var mealType: String // 배달음식, 집밥
-    @Persisted var mealPrice: Double // 식사 가격
-    @Persisted var mealName: String // 식사 이름
+    @Persisted var mealPrice: Double
+    @Persisted var mealName: String
     
     convenience init(mealRegDate: Date, mealTime: String, mealType: String, mealPrice: Double, mealName: String) {
         self.init()

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 final class CustomTabBarController: UITabBarController {
     
@@ -21,7 +22,9 @@ final class CustomTabBarController: UITabBarController {
         
         tabBarConfig()
         setupMiddleButton()
-        view.backgroundColor = .red
+        
+        let realm = try! Realm()
+        print(realm.configuration.fileURL ?? "")
     }
     
     private func tabBarConfig() {
@@ -117,6 +120,7 @@ final class CustomTabBarController: UITabBarController {
     
     @objc func middleButtonAction(sender: UIButton) {
         let vc = AddMealViewController()
+        vc.modalPresentationStyle = .fullScreen
         present(vc, animated:  true)
     }
 }

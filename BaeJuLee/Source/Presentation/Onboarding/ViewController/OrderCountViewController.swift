@@ -36,6 +36,7 @@ final class OrderCountViewController: BaseViewController {
     @objc func completeBtnClicked() {
         print("clicked")
         let vc = OrderSpentViewController()
+        vc.orderCount = orderCountView.orderCntTextField.text
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

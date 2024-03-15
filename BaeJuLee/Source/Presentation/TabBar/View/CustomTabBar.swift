@@ -8,7 +8,7 @@
 import UIKit
 import Then
 
-class CustomTabBar: UITabBar {
+final class CustomTabBar: UITabBar {
     let middleButton = UIButton(frame: CGRect(x: 0, y: 0, width: 70, height: 70)).then {
         $0.backgroundColor = .black
         $0.layer.cornerRadius = 35 // 버튼의 크기의 절반 값을 주어 동그라미 형태를 만듭니다.
