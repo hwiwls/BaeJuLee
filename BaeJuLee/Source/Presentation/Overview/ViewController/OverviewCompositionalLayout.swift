@@ -58,7 +58,7 @@ enum OverviewCompositionalLayout: Int, CaseIterable {
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
         
         let section = NSCollectionLayoutSection(group: group)
-        section.contentInsets = NSDirectionalEdgeInsets(top: 20, leading: 20, bottom: 20, trailing: 20)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 20, leading: 20, bottom: 16, trailing: 20)
         
         
         return section
@@ -74,7 +74,7 @@ enum OverviewCompositionalLayout: Int, CaseIterable {
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
         
         let section = NSCollectionLayoutSection(group: group)
-        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 20, bottom: 20, trailing: 20)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 20, bottom: 16, trailing: 20)
         
         return section
     }
@@ -93,15 +93,15 @@ enum OverviewCompositionalLayout: Int, CaseIterable {
         let thirdItem = NSCollectionLayoutItem(layoutSize: thirdItemSize)
         
         // 두 번째와 세 번째 셀을 위한 수직 그룹 - 화면의 절반 너비의 절반
-        let verticalGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5), heightDimension: .absolute(208))
+        let verticalGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5), heightDimension: .absolute(212))
         let verticalGroup = NSCollectionLayoutGroup.vertical(layoutSize: verticalGroupSize, subitems: [secondItem, thirdItem])
-        verticalGroup.interItemSpacing = .fixed(8)
+        verticalGroup.interItemSpacing = .fixed(12)
         
         // 최종 그룹 생성 (첫 번째 셀 + 수직 그룹)
         // 여기서는 화면 전체 너비를 사용하지만, 각 아이템/그룹은 화면의 절반을 차지
-        let finalGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(208))
+        let finalGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(212))
         let finalGroup = NSCollectionLayoutGroup.horizontal(layoutSize: finalGroupSize, subitems: [firstItem, verticalGroup])
-        finalGroup.interItemSpacing = .fixed(8)
+        finalGroup.interItemSpacing = .fixed(12)
         
         let section = NSCollectionLayoutSection(group: finalGroup)
  

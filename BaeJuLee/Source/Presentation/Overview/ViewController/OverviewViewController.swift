@@ -22,7 +22,7 @@ final class OverviewViewController: BaseViewController {
     }
     
     override func configView() {
-        overviewCollectionView.backgroundColor = .white
+        overviewCollectionView.backgroundColor = .pointBackground
         overviewCollectionView.delegate = self
         overviewCollectionView.dataSource = self
         overviewCollectionView.register(SavingCollectionViewCell.self, forCellWithReuseIdentifier: "SavingCollectionViewCell")

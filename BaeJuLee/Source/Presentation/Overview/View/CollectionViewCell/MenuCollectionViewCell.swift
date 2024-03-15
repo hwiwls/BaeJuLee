@@ -58,7 +58,7 @@ class MenuCollectionViewCell: BaseCollectionViewCell {
     
     func setupLayout() {
         layer.shadowColor = UIColor.gray.cgColor
-        layer.shadowOpacity = 0.3
+        layer.shadowOpacity = 0.2
         layer.shadowRadius = 10
         contentView.layer.cornerRadius = 10
         contentView.layer.masksToBounds = true

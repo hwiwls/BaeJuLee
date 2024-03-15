@@ -26,8 +26,6 @@
 		2E14CE182B9E3C99007A0A11 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 2E14CE172B9E3C99007A0A11 /* Then */; };
 		2E14CE1B2B9E3CB0007A0A11 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2E14CE1A2B9E3CB0007A0A11 /* SnapKit */; };
 		2E14CE1E2B9E3CE8007A0A11 /* DGCharts in Frameworks */ = {isa = PBXBuildFile; productRef = 2E14CE1D2B9E3CE8007A0A11 /* DGCharts */; };
-		2E14CE212B9E3CFF007A0A11 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 2E14CE202B9E3CFF007A0A11 /* Alamofire */; };
-		2E14CE232B9E3CFF007A0A11 /* AlamofireDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 2E14CE222B9E3CFF007A0A11 /* AlamofireDynamic */; };
 		2E14CE262B9E3D28007A0A11 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 2E14CE252B9E3D28007A0A11 /* Lottie */; };
 		2E14CE292B9E3D3E007A0A11 /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 2E14CE282B9E3D3E007A0A11 /* FSCalendar */; };
 		2E14CE2C2B9E3D9F007A0A11 /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = 2E14CE2B2B9E3D9F007A0A11 /* SkeletonView */; };
@@ -46,6 +44,7 @@
 		2E88CA602BA1D4CA0070F6C3 /* MenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E88CA5F2BA1D4CA0070F6C3 /* MenuCollectionViewCell.swift */; };
 		2E88CA622BA1D5E50070F6C3 /* OnboardingDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E88CA612BA1D5E50070F6C3 /* OnboardingDataModel.swift */; };
 		2E88CA642BA1DE7F0070F6C3 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E88CA632BA1DE7F0070F6C3 /* UserRepository.swift */; };
+		2EC75DD52BA3F716008A0E3A /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 2EC75DD42BA3F716008A0E3A /* Alamofire */; };
 		2ED30DC32B9F389200786ACE /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED30DC22B9F389200786ACE /* CustomTabBar.swift */; };
 		2ED30DC52B9F4A2200786ACE /* UserRealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED30DC42B9F4A2200786ACE /* UserRealmModel.swift */; };
 		2ED30DC82B9F4B5E00786ACE /* MealRealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED30DC72B9F4B5E00786ACE /* MealRealmModel.swift */; };
@@ -108,13 +107,12 @@
 			files = (
 				2E14CE2C2B9E3D9F007A0A11 /* SkeletonView in Frameworks */,
 				2E14CE152B9E3C90007A0A11 /* Kingfisher in Frameworks */,
-				2E14CE212B9E3CFF007A0A11 /* Alamofire in Frameworks */,
 				2E14CE262B9E3D28007A0A11 /* Lottie in Frameworks */,
 				2E14CE292B9E3D3E007A0A11 /* FSCalendar in Frameworks */,
 				2E14CE122B9E3C73007A0A11 /* RealmSwift in Frameworks */,
+				2EC75DD52BA3F716008A0E3A /* Alamofire in Frameworks */,
 				2E14CE102B9E3C73007A0A11 /* Realm in Frameworks */,
 				2E14CE182B9E3C99007A0A11 /* Then in Frameworks */,
-				2E14CE232B9E3CFF007A0A11 /* AlamofireDynamic in Frameworks */,
 				2E14CE1E2B9E3CE8007A0A11 /* DGCharts in Frameworks */,
 				2E14CE1B2B9E3CB0007A0A11 /* SnapKit in Frameworks */,
 			);
@@ -560,11 +558,10 @@
 				2E14CE172B9E3C99007A0A11 /* Then */,
 				2E14CE1A2B9E3CB0007A0A11 /* SnapKit */,
 				2E14CE1D2B9E3CE8007A0A11 /* DGCharts */,
-				2E14CE202B9E3CFF007A0A11 /* Alamofire */,
-				2E14CE222B9E3CFF007A0A11 /* AlamofireDynamic */,
 				2E14CE252B9E3D28007A0A11 /* Lottie */,
 				2E14CE282B9E3D3E007A0A11 /* FSCalendar */,
 				2E14CE2B2B9E3D9F007A0A11 /* SkeletonView */,
+				2EC75DD42BA3F716008A0E3A /* Alamofire */,
 			);
 			productName = BaeJuLee;
 			productReference = 2E1005AC2B99838800B9BED1 /* BaeJuLee.app */;
@@ -600,10 +597,10 @@
 				2E14CE162B9E3C99007A0A11 /* XCRemoteSwiftPackageReference "Then" */,
 				2E14CE192B9E3CB0007A0A11 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				2E14CE1C2B9E3CE8007A0A11 /* XCRemoteSwiftPackageReference "Charts" */,
-				2E14CE1F2B9E3CFF007A0A11 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				2E14CE242B9E3D28007A0A11 /* XCRemoteSwiftPackageReference "lottie-spm" */,
 				2E14CE272B9E3D3E007A0A11 /* XCRemoteSwiftPackageReference "FSCalendar" */,
 				2E14CE2A2B9E3D9F007A0A11 /* XCRemoteSwiftPackageReference "SkeletonView" */,
+				2EC75DD32BA3F716008A0E3A /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 2E1005AD2B99838800B9BED1 /* Products */;
 			projectDirPath = "";
@@ -933,14 +930,6 @@
 				minimumVersion = 5.1.0;
 			};
 		};
-		2E14CE1F2B9E3CFF007A0A11 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Alamofire/Alamofire";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.9.0;
-			};
-		};
 		2E14CE242B9E3D28007A0A11 /* XCRemoteSwiftPackageReference "lottie-spm" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/airbnb/lottie-spm.git";
@@ -963,6 +952,14 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 1.30.4;
+			};
+		};
+		2EC75DD32BA3F716008A0E3A /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.9.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -998,16 +995,6 @@
 			package = 2E14CE1C2B9E3CE8007A0A11 /* XCRemoteSwiftPackageReference "Charts" */;
 			productName = DGCharts;
 		};
-		2E14CE202B9E3CFF007A0A11 /* Alamofire */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 2E14CE1F2B9E3CFF007A0A11 /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = Alamofire;
-		};
-		2E14CE222B9E3CFF007A0A11 /* AlamofireDynamic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 2E14CE1F2B9E3CFF007A0A11 /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = AlamofireDynamic;
-		};
 		2E14CE252B9E3D28007A0A11 /* Lottie */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 2E14CE242B9E3D28007A0A11 /* XCRemoteSwiftPackageReference "lottie-spm" */;
@@ -1022,6 +1009,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2E14CE2A2B9E3D9F007A0A11 /* XCRemoteSwiftPackageReference "SkeletonView" */;
 			productName = SkeletonView;
+		};
+		2EC75DD42BA3F716008A0E3A /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2EC75DD32BA3F716008A0E3A /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
