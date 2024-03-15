@@ -10,6 +10,7 @@ import SnapKit
 import Then
 
 final class AddMealViewController: BaseViewController {
+    var viewModel = AddMealViewModel()
     
     let dateView = UIView().then {
         $0.backgroundColor = .white
@@ -17,7 +18,11 @@ final class AddMealViewController: BaseViewController {
     }
     
     let dateLabel = UILabel().then {
-        $0.text = "2222년 22월 22일"
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy년 MM월 dd일"
+        formatter.locale = Locale(identifier: "ko_KR")
+        let dateString = formatter.string(from: Date())
+        $0.text = dateString
         $0.textColor = .black
         $0.font = .systemFont(ofSize: 16)
     }
@@ -25,6 +30,7 @@ final class AddMealViewController: BaseViewController {
     let datePicker = UIDatePicker().then {
         $0.datePickerMode = .date
         $0.preferredDatePickerStyle = .wheels
+        $0.locale = Locale(identifier: "ko-KR")
     }
     
     let dateChevronBtn = UIButton().then {
@@ -44,9 +50,17 @@ final class AddMealViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        bindViewModel()
         configureTapGesture()
     }
     
+    private func bindViewModel() {
+        viewModel.outputFormattedDate.bind { [weak self] formattedDate in
+                guard let formattedDate = formattedDate else { return }
+                self?.dateLabel.text = formattedDate
+            }
+    }
+
     private func configureTapGesture() {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(showDatePicker))
         dateView.isUserInteractionEnabled = true
@@ -54,8 +68,6 @@ final class AddMealViewController: BaseViewController {
     }
     
     override func configView() {
-        datePicker.addTarget(self, action: #selector(datePickerValueChanged(_:)), for: .valueChanged)
-        dateView.isUserInteractionEnabled = true
     }
     
     @objc func showDatePicker() {
@@ -63,24 +75,16 @@ final class AddMealViewController: BaseViewController {
         datePicker.backgroundColor = .white
         let alert = UIAlertController(title: "\n\n\n\n\n\n\n\n\n\n", message: nil, preferredStyle: .actionSheet)
         alert.view.addSubview(datePicker)
-        let okAction = UIAlertAction(title: "확인", style: .default) { _ in
-            self.updateDateLabel()
-        }
+        let okAction = UIAlertAction(title: "확인", style: .default) { [weak self] _ in
+                self?.viewModel.inputDateSelected.value = self?.datePicker.date
+            }
         let cancelAction = UIAlertAction(title: "취소", style: .cancel, handler: nil)
         alert.addAction(okAction)
         alert.addAction(cancelAction)
         present(alert, animated: true, completion: nil)
     }
 
-    func updateDateLabel() {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy년 MM월 dd일"
-        dateLabel.text = formatter.string(from: datePicker.date)
-    }
-
-    @objc func datePickerValueChanged(_ sender: UIDatePicker) {
-        updateDateLabel()
-    }
+    
     
     override func configHierarchy() {
         view.addSubviews([
@@ -91,13 +95,11 @@ final class AddMealViewController: BaseViewController {
             dateLabel,
             dateChevronBtn
         ])
-        
-        
     }
     
     override func configLayout() {
         dateView.snp.makeConstraints {
-            $0.top.equalTo(view.safeAreaLayoutGuide)
+            $0.top.equalTo(view.safeAreaLayoutGuide).offset(36)
             $0.leading.trailing.equalTo(view.safeAreaLayoutGuide).inset(20)
             $0.height.equalTo(60)
         }
