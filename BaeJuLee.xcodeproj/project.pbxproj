@@ -58,6 +58,7 @@
 		2ED30DDC2B9F728700786ACE /* UITextField+PlaceholderColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED30DDB2B9F728700786ACE /* UITextField+PlaceholderColor.swift */; };
 		2EF5D10C2BA4A501006D2E9E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2EF5D10B2BA4A501006D2E9E /* Assets.xcassets */; };
 		2EF5D10E2BA4B621006D2E9E /* AddMealDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF5D10D2BA4B621006D2E9E /* AddMealDetailView.swift */; };
+		2EF5D1102BA4BEE1006D2E9E /* DateFormatterUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF5D10F2BA4BEE1006D2E9E /* DateFormatterUtility.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -104,6 +105,7 @@
 		2ED30DDB2B9F728700786ACE /* UITextField+PlaceholderColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+PlaceholderColor.swift"; sourceTree = "<group>"; };
 		2EF5D10B2BA4A501006D2E9E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2EF5D10D2BA4B621006D2E9E /* AddMealDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMealDetailView.swift; sourceTree = "<group>"; };
+		2EF5D10F2BA4BEE1006D2E9E /* DateFormatterUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterUtility.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -393,6 +395,7 @@
 			isa = PBXGroup;
 			children = (
 				2E14CE002B9E1AE7007A0A11 /* Extension */,
+				2EF5D10F2BA4BEE1006D2E9E /* DateFormatterUtility.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -647,6 +650,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2E28F3302BA49A7C00C0B1EB /* AddMealViewModel.swift in Sources */,
+				2EF5D1102BA4BEE1006D2E9E /* DateFormatterUtility.swift in Sources */,
 				2E14CDEF2B9E1523007A0A11 /* CalendarViewController.swift in Sources */,
 				2E14CDFC2B9E1A71007A0A11 /* RecipeRecommendViewController.swift in Sources */,
 				2E88CA622BA1D5E50070F6C3 /* OnboardingDataModel.swift in Sources */,

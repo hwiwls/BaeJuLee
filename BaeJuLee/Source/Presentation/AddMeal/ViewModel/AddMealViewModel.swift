@@ -20,8 +20,7 @@ class AddMealViewModel {
     }
     
     private func updateFormattedDate(date: Date) {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy년 MM월 dd일"
-        outputFormattedDate.value = formatter.string(from: date)
+        let formattedDate = DateFormatterUtility.shared.string(from: date, withFormat: "yyyy년 MM월 dd일")
+        outputFormattedDate.value = formattedDate
     }
 }

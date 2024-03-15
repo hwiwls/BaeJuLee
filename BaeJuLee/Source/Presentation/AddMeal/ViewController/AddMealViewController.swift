@@ -18,10 +18,7 @@ final class AddMealViewController: BaseViewController {
     }
     
     let dateLabel = UILabel().then {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy년 MM월 dd일"
-        formatter.locale = Locale(identifier: "ko_KR")
-        let dateString = formatter.string(from: Date())
+        let dateString = DateFormatterUtility.shared.string(from: Date(), withFormat: "yyyy년 MM월 dd일")
         $0.text = dateString
         $0.textColor = .black
         $0.font = .systemFont(ofSize: 16)
