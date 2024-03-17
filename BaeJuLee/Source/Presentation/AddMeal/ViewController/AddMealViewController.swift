@@ -8,8 +8,6 @@
 import UIKit
 import SnapKit
 import Then
-import RealmSwift
-import Toast
 
 final class AddMealViewController: BaseViewController, UITextFieldDelegate {
     enum MealTime: String {
@@ -69,6 +67,7 @@ final class AddMealViewController: BaseViewController, UITextFieldDelegate {
         $0.setTitleColor(.gray, for: .normal)
         $0.isEnabled = false
         $0.layer.cornerRadius = 10
+        $0.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
     }
     
     override func viewDidLoad() {
@@ -111,7 +110,12 @@ final class AddMealViewController: BaseViewController, UITextFieldDelegate {
     }
     
     private func setupToolbar() {
-        let toolbar = UIToolbar(frame: .zero)
+        let toolbar = UIToolbar(
+            frame: CGRect(
+                origin: .zero,
+                size: CGSize(width: 100, height: 44)
+            )
+        )
         toolbar.sizeToFit()
         let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         let doneButton = UIBarButtonItem(title: "완료", style: .done, target: self, action: #selector(dismissKeyboard))
@@ -193,6 +197,8 @@ final class AddMealViewController: BaseViewController, UITextFieldDelegate {
         dateView.addGestureRecognizer(tapGesture)
     }
     
+
+    
     @objc func showDatePicker() {
         datePicker.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 216)
         datePicker.backgroundColor = .white
@@ -224,25 +230,8 @@ final class AddMealViewController: BaseViewController, UITextFieldDelegate {
     }
     
     @objc private func saveMealData() {
-        guard let mealTime = viewModel.inputMealTimeSelected.value?.rawValue,
-              let mealType = viewModel.inputMealTypeSelected.value?.rawValue else {
-            return
-        }
-        
-        // Realm 데이터 저장
-        let meal = MealRealmModel(mealRegDate: Date(), mealTime: mealTime, mealType: mealType, mealPrice: Double(addMealDetailView.mealPriceTextField.text ?? "0") ?? 0.0, mealName: addMealDetailView.mealNameTextField.text ?? "")
-        
-        let realm = try! Realm()
-        try! realm.write {
-            realm.add(meal)
-            
-            
-        }
-        
-        self.view.makeToast("저장 성공", duration: 3.0, position: .bottom)
-                
-        self.navigationController?.popViewController(animated: true)
-        
+        viewModel.saveMealData(mealName: addMealDetailView.mealNameTextField.text, mealPrice: addMealDetailView.mealPriceTextField.text)
+//        self.navigationController?.popViewController(animated: true)
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -286,7 +275,7 @@ final class AddMealViewController: BaseViewController, UITextFieldDelegate {
         
         completeButton.snp.makeConstraints {
             $0.leading.bottom.trailing.equalTo(view.safeAreaLayoutGuide).inset(20)
-            $0.height.equalTo(44)
+            $0.height.equalTo(52)
         }
         
         

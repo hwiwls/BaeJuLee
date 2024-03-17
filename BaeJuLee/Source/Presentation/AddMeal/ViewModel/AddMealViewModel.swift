@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import RealmSwift
 
 class AddMealViewModel {
     var inputDateSelected: Observable<Date?> = Observable(nil)
@@ -45,5 +46,20 @@ class AddMealViewModel {
     private func updateCompleteButtonState() {
         let isBothSelected = inputMealTimeSelected.value != nil && inputMealTypeSelected.value != nil && inputMealPriceEntered.value
         outputIsCompleteButtonEnabled.value = isBothSelected
+    }
+    
+    func saveMealData(mealName: String?, mealPrice: String?) {
+        guard let mealTime = inputMealTimeSelected.value?.rawValue,
+              let mealType = inputMealTypeSelected.value?.rawValue,
+              let mealPrice = Double(mealPrice ?? "0") else {
+            return
+        }
+        
+        let meal = MealRealmModel(mealRegDate: Date(), mealTime: mealTime, mealType: mealType, mealPrice: mealPrice, mealName: mealName ?? "")
+        
+        let realm = try! Realm()
+        try! realm.write {
+            realm.add(meal)
+        }
     }
 }
