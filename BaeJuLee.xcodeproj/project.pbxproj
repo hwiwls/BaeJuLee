@@ -11,6 +11,8 @@
 		2E1005B22B99838800B9BED1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1005B12B99838800B9BED1 /* SceneDelegate.swift */; };
 		2E1005BC2B99838900B9BED1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E1005BA2B99838900B9BED1 /* LaunchScreen.storyboard */; };
 		2E1005C42B99860100B9BED1 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 2E1005C32B99860000B9BED1 /* .gitignore */; };
+		2E116FA72BA713E700A3C3C5 /* TextFieldEffects in Frameworks */ = {isa = PBXBuildFile; productRef = 2E116FA62BA713E700A3C3C5 /* TextFieldEffects */; };
+		2E116FAA2BA73DA500A3C3C5 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = 2E116FA92BA73DA500A3C3C5 /* Toast */; };
 		2E14CDE92B9E14AA007A0A11 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E14CDE82B9E14AA007A0A11 /* CustomTabBarController.swift */; };
 		2E14CDEF2B9E1523007A0A11 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E14CDEE2B9E1523007A0A11 /* CalendarViewController.swift */; };
 		2E14CDFA2B9E1A66007A0A11 /* LikeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E14CDF92B9E1A66007A0A11 /* LikeViewController.swift */; };
@@ -113,6 +115,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E116FAA2BA73DA500A3C3C5 /* Toast in Frameworks */,
 				2E14CE2C2B9E3D9F007A0A11 /* SkeletonView in Frameworks */,
 				2E14CE152B9E3C90007A0A11 /* Kingfisher in Frameworks */,
 				2E14CE262B9E3D28007A0A11 /* Lottie in Frameworks */,
@@ -120,6 +123,7 @@
 				2E14CE122B9E3C73007A0A11 /* RealmSwift in Frameworks */,
 				2EC75DD52BA3F716008A0E3A /* Alamofire in Frameworks */,
 				2E14CE102B9E3C73007A0A11 /* Realm in Frameworks */,
+				2E116FA72BA713E700A3C3C5 /* TextFieldEffects in Frameworks */,
 				2E14CE182B9E3C99007A0A11 /* Then in Frameworks */,
 				2E14CE1E2B9E3CE8007A0A11 /* DGCharts in Frameworks */,
 				2E14CE1B2B9E3CB0007A0A11 /* SnapKit in Frameworks */,
@@ -582,6 +586,8 @@
 				2E14CE282B9E3D3E007A0A11 /* FSCalendar */,
 				2E14CE2B2B9E3D9F007A0A11 /* SkeletonView */,
 				2EC75DD42BA3F716008A0E3A /* Alamofire */,
+				2E116FA62BA713E700A3C3C5 /* TextFieldEffects */,
+				2E116FA92BA73DA500A3C3C5 /* Toast */,
 			);
 			productName = BaeJuLee;
 			productReference = 2E1005AC2B99838800B9BED1 /* BaeJuLee.app */;
@@ -621,6 +627,8 @@
 				2E14CE272B9E3D3E007A0A11 /* XCRemoteSwiftPackageReference "FSCalendar" */,
 				2E14CE2A2B9E3D9F007A0A11 /* XCRemoteSwiftPackageReference "SkeletonView" */,
 				2EC75DD32BA3F716008A0E3A /* XCRemoteSwiftPackageReference "Alamofire" */,
+				2E116FA52BA713E700A3C3C5 /* XCRemoteSwiftPackageReference "TextFieldEffects" */,
+				2E116FA82BA73DA500A3C3C5 /* XCRemoteSwiftPackageReference "Toast-Swift" */,
 			);
 			productRefGroup = 2E1005AD2B99838800B9BED1 /* Products */;
 			projectDirPath = "";
@@ -914,6 +922,22 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		2E116FA52BA713E700A3C3C5 /* XCRemoteSwiftPackageReference "TextFieldEffects" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/raulriera/TextFieldEffects.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.7.0;
+			};
+		};
+		2E116FA82BA73DA500A3C3C5 /* XCRemoteSwiftPackageReference "Toast-Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scalessec/Toast-Swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.0;
+			};
+		};
 		2E14CE0E2B9E3C73007A0A11 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-swift.git";
@@ -989,6 +1013,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		2E116FA62BA713E700A3C3C5 /* TextFieldEffects */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2E116FA52BA713E700A3C3C5 /* XCRemoteSwiftPackageReference "TextFieldEffects" */;
+			productName = TextFieldEffects;
+		};
+		2E116FA92BA73DA500A3C3C5 /* Toast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2E116FA82BA73DA500A3C3C5 /* XCRemoteSwiftPackageReference "Toast-Swift" */;
+			productName = Toast;
+		};
 		2E14CE0F2B9E3C73007A0A11 /* Realm */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 2E14CE0E2B9E3C73007A0A11 /* XCRemoteSwiftPackageReference "realm-swift" */;

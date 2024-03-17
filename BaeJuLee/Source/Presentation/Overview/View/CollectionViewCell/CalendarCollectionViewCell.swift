@@ -22,6 +22,8 @@ class CalendarCollectionViewCell: BaseCollectionViewCell {
         $0.appearance.selectionColor = .pointPink
         $0.headerHeight = 0
         $0.weekdayHeight = 48
+        $0.backgroundColor = .clear
+        $0.scrollEnabled = false
     }
     
     override init(frame: CGRect) {

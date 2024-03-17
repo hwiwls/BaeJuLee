@@ -1,5 +1,5 @@
 {
-  "originHash" : "d88a0f3b92eddcd2c2ad236497e0b723be386a0e0f223da78ca1d54eb7cd5067",
+  "originHash" : "a01f3e982d8b56574a7f14ba3661020338665868f0628f3a51e3200d2670cede",
   "pins" : [
     {
       "identity" : "alamofire",
@@ -83,12 +83,30 @@
       }
     },
     {
+      "identity" : "textfieldeffects",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/raulriera/TextFieldEffects.git",
+      "state" : {
+        "revision" : "7e563d4d6d755bb1ab6c1c049f8c215d7c489100",
+        "version" : "1.7.0"
+      }
+    },
+    {
       "identity" : "then",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/devxoul/Then",
       "state" : {
         "revision" : "d41ef523faef0f911369f79c0b96815d9dbb6d7a",
         "version" : "3.0.0"
+      }
+    },
+    {
+      "identity" : "toast-swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/scalessec/Toast-Swift.git",
+      "state" : {
+        "revision" : "404ac98e0080a3d9f0630e007838284e04528bcd",
+        "version" : "5.1.0"
       }
     }
   ],
