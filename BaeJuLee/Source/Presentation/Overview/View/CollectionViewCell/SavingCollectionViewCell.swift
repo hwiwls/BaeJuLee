@@ -26,7 +26,7 @@ final class SavingCollectionViewCell: BaseCollectionViewCell {
     
     private let riceImageView = UIImageView().then {
         $0.contentMode = .scaleAspectFill
-        $0.image = UIImage(named: "밥")
+        $0.image = UIImage(named: "rice")
     }
     
     let recordBtn = UIButton().then {

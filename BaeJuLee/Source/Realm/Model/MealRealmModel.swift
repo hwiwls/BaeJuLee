@@ -11,8 +11,8 @@ import RealmSwift
 final class MealRealmModel: Object {
     @Persisted(primaryKey: true) var id: ObjectId
     @Persisted var mealRegDate: Date
-    @Persisted var mealTime: String // 아침, 점심, 저녁, 간식
-    @Persisted var mealType: String // 배달음식, 집밥
+    @Persisted var mealTime: String
+    @Persisted var mealType: String
     @Persisted var mealPrice: Double
     @Persisted var mealName: String
     

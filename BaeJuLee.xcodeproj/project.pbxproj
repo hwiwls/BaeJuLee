@@ -9,9 +9,10 @@
 /* Begin PBXBuildFile section */
 		2E1005B02B99838800B9BED1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1005AF2B99838800B9BED1 /* AppDelegate.swift */; };
 		2E1005B22B99838800B9BED1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1005B12B99838800B9BED1 /* SceneDelegate.swift */; };
-		2E1005B92B99838900B9BED1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E1005B82B99838900B9BED1 /* Assets.xcassets */; };
 		2E1005BC2B99838900B9BED1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E1005BA2B99838900B9BED1 /* LaunchScreen.storyboard */; };
 		2E1005C42B99860100B9BED1 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 2E1005C32B99860000B9BED1 /* .gitignore */; };
+		2E116FA72BA713E700A3C3C5 /* TextFieldEffects in Frameworks */ = {isa = PBXBuildFile; productRef = 2E116FA62BA713E700A3C3C5 /* TextFieldEffects */; };
+		2E116FAA2BA73DA500A3C3C5 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = 2E116FA92BA73DA500A3C3C5 /* Toast */; };
 		2E14CDE92B9E14AA007A0A11 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E14CDE82B9E14AA007A0A11 /* CustomTabBarController.swift */; };
 		2E14CDEF2B9E1523007A0A11 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E14CDEE2B9E1523007A0A11 /* CalendarViewController.swift */; };
 		2E14CDFA2B9E1A66007A0A11 /* LikeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E14CDF92B9E1A66007A0A11 /* LikeViewController.swift */; };
@@ -29,6 +30,8 @@
 		2E14CE262B9E3D28007A0A11 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 2E14CE252B9E3D28007A0A11 /* Lottie */; };
 		2E14CE292B9E3D3E007A0A11 /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 2E14CE282B9E3D3E007A0A11 /* FSCalendar */; };
 		2E14CE2C2B9E3D9F007A0A11 /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = 2E14CE2B2B9E3D9F007A0A11 /* SkeletonView */; };
+		2E28F3302BA49A7C00C0B1EB /* AddMealViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E28F32F2BA49A7C00C0B1EB /* AddMealViewModel.swift */; };
+		2E48AD452BA491150021F7D6 /* AddMealDateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E48AD442BA491150021F7D6 /* AddMealDateView.swift */; };
 		2E56D3462BA0242D002B0A6C /* OrderSpentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E56D3452BA0242D002B0A6C /* OrderSpentViewController.swift */; };
 		2E56D3482BA0243C002B0A6C /* OrderSpentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E56D3472BA0243C002B0A6C /* OrderSpentView.swift */; };
 		2E56D34A2BA0246B002B0A6C /* OrderSpentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E56D3492BA0246B002B0A6C /* OrderSpentViewModel.swift */; };
@@ -55,13 +58,15 @@
 		2ED30DD82B9F6AA400786ACE /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED30DD72B9F6AA400786ACE /* Observable.swift */; };
 		2ED30DDA2B9F6CD800786ACE /* OrderCountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED30DD92B9F6CD800786ACE /* OrderCountViewModel.swift */; };
 		2ED30DDC2B9F728700786ACE /* UITextField+PlaceholderColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED30DDB2B9F728700786ACE /* UITextField+PlaceholderColor.swift */; };
+		2EF5D10C2BA4A501006D2E9E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2EF5D10B2BA4A501006D2E9E /* Assets.xcassets */; };
+		2EF5D10E2BA4B621006D2E9E /* AddMealDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF5D10D2BA4B621006D2E9E /* AddMealDetailView.swift */; };
+		2EF5D1102BA4BEE1006D2E9E /* DateFormatterUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF5D10F2BA4BEE1006D2E9E /* DateFormatterUtility.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2E1005AC2B99838800B9BED1 /* BaeJuLee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BaeJuLee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E1005AF2B99838800B9BED1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2E1005B12B99838800B9BED1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2E1005B82B99838900B9BED1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2E1005BB2B99838900B9BED1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2E1005BD2B99838900B9BED1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2E1005C32B99860000B9BED1 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
@@ -73,6 +78,8 @@
 		2E14CE012B9E1AF3007A0A11 /* UIColor+CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+CustomColor.swift"; sourceTree = "<group>"; };
 		2E14CE062B9E3262007A0A11 /* OverviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewViewController.swift; sourceTree = "<group>"; };
 		2E14CE0C2B9E34B2007A0A11 /* AddMealViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMealViewController.swift; sourceTree = "<group>"; };
+		2E28F32F2BA49A7C00C0B1EB /* AddMealViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMealViewModel.swift; sourceTree = "<group>"; };
+		2E48AD442BA491150021F7D6 /* AddMealDateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMealDateView.swift; sourceTree = "<group>"; };
 		2E56D3452BA0242D002B0A6C /* OrderSpentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderSpentViewController.swift; sourceTree = "<group>"; };
 		2E56D3472BA0243C002B0A6C /* OrderSpentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderSpentView.swift; sourceTree = "<group>"; };
 		2E56D3492BA0246B002B0A6C /* OrderSpentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderSpentViewModel.swift; sourceTree = "<group>"; };
@@ -98,6 +105,9 @@
 		2ED30DD72B9F6AA400786ACE /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		2ED30DD92B9F6CD800786ACE /* OrderCountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCountViewModel.swift; sourceTree = "<group>"; };
 		2ED30DDB2B9F728700786ACE /* UITextField+PlaceholderColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+PlaceholderColor.swift"; sourceTree = "<group>"; };
+		2EF5D10B2BA4A501006D2E9E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2EF5D10D2BA4B621006D2E9E /* AddMealDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMealDetailView.swift; sourceTree = "<group>"; };
+		2EF5D10F2BA4BEE1006D2E9E /* DateFormatterUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterUtility.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +115,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E116FAA2BA73DA500A3C3C5 /* Toast in Frameworks */,
 				2E14CE2C2B9E3D9F007A0A11 /* SkeletonView in Frameworks */,
 				2E14CE152B9E3C90007A0A11 /* Kingfisher in Frameworks */,
 				2E14CE262B9E3D28007A0A11 /* Lottie in Frameworks */,
@@ -112,6 +123,7 @@
 				2E14CE122B9E3C73007A0A11 /* RealmSwift in Frameworks */,
 				2EC75DD52BA3F716008A0E3A /* Alamofire in Frameworks */,
 				2E14CE102B9E3C73007A0A11 /* Realm in Frameworks */,
+				2E116FA72BA713E700A3C3C5 /* TextFieldEffects in Frameworks */,
 				2E14CE182B9E3C99007A0A11 /* Then in Frameworks */,
 				2E14CE1E2B9E3CE8007A0A11 /* DGCharts in Frameworks */,
 				2E14CE1B2B9E3CB0007A0A11 /* SnapKit in Frameworks */,
@@ -151,7 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				2E1005BA2B99838900B9BED1 /* LaunchScreen.storyboard */,
-				2E1005B82B99838900B9BED1 /* Assets.xcassets */,
+				2EF5D10B2BA4A501006D2E9E /* Assets.xcassets */,
 				2E1005BD2B99838900B9BED1 /* Info.plist */,
 			);
 			path = Resources;
@@ -387,6 +399,7 @@
 			isa = PBXGroup;
 			children = (
 				2E14CE002B9E1AE7007A0A11 /* Extension */,
+				2EF5D10F2BA4BEE1006D2E9E /* DateFormatterUtility.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -439,6 +452,7 @@
 		2E14CE092B9E3498007A0A11 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2E48AD432BA490F70021F7D6 /* View */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -454,8 +468,18 @@
 		2E14CE0B2B9E34A4007A0A11 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				2E28F32F2BA49A7C00C0B1EB /* AddMealViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		2E48AD432BA490F70021F7D6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2E48AD442BA491150021F7D6 /* AddMealDateView.swift */,
+				2EF5D10D2BA4B621006D2E9E /* AddMealDetailView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		2E88CA582BA1C55C0070F6C3 /* CollectionViewCell */ = {
@@ -562,6 +586,8 @@
 				2E14CE282B9E3D3E007A0A11 /* FSCalendar */,
 				2E14CE2B2B9E3D9F007A0A11 /* SkeletonView */,
 				2EC75DD42BA3F716008A0E3A /* Alamofire */,
+				2E116FA62BA713E700A3C3C5 /* TextFieldEffects */,
+				2E116FA92BA73DA500A3C3C5 /* Toast */,
 			);
 			productName = BaeJuLee;
 			productReference = 2E1005AC2B99838800B9BED1 /* BaeJuLee.app */;
@@ -601,6 +627,8 @@
 				2E14CE272B9E3D3E007A0A11 /* XCRemoteSwiftPackageReference "FSCalendar" */,
 				2E14CE2A2B9E3D9F007A0A11 /* XCRemoteSwiftPackageReference "SkeletonView" */,
 				2EC75DD32BA3F716008A0E3A /* XCRemoteSwiftPackageReference "Alamofire" */,
+				2E116FA52BA713E700A3C3C5 /* XCRemoteSwiftPackageReference "TextFieldEffects" */,
+				2E116FA82BA73DA500A3C3C5 /* XCRemoteSwiftPackageReference "Toast-Swift" */,
 			);
 			productRefGroup = 2E1005AD2B99838800B9BED1 /* Products */;
 			projectDirPath = "";
@@ -617,8 +645,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2E1005C42B99860100B9BED1 /* .gitignore in Resources */,
+				2EF5D10C2BA4A501006D2E9E /* Assets.xcassets in Resources */,
 				2E1005BC2B99838900B9BED1 /* LaunchScreen.storyboard in Resources */,
-				2E1005B92B99838900B9BED1 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -629,6 +657,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E28F3302BA49A7C00C0B1EB /* AddMealViewModel.swift in Sources */,
+				2EF5D1102BA4BEE1006D2E9E /* DateFormatterUtility.swift in Sources */,
 				2E14CDEF2B9E1523007A0A11 /* CalendarViewController.swift in Sources */,
 				2E14CDFC2B9E1A71007A0A11 /* RecipeRecommendViewController.swift in Sources */,
 				2E88CA622BA1D5E50070F6C3 /* OnboardingDataModel.swift in Sources */,
@@ -636,6 +666,7 @@
 				2ED30DDA2B9F6CD800786ACE /* OrderCountViewModel.swift in Sources */,
 				2E14CE072B9E3262007A0A11 /* OverviewViewController.swift in Sources */,
 				2E1005B02B99838800B9BED1 /* AppDelegate.swift in Sources */,
+				2EF5D10E2BA4B621006D2E9E /* AddMealDetailView.swift in Sources */,
 				2ED30DD82B9F6AA400786ACE /* Observable.swift in Sources */,
 				2E56D3482BA0243C002B0A6C /* OrderSpentView.swift in Sources */,
 				2ED30DC52B9F4A2200786ACE /* UserRealmModel.swift in Sources */,
@@ -650,6 +681,7 @@
 				2E14CE0D2B9E34B2007A0A11 /* AddMealViewController.swift in Sources */,
 				2ED30DC32B9F389200786ACE /* CustomTabBar.swift in Sources */,
 				2E56D34E2BA03636002B0A6C /* GoalOrderView.swift in Sources */,
+				2E48AD452BA491150021F7D6 /* AddMealDateView.swift in Sources */,
 				2ED30DDC2B9F728700786ACE /* UITextField+PlaceholderColor.swift in Sources */,
 				2ED30DC82B9F4B5E00786ACE /* MealRealmModel.swift in Sources */,
 				2E5F643C2BA368D7004346E0 /* CalendarCollectionViewCell.swift in Sources */,
@@ -890,6 +922,22 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		2E116FA52BA713E700A3C3C5 /* XCRemoteSwiftPackageReference "TextFieldEffects" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/raulriera/TextFieldEffects.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.7.0;
+			};
+		};
+		2E116FA82BA73DA500A3C3C5 /* XCRemoteSwiftPackageReference "Toast-Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scalessec/Toast-Swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.0;
+			};
+		};
 		2E14CE0E2B9E3C73007A0A11 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-swift.git";
@@ -965,6 +1013,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		2E116FA62BA713E700A3C3C5 /* TextFieldEffects */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2E116FA52BA713E700A3C3C5 /* XCRemoteSwiftPackageReference "TextFieldEffects" */;
+			productName = TextFieldEffects;
+		};
+		2E116FA92BA73DA500A3C3C5 /* Toast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2E116FA82BA73DA500A3C3C5 /* XCRemoteSwiftPackageReference "Toast-Swift" */;
+			productName = Toast;
+		};
 		2E14CE0F2B9E3C73007A0A11 /* Realm */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 2E14CE0E2B9E3C73007A0A11 /* XCRemoteSwiftPackageReference "realm-swift" */;

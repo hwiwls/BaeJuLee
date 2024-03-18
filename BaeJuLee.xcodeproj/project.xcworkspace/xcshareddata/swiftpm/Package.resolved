@@ -1,5 +1,5 @@
 {
-  "originHash" : "463390581dfe2f7abe22bd42569bce9695ee43d1b618a49fd9ad51067592e0d2",
+  "originHash" : "a01f3e982d8b56574a7f14ba3661020338665868f0628f3a51e3200d2670cede",
   "pins" : [
     {
       "identity" : "alamofire",
@@ -61,7 +61,7 @@
       "location" : "https://github.com/realm/realm-swift.git",
       "state" : {
         "branch" : "master",
-        "revision" : "7a2f7d41ffa409978a6b5e475c2ee57f08222705"
+        "revision" : "7090f2102f790667b10d4870f18d6e546091d5d3"
       }
     },
     {
@@ -83,12 +83,30 @@
       }
     },
     {
+      "identity" : "textfieldeffects",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/raulriera/TextFieldEffects.git",
+      "state" : {
+        "revision" : "7e563d4d6d755bb1ab6c1c049f8c215d7c489100",
+        "version" : "1.7.0"
+      }
+    },
+    {
       "identity" : "then",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/devxoul/Then",
       "state" : {
         "revision" : "d41ef523faef0f911369f79c0b96815d9dbb6d7a",
         "version" : "3.0.0"
+      }
+    },
+    {
+      "identity" : "toast-swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/scalessec/Toast-Swift.git",
+      "state" : {
+        "revision" : "404ac98e0080a3d9f0630e007838284e04528bcd",
+        "version" : "5.1.0"
       }
     }
   ],

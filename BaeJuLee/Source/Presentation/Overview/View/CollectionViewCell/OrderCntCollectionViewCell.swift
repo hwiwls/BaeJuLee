@@ -23,7 +23,7 @@ final class OrderCntCollectionViewCell: BaseCollectionViewCell {
     }
     
     private let deliveryImageView = UIImageView().then {
-        $0.image = UIImage(named: "오토바이")
+        $0.image = UIImage(named: "motorcycle")
     }
     
     private let orderCntLabel = UILabel().then {
