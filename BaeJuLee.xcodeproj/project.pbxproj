@@ -31,7 +31,10 @@
 		2E14CE292B9E3D3E007A0A11 /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 2E14CE282B9E3D3E007A0A11 /* FSCalendar */; };
 		2E14CE2C2B9E3D9F007A0A11 /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = 2E14CE2B2B9E3D9F007A0A11 /* SkeletonView */; };
 		2E28F3302BA49A7C00C0B1EB /* AddMealViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E28F32F2BA49A7C00C0B1EB /* AddMealViewModel.swift */; };
-		2E48AD452BA491150021F7D6 /* AddMealDateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E48AD442BA491150021F7D6 /* AddMealDateView.swift */; };
+		2E5670512BA856A6002E0046 /* AddMealDateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5670502BA856A6002E0046 /* AddMealDateTableViewCell.swift */; };
+		2E5670542BA85A7E002E0046 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5670532BA85A7E002E0046 /* BaseTableViewCell.swift */; };
+		2E5670562BA8674D002E0046 /* AddMealDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5670552BA8674D002E0046 /* AddMealDetailTableViewCell.swift */; };
+		2E5670582BA89C4D002E0046 /* AddMealDateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5670572BA89C4D002E0046 /* AddMealDateView.swift */; };
 		2E56D3462BA0242D002B0A6C /* OrderSpentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E56D3452BA0242D002B0A6C /* OrderSpentViewController.swift */; };
 		2E56D3482BA0243C002B0A6C /* OrderSpentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E56D3472BA0243C002B0A6C /* OrderSpentView.swift */; };
 		2E56D34A2BA0246B002B0A6C /* OrderSpentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E56D3492BA0246B002B0A6C /* OrderSpentViewModel.swift */; };
@@ -79,7 +82,10 @@
 		2E14CE062B9E3262007A0A11 /* OverviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewViewController.swift; sourceTree = "<group>"; };
 		2E14CE0C2B9E34B2007A0A11 /* AddMealViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMealViewController.swift; sourceTree = "<group>"; };
 		2E28F32F2BA49A7C00C0B1EB /* AddMealViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMealViewModel.swift; sourceTree = "<group>"; };
-		2E48AD442BA491150021F7D6 /* AddMealDateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMealDateView.swift; sourceTree = "<group>"; };
+		2E5670502BA856A6002E0046 /* AddMealDateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMealDateTableViewCell.swift; sourceTree = "<group>"; };
+		2E5670532BA85A7E002E0046 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		2E5670552BA8674D002E0046 /* AddMealDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMealDetailTableViewCell.swift; sourceTree = "<group>"; };
+		2E5670572BA89C4D002E0046 /* AddMealDateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMealDateView.swift; sourceTree = "<group>"; };
 		2E56D3452BA0242D002B0A6C /* OrderSpentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderSpentViewController.swift; sourceTree = "<group>"; };
 		2E56D3472BA0243C002B0A6C /* OrderSpentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderSpentView.swift; sourceTree = "<group>"; };
 		2E56D3492BA0246B002B0A6C /* OrderSpentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderSpentViewModel.swift; sourceTree = "<group>"; };
@@ -285,6 +291,7 @@
 		2E14CDE62B9E13B2007A0A11 /* TableViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				2E5670532BA85A7E002E0046 /* BaseTableViewCell.swift */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -452,6 +459,7 @@
 		2E14CE092B9E3498007A0A11 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2E5670522BA85993002E0046 /* TableViewCell */,
 				2E48AD432BA490F70021F7D6 /* View */,
 			);
 			path = View;
@@ -476,10 +484,19 @@
 		2E48AD432BA490F70021F7D6 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				2E48AD442BA491150021F7D6 /* AddMealDateView.swift */,
 				2EF5D10D2BA4B621006D2E9E /* AddMealDetailView.swift */,
+				2E5670572BA89C4D002E0046 /* AddMealDateView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		2E5670522BA85993002E0046 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				2E5670502BA856A6002E0046 /* AddMealDateTableViewCell.swift */,
+				2E5670552BA8674D002E0046 /* AddMealDetailTableViewCell.swift */,
+			);
+			path = TableViewCell;
 			sourceTree = "<group>";
 		};
 		2E88CA582BA1C55C0070F6C3 /* CollectionViewCell */ = {
@@ -667,6 +684,7 @@
 				2E14CE072B9E3262007A0A11 /* OverviewViewController.swift in Sources */,
 				2E1005B02B99838800B9BED1 /* AppDelegate.swift in Sources */,
 				2EF5D10E2BA4B621006D2E9E /* AddMealDetailView.swift in Sources */,
+				2E5670512BA856A6002E0046 /* AddMealDateTableViewCell.swift in Sources */,
 				2ED30DD82B9F6AA400786ACE /* Observable.swift in Sources */,
 				2E56D3482BA0243C002B0A6C /* OrderSpentView.swift in Sources */,
 				2ED30DC52B9F4A2200786ACE /* UserRealmModel.swift in Sources */,
@@ -677,11 +695,11 @@
 				2E56D3462BA0242D002B0A6C /* OrderSpentViewController.swift in Sources */,
 				2E5F643E2BA368EC004346E0 /* BaseCollectionViewCell.swift in Sources */,
 				2E88CA572BA1BD060070F6C3 /* OverviewView.swift in Sources */,
+				2E5670582BA89C4D002E0046 /* AddMealDateView.swift in Sources */,
 				2E14CDFE2B9E1A8A007A0A11 /* BaseViewController.swift in Sources */,
 				2E14CE0D2B9E34B2007A0A11 /* AddMealViewController.swift in Sources */,
 				2ED30DC32B9F389200786ACE /* CustomTabBar.swift in Sources */,
 				2E56D34E2BA03636002B0A6C /* GoalOrderView.swift in Sources */,
-				2E48AD452BA491150021F7D6 /* AddMealDateView.swift in Sources */,
 				2ED30DDC2B9F728700786ACE /* UITextField+PlaceholderColor.swift in Sources */,
 				2ED30DC82B9F4B5E00786ACE /* MealRealmModel.swift in Sources */,
 				2E5F643C2BA368D7004346E0 /* CalendarCollectionViewCell.swift in Sources */,
@@ -689,12 +707,14 @@
 				2E56D34A2BA0246B002B0A6C /* OrderSpentViewModel.swift in Sources */,
 				2ED30DD02B9F5A0D00786ACE /* OrderCountViewController.swift in Sources */,
 				2E88CA5C2BA1D4BB0070F6C3 /* SavingCollectionViewCell.swift in Sources */,
+				2E5670542BA85A7E002E0046 /* BaseTableViewCell.swift in Sources */,
 				2ED30DD62B9F61E800786ACE /* UIView+addSubViews.swift in Sources */,
 				2E56D34C2BA02A65002B0A6C /* GoalOrderViewController.swift in Sources */,
 				2E88CA5E2BA1D4C40070F6C3 /* OrderCntCollectionViewCell.swift in Sources */,
 				2ED30DD22B9F5CDC00786ACE /* BaseView.swift in Sources */,
 				2E5F643A2BA2D464004346E0 /* OverviewCompositionalLayout.swift in Sources */,
 				2E14CE022B9E1AF3007A0A11 /* UIColor+CustomColor.swift in Sources */,
+				2E5670562BA8674D002E0046 /* AddMealDetailTableViewCell.swift in Sources */,
 				2E14CDFA2B9E1A66007A0A11 /* LikeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

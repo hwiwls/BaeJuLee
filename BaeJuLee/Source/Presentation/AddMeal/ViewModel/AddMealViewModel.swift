@@ -21,8 +21,8 @@ class AddMealViewModel {
     
     init() {
         inputDateSelected.bind { [weak self] date in
-            guard let strongSelf = self, let date = date else { return }
-            strongSelf.updateFormattedDate(date: date)
+            guard let date = date else { return }
+            self?.updateFormattedDate(date: date)
         }
         
         inputMealTimeSelected.bind { [weak self] _ in
@@ -40,12 +40,16 @@ class AddMealViewModel {
     
     private func updateFormattedDate(date: Date) {
         let formattedDate = DateFormatterUtility.shared.string(from: date, withFormat: "yyyy년 MM월 dd일")
-        outputFormattedDate.value = formattedDate
+            outputFormattedDate.value = formattedDate
     }
     
     private func updateCompleteButtonState() {
-        let isBothSelected = inputMealTimeSelected.value != nil && inputMealTypeSelected.value != nil && inputMealPriceEntered.value
-        outputIsCompleteButtonEnabled.value = isBothSelected
+        let isPriceEntered = inputMealPriceEntered.value
+        outputIsCompleteButtonEnabled.value = isPriceEntered
+    }
+    
+    func userDidSelectDate(date: Date) {
+        inputDateSelected.value = date
     }
     
     func saveMealData(mealName: String?, mealPrice: String?) {
