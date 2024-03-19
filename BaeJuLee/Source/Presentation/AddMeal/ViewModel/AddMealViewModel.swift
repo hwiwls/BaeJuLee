@@ -16,6 +16,7 @@ class AddMealViewModel {
     var inputMealTimeSelected: Observable<AddMealViewController.MealTime?> = Observable(nil)
     var inputMealTypeSelected: Observable<AddMealViewController.MealType?> = Observable(nil)
     var inputMealPriceEntered: Observable<Bool> = Observable(false)
+    var inputMealDateSelected: Observable<Date> = Observable(Date())
 
     var outputIsCompleteButtonEnabled: Observable<Bool> = Observable(false)
     
@@ -34,6 +35,10 @@ class AddMealViewModel {
         }
         
         inputMealPriceEntered.bind { [weak self] _ in
+            self?.updateCompleteButtonState()
+        }
+        
+        inputMealDateSelected.bind { [weak self] _ in
             self?.updateCompleteButtonState()
         }
     }
@@ -55,15 +60,16 @@ class AddMealViewModel {
     func saveMealData(mealName: String?, mealPrice: String?) {
         guard let mealTime = inputMealTimeSelected.value?.rawValue,
               let mealType = inputMealTypeSelected.value?.rawValue,
-              let mealPrice = Double(mealPrice ?? "0") else {
+              let mealPrice = Double(mealPrice ?? "0"),
+              let user = try! Realm().objects(UserRealmModel.self).first else {
+            print("Error")
             return
         }
         
-        let meal = MealRealmModel(mealRegDate: Date(), mealTime: mealTime, mealType: mealType, mealPrice: mealPrice, mealName: mealName ?? "")
-        
+        let meal = MealRealmModel(mealRegDate: inputMealDateSelected.value, mealTime: mealTime, mealType: mealType, mealPrice: mealPrice, mealName: mealName ?? "")
         let realm = try! Realm()
         try! realm.write {
-            realm.add(meal)
+            user.meals.append(meal)
         }
     }
 }

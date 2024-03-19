@@ -19,6 +19,7 @@ class UserRepository {
         let user = UserRealmModel()
         user.onboardingData = onboardingData
         user.onboardingData?.targetDeliveryCount = goalOrderCnt
+        user.userRegDate = currentDateTimeInKorea()
         
         do {
             try realm.write {

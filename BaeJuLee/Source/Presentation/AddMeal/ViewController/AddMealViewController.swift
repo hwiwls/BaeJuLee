@@ -81,16 +81,6 @@ final class AddMealViewController: BaseViewController {
             self?.completeButton.backgroundColor = isEnabled ? .pointGreen : .superLightGray
             self?.completeButton.setTitleColor(isEnabled ? .white : .gray, for: .normal)
         }
-        
-        addMealDetailView.breakfastButton.addTarget(self, action: #selector(mealTimeButtonPressed), for: .touchUpInside)
-        addMealDetailView.lunchButton.addTarget(self, action: #selector(mealTimeButtonPressed), for: .touchUpInside)
-        addMealDetailView.dinnerButton.addTarget(self, action: #selector(mealTimeButtonPressed), for: .touchUpInside)
-        addMealDetailView.snackButton.addTarget(self, action: #selector(mealTimeButtonPressed), for: .touchUpInside)
-
-        addMealDetailView.homeCookedButton.addTarget(self, action: #selector(mealTypeButtonPressed), for: .touchUpInside)
-        addMealDetailView.deliveryButton.addTarget(self, action: #selector(mealTypeButtonPressed), for: .touchUpInside)
-        addMealDetailView.diningOutButton.addTarget(self, action: #selector(mealTypeButtonPressed), for: .touchUpInside)
-        
     }
     
 
@@ -115,6 +105,15 @@ final class AddMealViewController: BaseViewController {
         addMealDetailView.mealPriceTextField.addTarget(self, action: #selector(textFieldDidChangeSelection), for: .editingChanged)
         
         completeButton.addTarget(self, action: #selector(saveMealData), for: .touchUpInside)
+        
+        addMealDetailView.breakfastButton.addTarget(self, action: #selector(mealTimeButtonPressed), for: .touchUpInside)
+        addMealDetailView.lunchButton.addTarget(self, action: #selector(mealTimeButtonPressed), for: .touchUpInside)
+        addMealDetailView.dinnerButton.addTarget(self, action: #selector(mealTimeButtonPressed), for: .touchUpInside)
+        addMealDetailView.snackButton.addTarget(self, action: #selector(mealTimeButtonPressed), for: .touchUpInside)
+
+        addMealDetailView.homeCookedButton.addTarget(self, action: #selector(mealTypeButtonPressed), for: .touchUpInside)
+        addMealDetailView.deliveryButton.addTarget(self, action: #selector(mealTypeButtonPressed), for: .touchUpInside)
+        addMealDetailView.diningOutButton.addTarget(self, action: #selector(mealTypeButtonPressed), for: .touchUpInside)
     }
 
     
@@ -157,32 +156,41 @@ final class AddMealViewController: BaseViewController {
 
 extension AddMealViewController {
     func setupDatePickerAndToolbar() {
-            // DatePicker 설정
-            datePicker.addTarget(self, action: #selector(datePickerChanged), for: .valueChanged)
+        // DatePicker 설정
+        datePicker.addTarget(self, action: #selector(datePickerChanged), for: .valueChanged)
 
-            // Toolbar 설정
-            let toolbar = UIToolbar()
-            toolbar.sizeToFit()
-            let doneButton = UIBarButtonItem(title: "확인", style: .plain, target: self, action: #selector(donePressed))
-            let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-            toolbar.setItems([flexibleSpace, doneButton], animated: true)
+        // Toolbar 설정
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        let doneButton = UIBarButtonItem(title: "확인", style: .plain, target: self, action: #selector(donePressed))
+        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        toolbar.setItems([flexibleSpace, doneButton], animated: true)
 
-            // dateTextField 입력 방식 변경
+        // dateTextField 입력 방식 변경
         addMealDateView.dateTextField.inputAccessoryView = toolbar
         addMealDateView.dateTextField.inputView = datePicker
-        }
+    }
 
-        @objc func datePickerChanged() {
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "yyyy년 MM월 dd일"
-            addMealDateView.dateTextField.text = dateFormatter.string(from: datePicker.date)
-        }
+    @objc func datePickerChanged() {
+        let selectedDate = datePicker.date
+        let timeZoneOffset = TimeZone.current.secondsFromGMT(for: selectedDate)
+        let localDate = Calendar.current.date(byAdding: .second, value: timeZoneOffset, to: selectedDate)!
 
-        @objc func donePressed() {
-            // '확인' 버튼을 누를 때 실행될 로직
-            datePickerChanged() // 날짜 업데이트
-            view.endEditing(true) // 키보드(또는 DatePicker) 숨기기
-        }
+        viewModel.inputMealDateSelected.value = localDate
+        updateDateTextFieldWithLocalDate(localDate: localDate)
+    }
+    
+    func updateDateTextFieldWithLocalDate(localDate: Date) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy년 MM월 dd일"
+        dateFormatter.timeZone = TimeZone(identifier: "Asia/Seoul")
+        addMealDateView.dateTextField.text = dateFormatter.string(from: localDate)
+    }
+
+    @objc func donePressed() {
+        datePickerChanged()
+        view.endEditing(true)
+    }
     
     private func addKeyboardObservers() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)

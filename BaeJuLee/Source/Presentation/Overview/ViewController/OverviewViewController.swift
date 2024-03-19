@@ -8,6 +8,7 @@
 import UIKit
 import SnapKit
 import FSCalendar
+import RealmSwift
 
 final class OverviewViewController: BaseViewController {
     private let logoImageView = UIImageView().then {
@@ -16,10 +17,19 @@ final class OverviewViewController: BaseViewController {
     }
    
     private lazy var overviewCollectionView = UICollectionView(frame: .zero, collectionViewLayout: OverviewCompositionalLayout.create())
-
+    
+    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationItem.leftBarButtonItem = nil
+        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
+    }
+
     
     override func configView() {
         overviewCollectionView.backgroundColor = .pointBackground
