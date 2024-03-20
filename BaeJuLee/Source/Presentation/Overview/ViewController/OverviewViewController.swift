@@ -22,12 +22,90 @@ final class OverviewViewController: BaseViewController {
         
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+    }
+    
+    
+
+    
+    func koreanWeekRange(from referenceDate: Date) -> (currentWeekStart: Date, lastWeekStart: Date, lastWeekEnd: Date) {
+        var calendar = Calendar(identifier: .gregorian)
+        calendar.timeZone = TimeZone(identifier: "Asia/Seoul")!
+        calendar.locale = Locale(identifier: "ko_KR")
+        calendar.firstWeekday = 1 // 일요일을 주의 첫 번째 날로 설정
+
+        // referenceDate로부터 현재 주의 시작일(일요일)을 찾음
+        let components = calendar.dateComponents([.yearForWeekOfYear, .weekOfYear], from: referenceDate)
+        guard let currentWeekStart = calendar.date(from: components) else {
+            fatalError("Failed to calculate the start of the current week.")
+        }
+
+        // 일요일 0시 기준으로 설정
+        let startOfDay = calendar.startOfDay(for: currentWeekStart)
+        let koreanOffset = calendar.timeZone.secondsFromGMT(for: startOfDay)
+        let correctedStartOfDay = startOfDay.addingTimeInterval(Double(koreanOffset))
+
+        // 지난 주의 시작과 끝을 계산
+        guard let lastWeekStart = calendar.date(byAdding: .day, value: -7, to: correctedStartOfDay),
+              let lastWeekEnd = calendar.date(byAdding: .day, value: 6, to: lastWeekStart) else {
+            fatalError("Failed to calculate the start and end of the last week.")
+        }
+
+        return (correctedStartOfDay, lastWeekStart, lastWeekEnd)
+    }
+
+
+    
+    func calculateSavings() {
+        let realm = try! Realm()
+        let currentDate = Date()
+        let (currentWeekStart, lastWeekStart, lastWeekEnd) = koreanWeekRange(from: currentDate)
+
+        guard let user = realm.objects(UserRealmModel.self).first else { return }
+
+        let thisWeekDeliverySpend: Double = realm.objects(MealRealmModel.self)
+            .filter("mealType == %@ AND mealRegDate >= %@ AND mealRegDate < %@", "배달", currentWeekStart, currentDate)
+            .sum(ofProperty: "mealPrice")
+
+        let lastWeekDeliverySpend: Double
+        
+        print("here!!!")
+        print("user.userRegDate: \(user.userRegDate)")
+        print("lastWeekStart: \(lastWeekStart)")
+        print("currentWeekStart: \(currentWeekStart)")
+        print("here!!!")
+            
+        if user.userRegDate >= currentWeekStart {
+            // 새로운 사용자의 경우, 온보딩 정보 사용
+            lastWeekDeliverySpend = user.onboardingData?.initialDeliveryCostLastWeek ?? 0
+        } else {
+            lastWeekDeliverySpend = realm.objects(MealRealmModel.self)
+                .filter("mealType == %@ AND mealRegDate >= %@ AND mealRegDate < %@", "배달", lastWeekStart, lastWeekEnd)
+                .sum(ofProperty: "mealPrice")
+            print("here!!!")
+        }
+
+        let savings = max(0, lastWeekDeliverySpend - thisWeekDeliverySpend)
+
+        print("lastWeekDeliverySpend: \(lastWeekDeliverySpend)")
+    
+        let thisWeekDeliveryCount: Int = realm.objects(MealRealmModel.self)
+            .filter("mealType == %@ AND mealRegDate >= %@ AND mealRegDate < %@", "배달", currentWeekStart, currentDate)
+            .count
+
+        // 목표 대비 절약 횟수 비교
+        let targetDeliveryCount = user.onboardingData?.targetDeliveryCount ?? 0
+//            let deliveryCountComparison = targetDeliveryCount - thisWeekDeliveryCount
+
+        print("이번 주에 절약한 금액: \(savings)")
+        print("이번 주 배달 횟수: \(thisWeekDeliveryCount)")
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationItem.leftBarButtonItem = nil
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
+        calculateSavings()
     }
 
     
