@@ -176,16 +176,16 @@ extension AddMealViewController {
         let timeZoneOffset = TimeZone.current.secondsFromGMT(for: selectedDate)
         let localDate = Calendar.current.date(byAdding: .second, value: timeZoneOffset, to: selectedDate)!
 
-        viewModel.inputMealDateSelected.value = localDate
-        updateDateTextFieldWithLocalDate(localDate: localDate)
+        viewModel.inputMealDateSelected.value = datePicker.date
+        viewModel.updateFormattedDate(date: localDate)
     }
     
-    func updateDateTextFieldWithLocalDate(localDate: Date) {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy년 MM월 dd일"
-        dateFormatter.timeZone = TimeZone(identifier: "Asia/Seoul")
-        addMealDateView.dateTextField.text = dateFormatter.string(from: localDate)
-    }
+//    func updateDateTextFieldWithLocalDate(localDate: Date) {
+//        let dateFormatter = DateFormatter()
+//        dateFormatter.dateFormat = "yyyy년 MM월 dd일"
+//        dateFormatter.timeZone = TimeZone(identifier: "Asia/Seoul")
+//        addMealDateView.dateTextField.text = dateFormatter.string(from: localDate)
+//    }
 
     @objc func donePressed() {
         datePickerChanged()

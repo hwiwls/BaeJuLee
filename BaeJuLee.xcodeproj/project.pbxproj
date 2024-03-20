@@ -51,7 +51,7 @@
 		2E88CA602BA1D4CA0070F6C3 /* MenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E88CA5F2BA1D4CA0070F6C3 /* MenuCollectionViewCell.swift */; };
 		2E88CA622BA1D5E50070F6C3 /* OnboardingDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E88CA612BA1D5E50070F6C3 /* OnboardingDataModel.swift */; };
 		2E88CA642BA1DE7F0070F6C3 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E88CA632BA1DE7F0070F6C3 /* UserRepository.swift */; };
-		2EBCA99A2BA8A35000BD8AE8 /* CalculateDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBCA9992BA8A35000BD8AE8 /* CalculateDate.swift */; };
+		2EBCA99A2BA8A35000BD8AE8 /* CalculateWeekRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBCA9992BA8A35000BD8AE8 /* CalculateWeekRange.swift */; };
 		2EC75DD52BA3F716008A0E3A /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 2EC75DD42BA3F716008A0E3A /* Alamofire */; };
 		2ED30DC32B9F389200786ACE /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED30DC22B9F389200786ACE /* CustomTabBar.swift */; };
 		2ED30DC52B9F4A2200786ACE /* UserRealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED30DC42B9F4A2200786ACE /* UserRealmModel.swift */; };
@@ -104,7 +104,7 @@
 		2E88CA5F2BA1D4CA0070F6C3 /* MenuCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCollectionViewCell.swift; sourceTree = "<group>"; };
 		2E88CA612BA1D5E50070F6C3 /* OnboardingDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingDataModel.swift; sourceTree = "<group>"; };
 		2E88CA632BA1DE7F0070F6C3 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
-		2EBCA9992BA8A35000BD8AE8 /* CalculateDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateDate.swift; sourceTree = "<group>"; };
+		2EBCA9992BA8A35000BD8AE8 /* CalculateWeekRange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateWeekRange.swift; sourceTree = "<group>"; };
 		2ED30DC22B9F389200786ACE /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		2ED30DC42B9F4A2200786ACE /* UserRealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRealmModel.swift; sourceTree = "<group>"; };
 		2ED30DC72B9F4B5E00786ACE /* MealRealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealRealmModel.swift; sourceTree = "<group>"; };
@@ -411,7 +411,7 @@
 			children = (
 				2E14CE002B9E1AE7007A0A11 /* Extension */,
 				2EF5D10F2BA4BEE1006D2E9E /* DateFormatterUtility.swift */,
-				2EBCA9992BA8A35000BD8AE8 /* CalculateDate.swift */,
+				2EBCA9992BA8A35000BD8AE8 /* CalculateWeekRange.swift */,
 				2E54D6172BA9A7ED00197C03 /* currentDateTimeInKorea.swift */,
 			);
 			path = Util;
@@ -694,7 +694,7 @@
 				2ED30DD82B9F6AA400786ACE /* Observable.swift in Sources */,
 				2E54D6182BA9A7ED00197C03 /* currentDateTimeInKorea.swift in Sources */,
 				2E56D3482BA0243C002B0A6C /* OrderSpentView.swift in Sources */,
-				2EBCA99A2BA8A35000BD8AE8 /* CalculateDate.swift in Sources */,
+				2EBCA99A2BA8A35000BD8AE8 /* CalculateWeekRange.swift in Sources */,
 				2ED30DC52B9F4A2200786ACE /* UserRealmModel.swift in Sources */,
 				2E14CDE92B9E14AA007A0A11 /* CustomTabBarController.swift in Sources */,
 				2E88CA642BA1DE7F0070F6C3 /* UserRepository.swift in Sources */,

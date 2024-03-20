@@ -43,7 +43,7 @@ class AddMealViewModel {
         }
     }
     
-    private func updateFormattedDate(date: Date) {
+    func updateFormattedDate(date: Date) {
         let formattedDate = DateFormatterUtility.shared.string(from: date, withFormat: "yyyy년 MM월 dd일")
             outputFormattedDate.value = formattedDate
     }
@@ -53,9 +53,6 @@ class AddMealViewModel {
         outputIsCompleteButtonEnabled.value = isPriceEntered
     }
     
-    func userDidSelectDate(date: Date) {
-        inputDateSelected.value = date
-    }
     
     func saveMealData(mealName: String?, mealPrice: String?) {
         guard let mealTime = inputMealTimeSelected.value?.rawValue,
