@@ -29,32 +29,41 @@ final class OverviewViewController: BaseViewController {
 
     
     func koreanWeekRange(from referenceDate: Date) -> (currentWeekStart: Date, lastWeekStart: Date, lastWeekEnd: Date) {
+        // calendar 설정
         var calendar = Calendar(identifier: .gregorian)
-        calendar.timeZone = TimeZone(identifier: "Asia/Seoul")!
-        calendar.locale = Locale(identifier: "ko_KR")
+        calendar.timeZone = TimeZone(identifier: "Asia/Seoul")! // Calendar 시간대를 한국 시간대로 설정
+        calendar.locale = Locale(identifier: "ko_KR")   // 로케일 설정: 날짜와 시간 포맷팅을 한국에 맞춰서
         calendar.firstWeekday = 1 // 일요일을 주의 첫 번째 날로 설정
 
-        // referenceDate로부터 현재 주의 시작일(일요일)을 찾음
-        let components = calendar.dateComponents([.yearForWeekOfYear, .weekOfYear], from: referenceDate)
-        guard let currentWeekStart = calendar.date(from: components) else {
-            fatalError("Failed to calculate the start of the current week.")
+        // 현재 주의 시작일 계산
+        // referenceDate로부터 현재 주의 시작일(일요일)을 찾음. 참고로 referenceDate는 Date()
+        let components = calendar.dateComponents([.yearForWeekOfYear, .weekOfYear], from: referenceDate)    // referenceDate로부터 날짜 구성 요소 추출
+        guard let currentWeekStart = calendar.date(from: components) else { // 현재 주의 시작일 계산
+            fatalError("이번주 시작 계산 실패")
         }
 
         // 일요일 0시 기준으로 설정
-        let startOfDay = calendar.startOfDay(for: currentWeekStart)
-        let koreanOffset = calendar.timeZone.secondsFromGMT(for: startOfDay)
-        let correctedStartOfDay = startOfDay.addingTimeInterval(Double(koreanOffset))
+        let startOfDay = calendar.startOfDay(for: currentWeekStart) // GMT 기준 주의 시작 날짜
+        let koreanOffset = calendar.timeZone.secondsFromGMT(for: startOfDay)    // GMT와 한국 시간대 간의 시차 계산
+        let correctedStartOfDay = startOfDay.addingTimeInterval(Double(koreanOffset))   // GMT로 계산된 자정 시간에 한국 시간대의 시차 더하기
+        
+        print("startOfDay: \(startOfDay)")
+        print("koreanOffset: \(koreanOffset)")
+        print("correctedStartOfDay: \(correctedStartOfDay)")
 
         // 지난 주의 시작과 끝을 계산
-        guard let lastWeekStart = calendar.date(byAdding: .day, value: -7, to: correctedStartOfDay),
-              let lastWeekEnd = calendar.date(byAdding: .day, value: 6, to: lastWeekStart) else {
-            fatalError("Failed to calculate the start and end of the last week.")
-        }
+        // 계산된 현재 주의 시작일로부터 7을 빼면 지난 주의 시작일이 구해짐
+        guard let lastWeekStart = calendar.date(byAdding: .day, value: -7, to: correctedStartOfDay) else {
+                fatalError("지난주 시작 계산 실패")
+            }
+
+            // 지난 주의 끝을 계산 (현재 주의 시작 직전 순간)
+            let lastWeekEnd = correctedStartOfDay.addingTimeInterval(-1)
+        
+
 
         return (correctedStartOfDay, lastWeekStart, lastWeekEnd)
     }
-
-
     
     func calculateSavings() {
         let realm = try! Realm()
@@ -79,6 +88,7 @@ final class OverviewViewController: BaseViewController {
             // 새로운 사용자의 경우, 온보딩 정보 사용
             lastWeekDeliverySpend = user.onboardingData?.initialDeliveryCostLastWeek ?? 0
         } else {
+            print("lastWeekEnd: \(lastWeekEnd)")
             lastWeekDeliverySpend = realm.objects(MealRealmModel.self)
                 .filter("mealType == %@ AND mealRegDate >= %@ AND mealRegDate < %@", "배달", lastWeekStart, lastWeekEnd)
                 .sum(ofProperty: "mealPrice")
@@ -88,6 +98,7 @@ final class OverviewViewController: BaseViewController {
         let savings = max(0, lastWeekDeliverySpend - thisWeekDeliverySpend)
 
         print("lastWeekDeliverySpend: \(lastWeekDeliverySpend)")
+        print("thisWeekDeliverySpend: \(thisWeekDeliverySpend)")
     
         let thisWeekDeliveryCount: Int = realm.objects(MealRealmModel.self)
             .filter("mealType == %@ AND mealRegDate >= %@ AND mealRegDate < %@", "배달", currentWeekStart, currentDate)
