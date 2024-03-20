@@ -19,9 +19,14 @@ final class SavingCollectionViewCell: BaseCollectionViewCell {
     let savingLabel = UILabel().then {
         $0.text = "지난 주 대비\n10원 절약했어요"
         $0.textColor = .black
-        $0.textAlignment = .center
         $0.font = .boldSystemFont(ofSize: 18)
         $0.numberOfLines = 2
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineSpacing = 12
+        let attributedString = NSMutableAttributedString(string: $0.text ?? "")
+        attributedString.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragraphStyle, range: NSMakeRange(0, attributedString.length))
+        $0.attributedText = attributedString
+        $0.textAlignment = .center
     }
     
     private let riceImageView = UIImageView().then {
@@ -32,6 +37,9 @@ final class SavingCollectionViewCell: BaseCollectionViewCell {
     let recordBtn = UIButton().then {
         $0.backgroundColor = .pointGreen
         $0.setTitle("오늘 식사 기록하기", for: .normal)
+        $0.layer.cornerRadius = 8
+        $0.clipsToBounds = true
+        $0.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
     }
     
     override init(frame: CGRect) {
@@ -62,7 +70,7 @@ final class SavingCollectionViewCell: BaseCollectionViewCell {
         
         riceImageView.snp.makeConstraints {
             $0.size.equalTo(100)
-            $0.top.equalTo(savingLabel.snp.bottom).offset(20)
+            $0.top.equalTo(savingLabel.snp.bottom)
             $0.centerX.equalToSuperview()
         }
         

@@ -31,6 +31,7 @@
 		2E14CE292B9E3D3E007A0A11 /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 2E14CE282B9E3D3E007A0A11 /* FSCalendar */; };
 		2E14CE2C2B9E3D9F007A0A11 /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = 2E14CE2B2B9E3D9F007A0A11 /* SkeletonView */; };
 		2E28F3302BA49A7C00C0B1EB /* AddMealViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E28F32F2BA49A7C00C0B1EB /* AddMealViewModel.swift */; };
+		2E410F032BAB49E0008E3C24 /* OverviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E410F022BAB49E0008E3C24 /* OverviewViewModel.swift */; };
 		2E54D6182BA9A7ED00197C03 /* currentDateTimeInKorea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E54D6172BA9A7ED00197C03 /* currentDateTimeInKorea.swift */; };
 		2E5670512BA856A6002E0046 /* AddMealDateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5670502BA856A6002E0046 /* AddMealDateTableViewCell.swift */; };
 		2E5670542BA85A7E002E0046 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5670532BA85A7E002E0046 /* BaseTableViewCell.swift */; };
@@ -45,7 +46,6 @@
 		2E5F643A2BA2D464004346E0 /* OverviewCompositionalLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5F64392BA2D464004346E0 /* OverviewCompositionalLayout.swift */; };
 		2E5F643C2BA368D7004346E0 /* CalendarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5F643B2BA368D7004346E0 /* CalendarCollectionViewCell.swift */; };
 		2E5F643E2BA368EC004346E0 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5F643D2BA368EC004346E0 /* BaseCollectionViewCell.swift */; };
-		2E88CA572BA1BD060070F6C3 /* OverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E88CA562BA1BD060070F6C3 /* OverviewView.swift */; };
 		2E88CA5C2BA1D4BB0070F6C3 /* SavingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E88CA5B2BA1D4BB0070F6C3 /* SavingCollectionViewCell.swift */; };
 		2E88CA5E2BA1D4C40070F6C3 /* OrderCntCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E88CA5D2BA1D4C40070F6C3 /* OrderCntCollectionViewCell.swift */; };
 		2E88CA602BA1D4CA0070F6C3 /* MenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E88CA5F2BA1D4CA0070F6C3 /* MenuCollectionViewCell.swift */; };
@@ -84,6 +84,7 @@
 		2E14CE062B9E3262007A0A11 /* OverviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewViewController.swift; sourceTree = "<group>"; };
 		2E14CE0C2B9E34B2007A0A11 /* AddMealViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMealViewController.swift; sourceTree = "<group>"; };
 		2E28F32F2BA49A7C00C0B1EB /* AddMealViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMealViewModel.swift; sourceTree = "<group>"; };
+		2E410F022BAB49E0008E3C24 /* OverviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewViewModel.swift; sourceTree = "<group>"; };
 		2E54D6172BA9A7ED00197C03 /* currentDateTimeInKorea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = currentDateTimeInKorea.swift; sourceTree = "<group>"; };
 		2E5670502BA856A6002E0046 /* AddMealDateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMealDateTableViewCell.swift; sourceTree = "<group>"; };
 		2E5670532BA85A7E002E0046 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
@@ -98,7 +99,6 @@
 		2E5F64392BA2D464004346E0 /* OverviewCompositionalLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewCompositionalLayout.swift; sourceTree = "<group>"; };
 		2E5F643B2BA368D7004346E0 /* CalendarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCollectionViewCell.swift; sourceTree = "<group>"; };
 		2E5F643D2BA368EC004346E0 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
-		2E88CA562BA1BD060070F6C3 /* OverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewView.swift; sourceTree = "<group>"; };
 		2E88CA5B2BA1D4BB0070F6C3 /* SavingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingCollectionViewCell.swift; sourceTree = "<group>"; };
 		2E88CA5D2BA1D4C40070F6C3 /* OrderCntCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCntCollectionViewCell.swift; sourceTree = "<group>"; };
 		2E88CA5F2BA1D4CA0070F6C3 /* MenuCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -431,7 +431,6 @@
 			isa = PBXGroup;
 			children = (
 				2E88CA582BA1C55C0070F6C3 /* CollectionViewCell */,
-				2E88CA562BA1BD060070F6C3 /* OverviewView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -448,6 +447,7 @@
 		2E14CE052B9E3258007A0A11 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				2E410F022BAB49E0008E3C24 /* OverviewViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -689,6 +689,7 @@
 				2ED30DDA2B9F6CD800786ACE /* OrderCountViewModel.swift in Sources */,
 				2E14CE072B9E3262007A0A11 /* OverviewViewController.swift in Sources */,
 				2E1005B02B99838800B9BED1 /* AppDelegate.swift in Sources */,
+				2E410F032BAB49E0008E3C24 /* OverviewViewModel.swift in Sources */,
 				2EF5D10E2BA4B621006D2E9E /* AddMealDetailView.swift in Sources */,
 				2E5670512BA856A6002E0046 /* AddMealDateTableViewCell.swift in Sources */,
 				2ED30DD82B9F6AA400786ACE /* Observable.swift in Sources */,
@@ -702,7 +703,6 @@
 				2E1005B22B99838800B9BED1 /* SceneDelegate.swift in Sources */,
 				2E56D3462BA0242D002B0A6C /* OrderSpentViewController.swift in Sources */,
 				2E5F643E2BA368EC004346E0 /* BaseCollectionViewCell.swift in Sources */,
-				2E88CA572BA1BD060070F6C3 /* OverviewView.swift in Sources */,
 				2E5670582BA89C4D002E0046 /* AddMealDateView.swift in Sources */,
 				2E14CDFE2B9E1A8A007A0A11 /* BaseViewController.swift in Sources */,
 				2E14CE0D2B9E34B2007A0A11 /* AddMealViewController.swift in Sources */,

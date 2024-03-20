@@ -32,13 +32,11 @@ final class OrderCntCollectionViewCell: BaseCollectionViewCell {
         $0.font = .boldSystemFont(ofSize: 15)
     }
     
-    lazy var progressView: UIProgressView = {
-        let view = UIProgressView()
-        view.trackTintColor = .superLightGray
-        view.progressTintColor = .pointPink
-        view.progress = 0.1
-        return view
-    }()
+    lazy var progressView = UIProgressView().then {
+        $0.trackTintColor = .superLightGray
+        $0.progressTintColor = .pointPink
+        $0.progress = 0.1
+    }
     
     var cntLabel = UILabel().then {
         $0.text = "2/10 회"
@@ -110,5 +108,10 @@ final class OrderCntCollectionViewCell: BaseCollectionViewCell {
         layer.shadowRadius = 10
         contentView.layer.cornerRadius = 10
         contentView.layer.masksToBounds = true
+    }
+    
+    func configure(withProgress progress: Float, countText: String) {
+        self.progressView.progress = progress
+        self.cntLabel.text = countText
     }
 }

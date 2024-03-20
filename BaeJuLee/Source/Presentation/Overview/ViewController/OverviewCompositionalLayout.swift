@@ -93,9 +93,9 @@ enum OverviewCompositionalLayout: Int, CaseIterable {
         let thirdItem = NSCollectionLayoutItem(layoutSize: thirdItemSize)
         
         // 두 번째와 세 번째 셀을 위한 수직 그룹 - 화면의 절반 너비의 절반
-        let verticalGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5), heightDimension: .absolute(212))
+        let verticalGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5), heightDimension: .absolute(208))
         let verticalGroup = NSCollectionLayoutGroup.vertical(layoutSize: verticalGroupSize, subitems: [secondItem, thirdItem])
-        verticalGroup.interItemSpacing = .fixed(12)
+        verticalGroup.interItemSpacing = .fixed(8)
         
         // 최종 그룹 생성 (첫 번째 셀 + 수직 그룹)
         // 여기서는 화면 전체 너비를 사용하지만, 각 아이템/그룹은 화면의 절반을 차지
@@ -105,7 +105,7 @@ enum OverviewCompositionalLayout: Int, CaseIterable {
         
         let section = NSCollectionLayoutSection(group: finalGroup)
  
-        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 20, bottom: 36, trailing: 20)
 
         return section
  }
