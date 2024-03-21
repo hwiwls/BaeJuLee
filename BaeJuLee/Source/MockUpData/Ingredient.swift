@@ -12,7 +12,7 @@ struct Ingredient {
     let ingredientImage: UIImage?
 }
 
-let all: [Ingredient] = [
+let allCategory: [Ingredient] = [
     Ingredient(ingredientName: "콩나물", ingredientImage: UIImage(named: "BeanSprouts")),
     Ingredient(ingredientName: "브로콜리", ingredientImage: UIImage(named: "Brocoli")),
     Ingredient(ingredientName: "당근", ingredientImage: UIImage(named: "Carrot")),
@@ -155,7 +155,7 @@ let can: [Ingredient] = [
     Ingredient(ingredientName: "참치캔", ingredientImage: UIImage(named: "Tuna"))
 ]
 
-let bakery: [Ingredient] = [
+let bread: [Ingredient] = [
     Ingredient(ingredientName: "베이글", ingredientImage: UIImage(named: "Bagle")),
     Ingredient(ingredientName: "식빵", ingredientImage: UIImage(named: "SandwichBread"))
 ]

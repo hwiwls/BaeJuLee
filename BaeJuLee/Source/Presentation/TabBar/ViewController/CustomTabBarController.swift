@@ -45,8 +45,8 @@ final class CustomTabBarController: UITabBarController {
             rootViewController: AddMealViewController()
         )
         
-        let recipeRecommendViewController = UINavigationController(
-            rootViewController: RecipeRecommendViewController()
+        let addIngredintViewController = UINavigationController(
+            rootViewController: AddIngredientViewController()
         )
         
         let likeViewController = UINavigationController(
@@ -78,7 +78,7 @@ final class CustomTabBarController: UITabBarController {
             selectedImage: UIImage(systemName: "plus")
         )
         
-        recipeRecommendViewController.tabBarItem = UITabBarItem(
+        addIngredintViewController.tabBarItem = UITabBarItem(
             title: nil,
             image: UIImage(systemName: "fork.knife")?
                 .withRenderingMode(.alwaysOriginal)
@@ -99,7 +99,7 @@ final class CustomTabBarController: UITabBarController {
             overviewViewController,
             calendarViewController,
             addMealViewController,
-            recipeRecommendViewController,
+            addIngredintViewController,
             likeViewController
         ]
         

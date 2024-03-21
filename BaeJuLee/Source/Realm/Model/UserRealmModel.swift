@@ -12,6 +12,7 @@ final class UserRealmModel: Object {
     @Persisted(primaryKey: true) var userid: ObjectId
     @Persisted var onboardingData: OnboardingDataModel?
     @Persisted var meals: List<MealRealmModel>
+//    @Persisted var ingredients: List<IngredientRealmModel>
     @Persisted var userRegDate: Date
     @Persisted var lastWeekDeliveryCount: Int // 지난주 배달 횟수
     @Persisted var lastWeekDeliverySpend: Double // 지난주 배달 음식 지출

@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		2E019B452BAC85FB008A4054 /* Tabman in Frameworks */ = {isa = PBXBuildFile; productRef = 2E019B442BAC85FB008A4054 /* Tabman */; };
 		2E019B482BAC8CDF008A4054 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E019B472BAC8CDF008A4054 /* Ingredient.swift */; };
+		2E019B4E2BACA0A8008A4054 /* AddIngredientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E019B4D2BACA0A8008A4054 /* AddIngredientViewController.swift */; };
+		2E019B502BACA70B008A4054 /* IngredientsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E019B4F2BACA70B008A4054 /* IngredientsViewController.swift */; };
+		2E019B562BACA757008A4054 /* RefrigeratorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E019B552BACA757008A4054 /* RefrigeratorViewController.swift */; };
+		2E019B582BACA843008A4054 /* IngredientRealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E019B572BACA843008A4054 /* IngredientRealmModel.swift */; };
+		2E019B5B2BACB445008A4054 /* IngredientCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E019B5A2BACB445008A4054 /* IngredientCollectionViewCell.swift */; };
 		2E1005B02B99838800B9BED1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1005AF2B99838800B9BED1 /* AppDelegate.swift */; };
 		2E1005B22B99838800B9BED1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1005B12B99838800B9BED1 /* SceneDelegate.swift */; };
 		2E1005BC2B99838900B9BED1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E1005BA2B99838900B9BED1 /* LaunchScreen.storyboard */; };
@@ -72,6 +77,11 @@
 
 /* Begin PBXFileReference section */
 		2E019B472BAC8CDF008A4054 /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
+		2E019B4D2BACA0A8008A4054 /* AddIngredientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddIngredientViewController.swift; sourceTree = "<group>"; };
+		2E019B4F2BACA70B008A4054 /* IngredientsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsViewController.swift; sourceTree = "<group>"; };
+		2E019B552BACA757008A4054 /* RefrigeratorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefrigeratorViewController.swift; sourceTree = "<group>"; };
+		2E019B572BACA843008A4054 /* IngredientRealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientRealmModel.swift; sourceTree = "<group>"; };
+		2E019B5A2BACB445008A4054 /* IngredientCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientCollectionViewCell.swift; sourceTree = "<group>"; };
 		2E1005AC2B99838800B9BED1 /* BaeJuLee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BaeJuLee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E1005AF2B99838800B9BED1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2E1005B12B99838800B9BED1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -153,6 +163,80 @@
 				2E019B472BAC8CDF008A4054 /* Ingredient.swift */,
 			);
 			path = MockUpData;
+			sourceTree = "<group>";
+		};
+		2E019B492BACA08A008A4054 /* AddIngredient */ = {
+			isa = PBXGroup;
+			children = (
+				2E019B4C2BACA09E008A4054 /* ViewModel */,
+				2E019B4B2BACA099008A4054 /* ViewController */,
+				2E019B4A2BACA096008A4054 /* View */,
+			);
+			path = AddIngredient;
+			sourceTree = "<group>";
+		};
+		2E019B4A2BACA096008A4054 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2E019B592BACB414008A4054 /* CollectionViewCell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2E019B4B2BACA099008A4054 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2E019B4D2BACA0A8008A4054 /* AddIngredientViewController.swift */,
+				2E019B4F2BACA70B008A4054 /* IngredientsViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		2E019B4C2BACA09E008A4054 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		2E019B512BACA733008A4054 /* Refrigerator */ = {
+			isa = PBXGroup;
+			children = (
+				2E019B542BACA748008A4054 /* ViewModel */,
+				2E019B532BACA743008A4054 /* ViewController */,
+				2E019B522BACA740008A4054 /* View */,
+			);
+			path = Refrigerator;
+			sourceTree = "<group>";
+		};
+		2E019B522BACA740008A4054 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2E019B532BACA743008A4054 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2E019B552BACA757008A4054 /* RefrigeratorViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		2E019B542BACA748008A4054 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		2E019B592BACB414008A4054 /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				2E019B5A2BACB445008A4054 /* IngredientCollectionViewCell.swift */,
+			);
+			path = CollectionViewCell;
 			sourceTree = "<group>";
 		};
 		2E1005A32B99838700B9BED1 = {
@@ -247,6 +331,8 @@
 				2ED30DCB2B9F59EF00786ACE /* Onboarding */,
 				2E14CE082B9E348F007A0A11 /* AddMeal */,
 				2E14CDF42B9E16AF007A0A11 /* Like */,
+				2E019B512BACA733008A4054 /* Refrigerator */,
+				2E019B492BACA08A008A4054 /* AddIngredient */,
 				2E14CDF02B9E1535007A0A11 /* RecipeRecommend */,
 				2E14CDEA2B9E1502007A0A11 /* Calendar */,
 			);
@@ -543,6 +629,7 @@
 				2ED30DC72B9F4B5E00786ACE /* MealRealmModel.swift */,
 				2ED30DC42B9F4A2200786ACE /* UserRealmModel.swift */,
 				2E88CA612BA1D5E50070F6C3 /* OnboardingDataModel.swift */,
+				2E019B572BACA843008A4054 /* IngredientRealmModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -707,6 +794,7 @@
 				2E410F032BAB49E0008E3C24 /* OverviewViewModel.swift in Sources */,
 				2EF5D10E2BA4B621006D2E9E /* AddMealDetailView.swift in Sources */,
 				2E5670512BA856A6002E0046 /* AddMealDateTableViewCell.swift in Sources */,
+				2E019B562BACA757008A4054 /* RefrigeratorViewController.swift in Sources */,
 				2ED30DD82B9F6AA400786ACE /* Observable.swift in Sources */,
 				2E54D6182BA9A7ED00197C03 /* currentDateTimeInKorea.swift in Sources */,
 				2E56D3482BA0243C002B0A6C /* OrderSpentView.swift in Sources */,
@@ -729,6 +817,7 @@
 				2E88CA602BA1D4CA0070F6C3 /* MenuCollectionViewCell.swift in Sources */,
 				2E56D34A2BA0246B002B0A6C /* OrderSpentViewModel.swift in Sources */,
 				2ED30DD02B9F5A0D00786ACE /* OrderCountViewController.swift in Sources */,
+				2E019B5B2BACB445008A4054 /* IngredientCollectionViewCell.swift in Sources */,
 				2E88CA5C2BA1D4BB0070F6C3 /* SavingCollectionViewCell.swift in Sources */,
 				2E5670542BA85A7E002E0046 /* BaseTableViewCell.swift in Sources */,
 				2ED30DD62B9F61E800786ACE /* UIView+addSubViews.swift in Sources */,
@@ -736,7 +825,10 @@
 				2E88CA5E2BA1D4C40070F6C3 /* OrderCntCollectionViewCell.swift in Sources */,
 				2ED30DD22B9F5CDC00786ACE /* BaseView.swift in Sources */,
 				2E5F643A2BA2D464004346E0 /* OverviewCompositionalLayout.swift in Sources */,
+				2E019B4E2BACA0A8008A4054 /* AddIngredientViewController.swift in Sources */,
+				2E019B582BACA843008A4054 /* IngredientRealmModel.swift in Sources */,
 				2E14CE022B9E1AF3007A0A11 /* UIColor+CustomColor.swift in Sources */,
+				2E019B502BACA70B008A4054 /* IngredientsViewController.swift in Sources */,
 				2E5670562BA8674D002E0046 /* AddMealDetailTableViewCell.swift in Sources */,
 				2E14CDFA2B9E1A66007A0A11 /* LikeViewController.swift in Sources */,
 				2E019B482BAC8CDF008A4054 /* Ingredient.swift in Sources */,
