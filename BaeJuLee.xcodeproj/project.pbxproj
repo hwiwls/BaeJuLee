@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E019B452BAC85FB008A4054 /* Tabman in Frameworks */ = {isa = PBXBuildFile; productRef = 2E019B442BAC85FB008A4054 /* Tabman */; };
+		2E019B482BAC8CDF008A4054 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E019B472BAC8CDF008A4054 /* Ingredient.swift */; };
 		2E1005B02B99838800B9BED1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1005AF2B99838800B9BED1 /* AppDelegate.swift */; };
 		2E1005B22B99838800B9BED1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1005B12B99838800B9BED1 /* SceneDelegate.swift */; };
 		2E1005BC2B99838900B9BED1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E1005BA2B99838900B9BED1 /* LaunchScreen.storyboard */; };
@@ -69,6 +71,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2E019B472BAC8CDF008A4054 /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
 		2E1005AC2B99838800B9BED1 /* BaeJuLee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BaeJuLee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E1005AF2B99838800B9BED1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2E1005B12B99838800B9BED1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -125,6 +128,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E019B452BAC85FB008A4054 /* Tabman in Frameworks */,
 				2E116FAA2BA73DA500A3C3C5 /* Toast in Frameworks */,
 				2E14CE2C2B9E3D9F007A0A11 /* SkeletonView in Frameworks */,
 				2E14CE152B9E3C90007A0A11 /* Kingfisher in Frameworks */,
@@ -143,6 +147,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2E019B462BAC8CC3008A4054 /* MockUpData */ = {
+			isa = PBXGroup;
+			children = (
+				2E019B472BAC8CDF008A4054 /* Ingredient.swift */,
+			);
+			path = MockUpData;
+			sourceTree = "<group>";
+		};
 		2E1005A32B99838700B9BED1 = {
 			isa = PBXGroup;
 			children = (
@@ -186,6 +198,7 @@
 				2E14CDDB2B9E0AD2007A0A11 /* Network */,
 				2E14CDDE2B9E0AED007A0A11 /* Observable */,
 				2E14CDDD2B9E0AE7007A0A11 /* Realm */,
+				2E019B462BAC8CC3008A4054 /* MockUpData */,
 				2E14CDDF2B9E0AF3007A0A11 /* Presentation */,
 				2E14CDFF2B9E1ADD007A0A11 /* Util */,
 			);
@@ -611,6 +624,7 @@
 				2EC75DD42BA3F716008A0E3A /* Alamofire */,
 				2E116FA62BA713E700A3C3C5 /* TextFieldEffects */,
 				2E116FA92BA73DA500A3C3C5 /* Toast */,
+				2E019B442BAC85FB008A4054 /* Tabman */,
 			);
 			productName = BaeJuLee;
 			productReference = 2E1005AC2B99838800B9BED1 /* BaeJuLee.app */;
@@ -652,6 +666,7 @@
 				2EC75DD32BA3F716008A0E3A /* XCRemoteSwiftPackageReference "Alamofire" */,
 				2E116FA52BA713E700A3C3C5 /* XCRemoteSwiftPackageReference "TextFieldEffects" */,
 				2E116FA82BA73DA500A3C3C5 /* XCRemoteSwiftPackageReference "Toast-Swift" */,
+				2E019B432BAC85FB008A4054 /* XCRemoteSwiftPackageReference "Tabman" */,
 			);
 			productRefGroup = 2E1005AD2B99838800B9BED1 /* Products */;
 			projectDirPath = "";
@@ -724,6 +739,7 @@
 				2E14CE022B9E1AF3007A0A11 /* UIColor+CustomColor.swift in Sources */,
 				2E5670562BA8674D002E0046 /* AddMealDetailTableViewCell.swift in Sources */,
 				2E14CDFA2B9E1A66007A0A11 /* LikeViewController.swift in Sources */,
+				2E019B482BAC8CDF008A4054 /* Ingredient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -950,6 +966,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		2E019B432BAC85FB008A4054 /* XCRemoteSwiftPackageReference "Tabman" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/uias/Tabman.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.2;
+			};
+		};
 		2E116FA52BA713E700A3C3C5 /* XCRemoteSwiftPackageReference "TextFieldEffects" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/raulriera/TextFieldEffects.git";
@@ -1041,6 +1065,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		2E019B442BAC85FB008A4054 /* Tabman */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2E019B432BAC85FB008A4054 /* XCRemoteSwiftPackageReference "Tabman" */;
+			productName = Tabman;
+		};
 		2E116FA62BA713E700A3C3C5 /* TextFieldEffects */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 2E116FA52BA713E700A3C3C5 /* XCRemoteSwiftPackageReference "TextFieldEffects" */;
