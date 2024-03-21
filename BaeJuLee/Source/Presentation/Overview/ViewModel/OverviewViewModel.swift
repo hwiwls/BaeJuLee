@@ -9,6 +9,8 @@ import Foundation
 import RealmSwift
 
 class OverviewViewModel {
+    var realmNotificationToken: NotificationToken?
+    
     var savings: Observable<String> = Observable("")
     
     // 배달 횟수와 목표 배달 횟수
@@ -21,6 +23,23 @@ class OverviewViewModel {
 
     init() {
         calculateSavings()
+        setupRealmNotification()
+    }
+
+    func setupRealmNotification() {
+        let realm = try! Realm()
+        realmNotificationToken = realm.objects(MealRealmModel.self).observe { [weak self] (changes) in
+            switch changes {
+            case .initial, .update(_, _, _, _):
+                self?.calculateSavings()
+            case .error(let error):
+                print("An error occurred: \(error)")
+            }
+        }
+    }
+
+    deinit {
+        realmNotificationToken?.invalidate()
     }
     
     func calculateWeekRange(from referenceDate: Date) -> (currentWeekStart: Date, lastWeekStart: Date, lastWeekEnd: Date) {
@@ -100,7 +119,6 @@ class OverviewViewModel {
         
         let deliveryCountText = "\(thisWeekDeliveryCount)/\(targetDeliveryCount) 회"
         self.outputdeliveryCountText.value = deliveryCountText
-        
     }
     
 }
