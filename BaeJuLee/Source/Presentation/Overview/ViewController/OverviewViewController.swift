@@ -24,22 +24,34 @@ final class OverviewViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        bindViewModel()
+    }
+
+    func bindViewModel() {
         viewModel.savings.bind { [weak self] _ in
             DispatchQueue.main.async {
-                self?.overviewCollectionView.reloadData()
+                let indexPath = IndexPath(item: 0, section: OverviewCompositionalLayout.saving.rawValue)
+                self?.overviewCollectionView.reloadItems(at: [indexPath])
+            }
+        }
+        
+//        viewModel.outputdeliveryProgress.bind { [weak self] _ in
+//            DispatchQueue.main.async {
+//                let indexPath = IndexPath(item: 1, section: OverviewCompositionalLayout.orderCnt.rawValue)
+//                self?.overviewCollectionView.reloadItems(at: [indexPath])
+//            }
+//        }
+//        
+        viewModel.outputdeliveryCountText.bind { [weak self] _ in
+            DispatchQueue.main.async {
+                let indexPath = IndexPath(item: 0, section: OverviewCompositionalLayout.orderCnt.rawValue)
+                self?.overviewCollectionView.reloadItems(at: [indexPath])
             }
         }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-//        self.navigationItem.leftBarButtonItem = nil
-//        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
-        viewModel.savings.bind { [weak self] _ in
-            DispatchQueue.main.async {
-                self?.overviewCollectionView.reloadData()
-            }
-        }
     }
     
     override func configView() {
