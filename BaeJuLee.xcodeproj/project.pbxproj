@@ -71,6 +71,7 @@
 		2ED30DDA2B9F6CD800786ACE /* OrderCountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED30DD92B9F6CD800786ACE /* OrderCountViewModel.swift */; };
 		2ED30DDC2B9F728700786ACE /* UITextField+PlaceholderColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED30DDB2B9F728700786ACE /* UITextField+PlaceholderColor.swift */; };
 		2EF17F0C2BADFD9E004237D3 /* Secrets.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 2EF17F0B2BADFD9E004237D3 /* Secrets.xcconfig */; };
+		2EF17F0F2BADFFFA004237D3 /* GoogleGenerativeAI in Frameworks */ = {isa = PBXBuildFile; productRef = 2EF17F0E2BADFFFA004237D3 /* GoogleGenerativeAI */; };
 		2EF5D10C2BA4A501006D2E9E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2EF5D10B2BA4A501006D2E9E /* Assets.xcassets */; };
 		2EF5D10E2BA4B621006D2E9E /* AddMealDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF5D10D2BA4B621006D2E9E /* AddMealDetailView.swift */; };
 		2EF5D1102BA4BEE1006D2E9E /* DateFormatterUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF5D10F2BA4BEE1006D2E9E /* DateFormatterUtility.swift */; };
@@ -151,6 +152,7 @@
 				2E14CE102B9E3C73007A0A11 /* Realm in Frameworks */,
 				2E116FA72BA713E700A3C3C5 /* TextFieldEffects in Frameworks */,
 				2E14CE182B9E3C99007A0A11 /* Then in Frameworks */,
+				2EF17F0F2BADFFFA004237D3 /* GoogleGenerativeAI in Frameworks */,
 				2E14CE1E2B9E3CE8007A0A11 /* DGCharts in Frameworks */,
 				2E14CE1B2B9E3CB0007A0A11 /* SnapKit in Frameworks */,
 			);
@@ -715,6 +717,7 @@
 				2E116FA62BA713E700A3C3C5 /* TextFieldEffects */,
 				2E116FA92BA73DA500A3C3C5 /* Toast */,
 				2E019B442BAC85FB008A4054 /* Tabman */,
+				2EF17F0E2BADFFFA004237D3 /* GoogleGenerativeAI */,
 			);
 			productName = BaeJuLee;
 			productReference = 2E1005AC2B99838800B9BED1 /* BaeJuLee.app */;
@@ -757,6 +760,7 @@
 				2E116FA52BA713E700A3C3C5 /* XCRemoteSwiftPackageReference "TextFieldEffects" */,
 				2E116FA82BA73DA500A3C3C5 /* XCRemoteSwiftPackageReference "Toast-Swift" */,
 				2E019B432BAC85FB008A4054 /* XCRemoteSwiftPackageReference "Tabman" */,
+				2EF17F0D2BADFFFA004237D3 /* XCRemoteSwiftPackageReference "generative-ai-swift" */,
 			);
 			productRefGroup = 2E1005AD2B99838800B9BED1 /* Products */;
 			projectDirPath = "";
@@ -1162,6 +1166,14 @@
 				minimumVersion = 5.9.0;
 			};
 		};
+		2EF17F0D2BADFFFA004237D3 /* XCRemoteSwiftPackageReference "generative-ai-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/generative-ai-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.4.8;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1229,6 +1241,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2EC75DD32BA3F716008A0E3A /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		2EF17F0E2BADFFFA004237D3 /* GoogleGenerativeAI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2EF17F0D2BADFFFA004237D3 /* XCRemoteSwiftPackageReference "generative-ai-swift" */;
+			productName = GoogleGenerativeAI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
