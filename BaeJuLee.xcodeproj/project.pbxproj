@@ -70,6 +70,7 @@
 		2ED30DD82B9F6AA400786ACE /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED30DD72B9F6AA400786ACE /* Observable.swift */; };
 		2ED30DDA2B9F6CD800786ACE /* OrderCountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED30DD92B9F6CD800786ACE /* OrderCountViewModel.swift */; };
 		2ED30DDC2B9F728700786ACE /* UITextField+PlaceholderColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED30DDB2B9F728700786ACE /* UITextField+PlaceholderColor.swift */; };
+		2EF17F0C2BADFD9E004237D3 /* Secrets.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 2EF17F0B2BADFD9E004237D3 /* Secrets.xcconfig */; };
 		2EF5D10C2BA4A501006D2E9E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2EF5D10B2BA4A501006D2E9E /* Assets.xcassets */; };
 		2EF5D10E2BA4B621006D2E9E /* AddMealDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF5D10D2BA4B621006D2E9E /* AddMealDetailView.swift */; };
 		2EF5D1102BA4BEE1006D2E9E /* DateFormatterUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF5D10F2BA4BEE1006D2E9E /* DateFormatterUtility.swift */; };
@@ -128,6 +129,7 @@
 		2ED30DD72B9F6AA400786ACE /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		2ED30DD92B9F6CD800786ACE /* OrderCountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCountViewModel.swift; sourceTree = "<group>"; };
 		2ED30DDB2B9F728700786ACE /* UITextField+PlaceholderColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+PlaceholderColor.swift"; sourceTree = "<group>"; };
+		2EF17F0B2BADFD9E004237D3 /* Secrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secrets.xcconfig; sourceTree = "<group>"; };
 		2EF5D10B2BA4A501006D2E9E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2EF5D10D2BA4B621006D2E9E /* AddMealDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMealDetailView.swift; sourceTree = "<group>"; };
 		2EF5D10F2BA4BEE1006D2E9E /* DateFormatterUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterUtility.swift; sourceTree = "<group>"; };
@@ -242,6 +244,7 @@
 		2E1005A32B99838700B9BED1 = {
 			isa = PBXGroup;
 			children = (
+				2EF17F0B2BADFD9E004237D3 /* Secrets.xcconfig */,
 				2E1005C32B99860000B9BED1 /* .gitignore */,
 				2E1005AE2B99838800B9BED1 /* BaeJuLee */,
 				2E1005AD2B99838800B9BED1 /* Products */,
@@ -769,6 +772,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2EF17F0C2BADFD9E004237D3 /* Secrets.xcconfig in Resources */,
 				2E1005C42B99860100B9BED1 /* .gitignore in Resources */,
 				2EF5D10C2BA4A501006D2E9E /* Assets.xcassets in Resources */,
 				2E1005BC2B99838900B9BED1 /* LaunchScreen.storyboard in Resources */,

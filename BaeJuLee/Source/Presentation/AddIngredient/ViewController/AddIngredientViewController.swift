@@ -23,6 +23,7 @@ class AddIngredientViewController: TabmanViewController {
         configSearchBar()
         configViewControllers()
         configTabman()
+//        configTapGesture()
     }
     
     func configSearchBar() {
@@ -86,6 +87,15 @@ class AddIngredientViewController: TabmanViewController {
         addBar(bar, dataSource: self, at: .top)
     }
     
+//    func configTapGesture() {
+//        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+//        tapGesture.cancelsTouchesInView = false
+//        view.addGestureRecognizer(tapGesture)
+//    }
+//
+//    @objc func dismissKeyboard() {
+//        view.endEditing(true)
+//    }
 }
 
 extension AddIngredientViewController: UISearchBarDelegate {
