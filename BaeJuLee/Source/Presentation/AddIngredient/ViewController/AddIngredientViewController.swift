@@ -29,8 +29,20 @@ class AddIngredientViewController: TabmanViewController {
         searchBar.delegate = self
         searchBar.placeholder = "검색"
         searchBar.sizeToFit()
-        searchBar.showsCancelButton = true
+        searchBar.showsCancelButton = false
         navigationItem.titleView = searchBar
+        let doneButton = UIBarButtonItem(title: "완료", style: .done, target: self, action: #selector(printSelectedItems))
+        navigationItem.rightBarButtonItem = doneButton
+    }
+    
+    @objc func printSelectedItems() {
+        viewControllers.forEach {
+            if let vc = $0 as? IngredientsViewController {
+                vc.selectedIngredients.forEach { ingredient in
+                    print(ingredient.ingredientName)
+                }
+            }
+        }
     }
     
     func configViewControllers() {
@@ -77,11 +89,21 @@ class AddIngredientViewController: TabmanViewController {
 }
 
 extension AddIngredientViewController: UISearchBarDelegate {
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-    }
     
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        searchBar.text = ""
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        // 현재 활성화된 탭의 ViewController를 찾습니다.
+        if let currentIndex = self.currentIndex,
+           let ingredientVC = viewControllers[currentIndex] as? IngredientsViewController {
+            print("currentIdx: \(currentIndex)")
+            if searchText.isEmpty {
+                ingredientVC.resetFilteredContent()
+            } else {
+                ingredientVC.filterContentForSearchText(searchText)
+            }
+        }
+    }
+
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
     }
 }

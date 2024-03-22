@@ -151,6 +151,7 @@ let allCategory: [Ingredient] = [
     Ingredient(ingredientName: "파인애플", ingredientImage: UIImage(named: "PineApple")),
     Ingredient(ingredientName: "딸기", ingredientImage: UIImage(named: "Strawberry")),
     Ingredient(ingredientName: "아몬드", ingredientImage: UIImage(named: "Almond")),
+    Ingredient(ingredientName: "오리고기", ingredientImage: UIImage(named: "Chicken")),
     Ingredient(ingredientName: "어묵", ingredientImage: UIImage(named: "FishCake")),
     Ingredient(ingredientName: "밀가루", ingredientImage: UIImage(named: "Flour")),
     Ingredient(ingredientName: "레드 와인", ingredientImage: UIImage(named: "RedWine")),
@@ -245,7 +246,6 @@ let sauce: [Ingredient] = [
     Ingredient(ingredientName: "굴소스", ingredientImage: UIImage(named: "OysterSauce")),
     Ingredient(ingredientName: "후추", ingredientImage: UIImage(named: "Pepper")),
     Ingredient(ingredientName: "고춧가루", ingredientImage: UIImage(named: "PepperSpice")),
-    Ingredient(ingredientName: "참기름", ingredientImage: UIImage(named: "SesameOil")),
     Ingredient(ingredientName: "식용유", ingredientImage: UIImage(named: "Oil")),
     Ingredient(ingredientName: "로제 소스", ingredientImage: UIImage(named: "RoseSauce")),
     Ingredient(ingredientName: "오리엔탈 드레싱", ingredientImage: UIImage(named: "SaladSauce")),
@@ -293,17 +293,18 @@ let dairyProduct: [Ingredient] = [
 
 let meat: [Ingredient] = [
     Ingredient(ingredientName: "닭가슴살", ingredientImage: UIImage(named: "ChickenBreast")),
+    Ingredient(ingredientName: "닭고기", ingredientImage: UIImage(named: "Chicken")),
     Ingredient(ingredientName: "계란", ingredientImage: UIImage(named: "Egg")),
     Ingredient(ingredientName: "삼겹살", ingredientImage: UIImage(named: "PorkBelly")),
     Ingredient(ingredientName: "돼지갈비살", ingredientImage: UIImage(named: "PorkRibs")),
     Ingredient(ingredientName: "소등심", ingredientImage: UIImage(named: "Sirloin")),
     Ingredient(ingredientName: "소안심", ingredientImage: UIImage(named: "Tenderloin")),
     Ingredient(ingredientName: "베이컨", ingredientImage: UIImage(named: "Bacon")),
-    Ingredient(ingredientName: "닭고기", ingredientImage: UIImage(named: "Chicken")),
     Ingredient(ingredientName: "양고기", ingredientImage: UIImage(named: "Lamb")),
     Ingredient(ingredientName: "소세지", ingredientImage: UIImage(named: "Sausage")),
     Ingredient(ingredientName: "우삼겹", ingredientImage: UIImage(named: "BeefBrisket")),
-    Ingredient(ingredientName: "대패삼겹살", ingredientImage: UIImage(named: "PorkBelly"))
+    Ingredient(ingredientName: "대패삼겹살", ingredientImage: UIImage(named: "PorkBelly")),
+    Ingredient(ingredientName: "오리고기", ingredientImage: UIImage(named: "Chicken")),
 ]
 
 let kimchi_deli: [Ingredient] = [
