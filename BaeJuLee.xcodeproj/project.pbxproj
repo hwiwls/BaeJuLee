@@ -70,8 +70,9 @@
 		2ED30DD82B9F6AA400786ACE /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED30DD72B9F6AA400786ACE /* Observable.swift */; };
 		2ED30DDA2B9F6CD800786ACE /* OrderCountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED30DD92B9F6CD800786ACE /* OrderCountViewModel.swift */; };
 		2ED30DDC2B9F728700786ACE /* UITextField+PlaceholderColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED30DDB2B9F728700786ACE /* UITextField+PlaceholderColor.swift */; };
-		2EF17F0C2BADFD9E004237D3 /* Secrets.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 2EF17F0B2BADFD9E004237D3 /* Secrets.xcconfig */; };
 		2EF17F0F2BADFFFA004237D3 /* GoogleGenerativeAI in Frameworks */ = {isa = PBXBuildFile; productRef = 2EF17F0E2BADFFFA004237D3 /* GoogleGenerativeAI */; };
+		2EF17F112BAE0899004237D3 /* GenerativeAI-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2EF17F102BAE0899004237D3 /* GenerativeAI-Info.plist */; };
+		2EF17F142BAE0912004237D3 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF17F132BAE0912004237D3 /* APIKey.swift */; };
 		2EF5D10C2BA4A501006D2E9E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2EF5D10B2BA4A501006D2E9E /* Assets.xcassets */; };
 		2EF5D10E2BA4B621006D2E9E /* AddMealDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF5D10D2BA4B621006D2E9E /* AddMealDetailView.swift */; };
 		2EF5D1102BA4BEE1006D2E9E /* DateFormatterUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF5D10F2BA4BEE1006D2E9E /* DateFormatterUtility.swift */; };
@@ -130,7 +131,8 @@
 		2ED30DD72B9F6AA400786ACE /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		2ED30DD92B9F6CD800786ACE /* OrderCountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCountViewModel.swift; sourceTree = "<group>"; };
 		2ED30DDB2B9F728700786ACE /* UITextField+PlaceholderColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+PlaceholderColor.swift"; sourceTree = "<group>"; };
-		2EF17F0B2BADFD9E004237D3 /* Secrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secrets.xcconfig; sourceTree = "<group>"; };
+		2EF17F102BAE0899004237D3 /* GenerativeAI-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GenerativeAI-Info.plist"; sourceTree = "<group>"; };
+		2EF17F132BAE0912004237D3 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		2EF5D10B2BA4A501006D2E9E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2EF5D10D2BA4B621006D2E9E /* AddMealDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMealDetailView.swift; sourceTree = "<group>"; };
 		2EF5D10F2BA4BEE1006D2E9E /* DateFormatterUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterUtility.swift; sourceTree = "<group>"; };
@@ -246,7 +248,6 @@
 		2E1005A32B99838700B9BED1 = {
 			isa = PBXGroup;
 			children = (
-				2EF17F0B2BADFD9E004237D3 /* Secrets.xcconfig */,
 				2E1005C32B99860000B9BED1 /* .gitignore */,
 				2E1005AE2B99838800B9BED1 /* BaeJuLee */,
 				2E1005AD2B99838800B9BED1 /* Products */,
@@ -306,6 +307,7 @@
 		2E14CDDB2B9E0AD2007A0A11 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				2EF17F122BAE0909004237D3 /* APIKey */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -687,6 +689,15 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		2EF17F122BAE0909004237D3 /* APIKey */ = {
+			isa = PBXGroup;
+			children = (
+				2EF17F102BAE0899004237D3 /* GenerativeAI-Info.plist */,
+				2EF17F132BAE0912004237D3 /* APIKey.swift */,
+			);
+			path = APIKey;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -776,7 +787,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2EF17F0C2BADFD9E004237D3 /* Secrets.xcconfig in Resources */,
+				2EF17F112BAE0899004237D3 /* GenerativeAI-Info.plist in Resources */,
 				2E1005C42B99860100B9BED1 /* .gitignore in Resources */,
 				2EF5D10C2BA4A501006D2E9E /* Assets.xcassets in Resources */,
 				2E1005BC2B99838900B9BED1 /* LaunchScreen.storyboard in Resources */,
@@ -806,6 +817,7 @@
 				2ED30DD82B9F6AA400786ACE /* Observable.swift in Sources */,
 				2E54D6182BA9A7ED00197C03 /* currentDateTimeInKorea.swift in Sources */,
 				2E56D3482BA0243C002B0A6C /* OrderSpentView.swift in Sources */,
+				2EF17F142BAE0912004237D3 /* APIKey.swift in Sources */,
 				2EBCA99A2BA8A35000BD8AE8 /* CalculateWeekRange.swift in Sources */,
 				2ED30DC52B9F4A2200786ACE /* UserRealmModel.swift in Sources */,
 				2E14CDE92B9E14AA007A0A11 /* CustomTabBarController.swift in Sources */,
@@ -859,7 +871,6 @@
 /* Begin XCBuildConfiguration section */
 		2E1005BE2B99838900B9BED1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2EF17F0B2BADFD9E004237D3 /* Secrets.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -923,7 +934,6 @@
 		};
 		2E1005BF2B99838900B9BED1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2EF17F0B2BADFD9E004237D3 /* Secrets.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -980,7 +990,6 @@
 		};
 		2E1005C12B99838900B9BED1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2EF17F0B2BADFD9E004237D3 /* Secrets.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1014,7 +1023,6 @@
 		};
 		2E1005C22B99838900B9BED1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2EF17F0B2BADFD9E004237D3 /* Secrets.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

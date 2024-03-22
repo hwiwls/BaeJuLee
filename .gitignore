@@ -88,7 +88,7 @@ fastlane/test_output
 
 iOSInjectionProject/
 
-*.xcconfig
+GenerativeAI-Info.plist
 
 # End of https://www.toptal.com/developers/gitignore/api/swift
 Secrets.xcconfig

@@ -9,6 +9,7 @@ import UIKit
 import Tabman
 import Pageboy
 import SnapKit
+import GoogleGenerativeAI
 
 class AddIngredientViewController: TabmanViewController {
 
@@ -32,19 +33,83 @@ class AddIngredientViewController: TabmanViewController {
         searchBar.sizeToFit()
         searchBar.showsCancelButton = false
         navigationItem.titleView = searchBar
-        let doneButton = UIBarButtonItem(title: "완료", style: .done, target: self, action: #selector(printSelectedItems))
+        let doneButton = UIBarButtonItem(title: "완료", style: .done, target: self, action: #selector(triggerAPICall))
         navigationItem.rightBarButtonItem = doneButton
     }
     
-    @objc func printSelectedItems() {
+//    @objc func printSelectedItems() {
+//        viewControllers.forEach {
+//            if let vc = $0 as? IngredientsViewController {
+//                vc.selectedIngredients.forEach { ingredient in
+//                    print(ingredient.ingredientName)
+//                }
+//            }
+//        }
+//    }
+    
+    func getAllSelectedIngredients() -> String {
+        var allSelectedIngredients: [String] = []
         viewControllers.forEach {
             if let vc = $0 as? IngredientsViewController {
-                vc.selectedIngredients.forEach { ingredient in
-                    print(ingredient.ingredientName)
-                }
+                let ingredientNames = vc.selectedIngredients.map { $0.ingredientName }
+                allSelectedIngredients.append(contentsOf: ingredientNames)
             }
         }
+        let ingredientsString = allSelectedIngredients.joined(separator: ", ")
+        return ingredientsString
     }
+    
+    @objc func triggerAPICall() {
+            // Task.init을 사용하여 비동기 작업을 시작합니다.
+            Task {
+                await performAPICall()
+            }
+        }
+    
+    func performAPICall() async {
+        
+        let model = GenerativeModel(name: "gemini-pro", apiKey: APIKey.default)
+
+        let ingredientsString = getAllSelectedIngredients()
+        let prompt = "단답형으로만 대답해. 다음 재료들로 만들 수 있는 음식을 10가지 미만으로 '-'을 이용해서 나열해: \(ingredientsString)."
+            do {
+                let response = try await model.generateContent(prompt)
+                if let text = response.text {
+                    DispatchQueue.main.async {
+                        
+                        print(text)
+                        
+                        let dishesArray = text
+                            .split(separator: "\n")
+                            .map { String($0).trimmingCharacters(in: CharacterSet(charactersIn: "- ").union(.whitespaces)) }
+
+                        print(dishesArray)
+                    }
+                }
+            } catch {
+                print("API call failed: \(error)")
+            }
+        }
+    
+//    @objc func performAPICall() async {
+//        guard let apiKey = Bundle.main.object(forInfoDictionaryKey: "GEMINI_API_KEY") as? String else { return }
+//        let model = GenerativeModel(name: "gemini-pro", apiKey: apiKey)
+//        
+//        // 선택된 재료들로 구성된 문자열을 prompt로 사용
+//        let ingredientsString = getAllSelectedIngredients()
+//        let prompt = "단답형으로만 대답해. 다음 재료로 만들 수 있는 음식을 10가지 미만으로 나열해: \(ingredientsString)"
+//        
+//        do {
+//            let response = try await model.generateContent(prompt)
+//            let response2 = try await model.countTokens(prompt)
+//            print(response2.totalTokens)
+//            if let text = response.text {
+//                print("gemini: \(text)") // API로부터 받은 응답 처리
+//            }
+//        } catch {
+//            print("API call failed: \(error)")
+//        }
+//    }
     
     func configViewControllers() {
         let categories = [
