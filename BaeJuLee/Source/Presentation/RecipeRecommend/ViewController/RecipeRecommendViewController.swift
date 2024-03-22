@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class RecipeRecommendViewController: UIViewController {
+final class RecipeRecommendViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
