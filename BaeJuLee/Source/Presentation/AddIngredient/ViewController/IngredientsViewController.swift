@@ -81,6 +81,7 @@ extension IngredientsViewController: UICollectionViewDelegate, UICollectionViewD
         return isFiltering ? filteredIngredients.count : ingredients.count
     }
     
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "IngredientCollectionViewCell", for: indexPath) as! IngredientCollectionViewCell
         
@@ -88,8 +89,17 @@ extension IngredientsViewController: UICollectionViewDelegate, UICollectionViewD
         cell.ingredientNameLabel.text = ingredient.ingredientName
         cell.ingredientImageView.image = ingredient.ingredientImage
         
+        // 선택된 재료인지 확인하여 버튼 상태 업데이트
+        // prepareforreuse를 쓰면 기존에 체크했던 것도 없어져서 이렇게 설정
+        if selectedIngredients.contains(where: { $0.ingredientName == ingredient.ingredientName }) {
+            cell.checkBtn.setImage(UIImage(systemName: "checkmark.circle.fill")?.withRenderingMode(.alwaysOriginal).withTintColor(.pointGreen), for: .normal)
+        } else {
+            cell.checkBtn.setImage(UIImage(systemName: "checkmark.circle.fill")?.withRenderingMode(.alwaysOriginal).withTintColor(.pointRegularLightGray), for: .normal)
+        }
+        
         return cell
     }
+
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let ingredient = isFiltering ? filteredIngredients[indexPath.row] : ingredients[indexPath.row]
