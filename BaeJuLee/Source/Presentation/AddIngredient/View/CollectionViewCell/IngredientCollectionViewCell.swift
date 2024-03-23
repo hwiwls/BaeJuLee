@@ -75,4 +75,13 @@ final class IngredientCollectionViewCell: BaseCollectionViewCell {
             $0.trailing.equalToSuperview().inset(20)
         }
     }
+    
+    func configure(with ingredient: Ingredient, isSelected: Bool) {
+        ingredientImageView.image = ingredient.ingredientImage
+        ingredientNameLabel.text = ingredient.ingredientName
+        
+        // Set the check button image based on the selection state
+        let checkmarkImage = isSelected ? UIImage(systemName: "checkmark.circle.fill")?.withRenderingMode(.alwaysOriginal).withTintColor(.pointGreen) : UIImage(systemName: "checkmark.circle.fill")?.withRenderingMode(.alwaysOriginal).withTintColor(.pointRegularLightGray)
+        checkBtn.setImage(checkmarkImage, for: .normal)
+    }
 }

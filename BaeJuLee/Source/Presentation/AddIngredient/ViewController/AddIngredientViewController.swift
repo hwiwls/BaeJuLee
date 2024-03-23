@@ -112,8 +112,8 @@ class AddIngredientViewController: TabmanViewController {
 //    }
     
     func configViewControllers() {
-        let categories = [
-            ("전체", allCategory),
+        // 개별 카테고리 배열
+        let categoriesData = [
             ("채소", vegetable),
             ("과일", fruits),
             ("정육/계란", meat),
@@ -129,10 +129,19 @@ class AddIngredientViewController: TabmanViewController {
             ("베이커리", bread),
             ("기타", etc)
         ]
+
+        // 모든 카테고리의 합집합을 계산하여 allCategory를 생성
+        let allCategory = Set(categoriesData.flatMap { $0.1 }).sorted(by: { $0.ingredientName < $1.ingredientName })
+
+        // '전체' 카테고리를 포함하여 viewControllers 배열 구성
+        var categories = [("전체", allCategory)]
+        categories.append(contentsOf: categoriesData)
+
         viewControllers = categories.map { title, ingredients in
             IngredientsViewController(ingredients: ingredients, title: title)
         }
     }
+
 
     
     func configTabman() {

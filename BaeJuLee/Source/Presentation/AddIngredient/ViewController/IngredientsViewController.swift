@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Toast
 
 final class IngredientsViewController: BaseViewController {
     lazy var ingredientCollectionView = UICollectionView(frame: .zero, collectionViewLayout: configureCollectionViewLayout())
@@ -27,7 +28,17 @@ final class IngredientsViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
+        NotificationCenter.default.addObserver(self, selector: #selector(handleIngredientsChanged), name: .selectedIngredientsChanged, object: nil)
+    }
+
+    @objc func handleIngredientsChanged() {
+        // 변경 사항에 대한 처리를 수행, 예를 들면 컬렉션 뷰 업데이트
+        ingredientCollectionView.reloadData()
+    }
+
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
     
     func configureCollectionViewLayout() -> UICollectionViewLayout {
@@ -83,19 +94,13 @@ extension IngredientsViewController: UICollectionViewDelegate, UICollectionViewD
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "IngredientCollectionViewCell", for: indexPath) as! IngredientCollectionViewCell
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "IngredientCollectionViewCell", for: indexPath) as? IngredientCollectionViewCell else {
+            return UICollectionViewCell()
+        }
         
         let ingredient = isFiltering ? filteredIngredients[indexPath.item] : ingredients[indexPath.item]
-        cell.ingredientNameLabel.text = ingredient.ingredientName
-        cell.ingredientImageView.image = ingredient.ingredientImage
-        
-        // 선택된 재료인지 확인하여 버튼 상태 업데이트
-        // prepareforreuse를 쓰면 기존에 체크했던 것도 없어져서 이렇게 설정
-        if selectedIngredients.contains(where: { $0.ingredientName == ingredient.ingredientName }) {
-            cell.checkBtn.setImage(UIImage(systemName: "checkmark.circle.fill")?.withRenderingMode(.alwaysOriginal).withTintColor(.pointGreen), for: .normal)
-        } else {
-            cell.checkBtn.setImage(UIImage(systemName: "checkmark.circle.fill")?.withRenderingMode(.alwaysOriginal).withTintColor(.pointRegularLightGray), for: .normal)
-        }
+        let isSelected = SelectedIngredientsManager.shared.isSelected(ingredient.ingredientName)
+        cell.configure(with: ingredient, isSelected: isSelected)
         
         return cell
     }
@@ -104,16 +109,16 @@ extension IngredientsViewController: UICollectionViewDelegate, UICollectionViewD
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let ingredient = isFiltering ? filteredIngredients[indexPath.row] : ingredients[indexPath.row]
         
-        if let cell = collectionView.cellForItem(at: indexPath) as? IngredientCollectionViewCell {
-            // selectedIngredients에서 현재 선택한 ingredient의 인덱스 찾기
-            if let index = selectedIngredients.firstIndex(where: { $0.ingredientName == ingredient.ingredientName }) {
-                // 이미 선택된 항목은 selectedIngredients 배열에서 제거
-                selectedIngredients.remove(at: index)
-                cell.checkBtn.setImage(UIImage(systemName: "checkmark.circle.fill")?.withRenderingMode(.alwaysOriginal).withTintColor(.pointRegularLightGray), for: .normal)
-            } else {
-                selectedIngredients.append(ingredient)
-                cell.checkBtn.setImage(UIImage(systemName: "checkmark.circle.fill")?.withRenderingMode(.alwaysOriginal).withTintColor(.pointGreen), for: .normal)
-            }
+        // 선택 상태 토글
+        let updated = SelectedIngredientsManager.shared.toggleIngredient(ingredient.ingredientName)
+        
+        if !updated {
+            // 선택 제한에 도달했을 경우 알림
+            self.view.makeToast("최대 10개의 재료만 선택할 수 있습니다.")
+        } else {
+            // UI 업데이트
+            collectionView.reloadData()
         }
     }
+
 }
