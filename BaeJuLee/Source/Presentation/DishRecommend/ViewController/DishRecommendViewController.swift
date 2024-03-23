@@ -10,11 +10,11 @@ import Lottie
 import SnapKit
 import Then
 
-final class RecipeRecommendViewController: BaseViewController {
+final class DishRecommendViewController: BaseViewController {
 
     var animationView = LottieAnimationView()
     // 네트워크 요청의 결과를 다루는 로직을 외부에서 정의하고, 요청의 결과가 준비되었을 때 해당 로직을 실행할 수 있게
-    var completionHandler: (([String]) -> Void)?
+    var completionHandler: (([String: String]) -> Void)?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +31,7 @@ final class RecipeRecommendViewController: BaseViewController {
     }
 
     // 네트워크 요청 결과 처리
-    func handleNetworkResponse(result: [String]) {
+    func handleNetworkResponse(result: [String: String]) {
         animationView.stop()
         animationView.isHidden = true
 

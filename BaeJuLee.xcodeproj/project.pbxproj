@@ -21,10 +21,15 @@
 		2E116FA72BA713E700A3C3C5 /* TextFieldEffects in Frameworks */ = {isa = PBXBuildFile; productRef = 2E116FA62BA713E700A3C3C5 /* TextFieldEffects */; };
 		2E116FAA2BA73DA500A3C3C5 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = 2E116FA92BA73DA500A3C3C5 /* Toast */; };
 		2E11AB292BAF1C5D009E5DEC /* Animation - 1711202389333.json in Resources */ = {isa = PBXBuildFile; fileRef = 2E11AB282BAF1C5D009E5DEC /* Animation - 1711202389333.json */; };
+		2E11AB2B2BAF4AC8009E5DEC /* CustomSearchJSONAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E11AB2A2BAF4AC8009E5DEC /* CustomSearchJSONAPI.swift */; };
+		2E11AB2D2BAF4F39009E5DEC /* CustomSearchJSON-info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2E11AB2C2BAF4F39009E5DEC /* CustomSearchJSON-info.plist */; };
+		2E11AB2F2BAF4FAA009E5DEC /* CustomSearchJSONAPIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E11AB2E2BAF4FAA009E5DEC /* CustomSearchJSONAPIKey.swift */; };
+		2E11AB312BAF51BB009E5DEC /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E11AB302BAF51BB009E5DEC /* Search.swift */; };
+		2E11AB332BAF5722009E5DEC /* CustomSearchJSONAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E11AB322BAF5722009E5DEC /* CustomSearchJSONAPIManager.swift */; };
 		2E14CDE92B9E14AA007A0A11 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E14CDE82B9E14AA007A0A11 /* CustomTabBarController.swift */; };
 		2E14CDEF2B9E1523007A0A11 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E14CDEE2B9E1523007A0A11 /* CalendarViewController.swift */; };
 		2E14CDFA2B9E1A66007A0A11 /* LikeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E14CDF92B9E1A66007A0A11 /* LikeViewController.swift */; };
-		2E14CDFC2B9E1A71007A0A11 /* RecipeRecommendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E14CDFB2B9E1A71007A0A11 /* RecipeRecommendViewController.swift */; };
+		2E14CDFC2B9E1A71007A0A11 /* DishRecommendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E14CDFB2B9E1A71007A0A11 /* DishRecommendViewController.swift */; };
 		2E14CDFE2B9E1A8A007A0A11 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E14CDFD2B9E1A8A007A0A11 /* BaseViewController.swift */; };
 		2E14CE022B9E1AF3007A0A11 /* UIColor+CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E14CE012B9E1AF3007A0A11 /* UIColor+CustomColor.swift */; };
 		2E14CE072B9E3262007A0A11 /* OverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E14CE062B9E3262007A0A11 /* OverviewViewController.swift */; };
@@ -74,7 +79,7 @@
 		2ED30DDC2B9F728700786ACE /* UITextField+PlaceholderColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED30DDB2B9F728700786ACE /* UITextField+PlaceholderColor.swift */; };
 		2EF17F0F2BADFFFA004237D3 /* GoogleGenerativeAI in Frameworks */ = {isa = PBXBuildFile; productRef = 2EF17F0E2BADFFFA004237D3 /* GoogleGenerativeAI */; };
 		2EF17F112BAE0899004237D3 /* GenerativeAI-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2EF17F102BAE0899004237D3 /* GenerativeAI-Info.plist */; };
-		2EF17F142BAE0912004237D3 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF17F132BAE0912004237D3 /* APIKey.swift */; };
+		2EF17F142BAE0912004237D3 /* GeminiAPIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF17F132BAE0912004237D3 /* GeminiAPIKey.swift */; };
 		2EF5D10C2BA4A501006D2E9E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2EF5D10B2BA4A501006D2E9E /* Assets.xcassets */; };
 		2EF5D10E2BA4B621006D2E9E /* AddMealDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF5D10D2BA4B621006D2E9E /* AddMealDetailView.swift */; };
 		2EF5D1102BA4BEE1006D2E9E /* DateFormatterUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF5D10F2BA4BEE1006D2E9E /* DateFormatterUtility.swift */; };
@@ -94,10 +99,15 @@
 		2E1005BD2B99838900B9BED1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2E1005C32B99860000B9BED1 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		2E11AB282BAF1C5D009E5DEC /* Animation - 1711202389333.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Animation - 1711202389333.json"; sourceTree = "<group>"; };
+		2E11AB2A2BAF4AC8009E5DEC /* CustomSearchJSONAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSearchJSONAPI.swift; sourceTree = "<group>"; };
+		2E11AB2C2BAF4F39009E5DEC /* CustomSearchJSON-info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CustomSearchJSON-info.plist"; sourceTree = "<group>"; };
+		2E11AB2E2BAF4FAA009E5DEC /* CustomSearchJSONAPIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSearchJSONAPIKey.swift; sourceTree = "<group>"; };
+		2E11AB302BAF51BB009E5DEC /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
+		2E11AB322BAF5722009E5DEC /* CustomSearchJSONAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSearchJSONAPIManager.swift; sourceTree = "<group>"; };
 		2E14CDE82B9E14AA007A0A11 /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
 		2E14CDEE2B9E1523007A0A11 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		2E14CDF92B9E1A66007A0A11 /* LikeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeViewController.swift; sourceTree = "<group>"; };
-		2E14CDFB2B9E1A71007A0A11 /* RecipeRecommendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeRecommendViewController.swift; sourceTree = "<group>"; };
+		2E14CDFB2B9E1A71007A0A11 /* DishRecommendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishRecommendViewController.swift; sourceTree = "<group>"; };
 		2E14CDFD2B9E1A8A007A0A11 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		2E14CE012B9E1AF3007A0A11 /* UIColor+CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+CustomColor.swift"; sourceTree = "<group>"; };
 		2E14CE062B9E3262007A0A11 /* OverviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewViewController.swift; sourceTree = "<group>"; };
@@ -136,7 +146,7 @@
 		2ED30DD92B9F6CD800786ACE /* OrderCountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCountViewModel.swift; sourceTree = "<group>"; };
 		2ED30DDB2B9F728700786ACE /* UITextField+PlaceholderColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+PlaceholderColor.swift"; sourceTree = "<group>"; };
 		2EF17F102BAE0899004237D3 /* GenerativeAI-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GenerativeAI-Info.plist"; sourceTree = "<group>"; };
-		2EF17F132BAE0912004237D3 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
+		2EF17F132BAE0912004237D3 /* GeminiAPIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeminiAPIKey.swift; sourceTree = "<group>"; };
 		2EF5D10B2BA4A501006D2E9E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2EF5D10D2BA4B621006D2E9E /* AddMealDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMealDetailView.swift; sourceTree = "<group>"; };
 		2EF5D10F2BA4BEE1006D2E9E /* DateFormatterUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterUtility.swift; sourceTree = "<group>"; };
@@ -314,6 +324,9 @@
 			isa = PBXGroup;
 			children = (
 				2EF17F122BAE0909004237D3 /* APIKey */,
+				2E11AB2A2BAF4AC8009E5DEC /* CustomSearchJSONAPI.swift */,
+				2E11AB302BAF51BB009E5DEC /* Search.swift */,
+				2E11AB322BAF5722009E5DEC /* CustomSearchJSONAPIManager.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -346,7 +359,7 @@
 				2E14CDF42B9E16AF007A0A11 /* Like */,
 				2E019B512BACA733008A4054 /* Refrigerator */,
 				2E019B492BACA08A008A4054 /* AddIngredient */,
-				2E14CDF02B9E1535007A0A11 /* RecipeRecommend */,
+				2E14CDF02B9E1535007A0A11 /* DishRecommend */,
 				2E14CDEA2B9E1502007A0A11 /* Calendar */,
 			);
 			path = Presentation;
@@ -444,14 +457,14 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		2E14CDF02B9E1535007A0A11 /* RecipeRecommend */ = {
+		2E14CDF02B9E1535007A0A11 /* DishRecommend */ = {
 			isa = PBXGroup;
 			children = (
 				2E14CDF32B9E168F007A0A11 /* ViewModel */,
 				2E14CDF22B9E1689007A0A11 /* ViewController */,
 				2E14CDF12B9E1683007A0A11 /* View */,
 			);
-			path = RecipeRecommend;
+			path = DishRecommend;
 			sourceTree = "<group>";
 		};
 		2E14CDF12B9E1683007A0A11 /* View */ = {
@@ -464,7 +477,7 @@
 		2E14CDF22B9E1689007A0A11 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				2E14CDFB2B9E1A71007A0A11 /* RecipeRecommendViewController.swift */,
+				2E14CDFB2B9E1A71007A0A11 /* DishRecommendViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -699,7 +712,9 @@
 			isa = PBXGroup;
 			children = (
 				2EF17F102BAE0899004237D3 /* GenerativeAI-Info.plist */,
-				2EF17F132BAE0912004237D3 /* APIKey.swift */,
+				2EF17F132BAE0912004237D3 /* GeminiAPIKey.swift */,
+				2E11AB2C2BAF4F39009E5DEC /* CustomSearchJSON-info.plist */,
+				2E11AB2E2BAF4FAA009E5DEC /* CustomSearchJSONAPIKey.swift */,
 			);
 			path = APIKey;
 			sourceTree = "<group>";
@@ -798,6 +813,7 @@
 				2E11AB292BAF1C5D009E5DEC /* Animation - 1711202389333.json in Resources */,
 				2EF5D10C2BA4A501006D2E9E /* Assets.xcassets in Resources */,
 				2E1005BC2B99838900B9BED1 /* LaunchScreen.storyboard in Resources */,
+				2E11AB2D2BAF4F39009E5DEC /* CustomSearchJSON-info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -811,7 +827,7 @@
 				2E28F3302BA49A7C00C0B1EB /* AddMealViewModel.swift in Sources */,
 				2EF5D1102BA4BEE1006D2E9E /* DateFormatterUtility.swift in Sources */,
 				2E14CDEF2B9E1523007A0A11 /* CalendarViewController.swift in Sources */,
-				2E14CDFC2B9E1A71007A0A11 /* RecipeRecommendViewController.swift in Sources */,
+				2E14CDFC2B9E1A71007A0A11 /* DishRecommendViewController.swift in Sources */,
 				2E88CA622BA1D5E50070F6C3 /* OnboardingDataModel.swift in Sources */,
 				2E56D3502BA03E1B002B0A6C /* GoalOrderViewModel.swift in Sources */,
 				2ED30DDA2B9F6CD800786ACE /* OrderCountViewModel.swift in Sources */,
@@ -824,12 +840,13 @@
 				2ED30DD82B9F6AA400786ACE /* Observable.swift in Sources */,
 				2E54D6182BA9A7ED00197C03 /* currentDateTimeInKorea.swift in Sources */,
 				2E56D3482BA0243C002B0A6C /* OrderSpentView.swift in Sources */,
-				2EF17F142BAE0912004237D3 /* APIKey.swift in Sources */,
+				2EF17F142BAE0912004237D3 /* GeminiAPIKey.swift in Sources */,
 				2EBCA99A2BA8A35000BD8AE8 /* CalculateWeekRange.swift in Sources */,
 				2ED30DC52B9F4A2200786ACE /* UserRealmModel.swift in Sources */,
 				2E14CDE92B9E14AA007A0A11 /* CustomTabBarController.swift in Sources */,
 				2E88CA642BA1DE7F0070F6C3 /* UserRepository.swift in Sources */,
 				2ED30DD42B9F5D5500786ACE /* OrderCountView.swift in Sources */,
+				2E11AB312BAF51BB009E5DEC /* Search.swift in Sources */,
 				2E1005B22B99838800B9BED1 /* SceneDelegate.swift in Sources */,
 				2E56D3462BA0242D002B0A6C /* OrderSpentViewController.swift in Sources */,
 				2E5F643E2BA368EC004346E0 /* BaseCollectionViewCell.swift in Sources */,
@@ -844,8 +861,10 @@
 				2E5F643C2BA368D7004346E0 /* CalendarCollectionViewCell.swift in Sources */,
 				2E88CA602BA1D4CA0070F6C3 /* MenuCollectionViewCell.swift in Sources */,
 				2E56D34A2BA0246B002B0A6C /* OrderSpentViewModel.swift in Sources */,
+				2E11AB2B2BAF4AC8009E5DEC /* CustomSearchJSONAPI.swift in Sources */,
 				2ED30DD02B9F5A0D00786ACE /* OrderCountViewController.swift in Sources */,
 				2E019B5B2BACB445008A4054 /* IngredientCollectionViewCell.swift in Sources */,
+				2E11AB2F2BAF4FAA009E5DEC /* CustomSearchJSONAPIKey.swift in Sources */,
 				2E88CA5C2BA1D4BB0070F6C3 /* SavingCollectionViewCell.swift in Sources */,
 				2E5670542BA85A7E002E0046 /* BaseTableViewCell.swift in Sources */,
 				2ED30DD62B9F61E800786ACE /* UIView+addSubViews.swift in Sources */,
@@ -859,6 +878,7 @@
 				2E019B502BACA70B008A4054 /* IngredientsViewController.swift in Sources */,
 				2E5670562BA8674D002E0046 /* AddMealDetailTableViewCell.swift in Sources */,
 				2E14CDFA2B9E1A66007A0A11 /* LikeViewController.swift in Sources */,
+				2E11AB332BAF5722009E5DEC /* CustomSearchJSONAPIManager.swift in Sources */,
 				2E019B482BAC8CDF008A4054 /* Ingredient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

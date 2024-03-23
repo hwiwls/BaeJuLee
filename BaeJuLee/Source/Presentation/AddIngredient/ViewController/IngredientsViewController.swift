@@ -32,7 +32,6 @@ final class IngredientsViewController: BaseViewController {
     }
 
     @objc func handleIngredientsChanged() {
-        // 변경 사항에 대한 처리를 수행, 예를 들면 컬렉션 뷰 업데이트
         ingredientCollectionView.reloadData()
     }
 
@@ -112,8 +111,7 @@ extension IngredientsViewController: UICollectionViewDelegate, UICollectionViewD
         let updated = SelectedIngredientsManager.shared.toggleIngredient(ingredient.ingredientName)
         
         if !updated {
-            // 선택 제한에 도달했을 경우 알림
-            self.view.makeToast("최대 10개의 재료만 선택할 수 있습니다.")
+            self.view.makeToast("최대 10개의 재료만 선택할 수 있습니다.", position: .center)
         } else {
             // UI 업데이트
             collectionView.reloadData()
