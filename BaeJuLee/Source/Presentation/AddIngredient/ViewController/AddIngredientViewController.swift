@@ -47,14 +47,8 @@ class AddIngredientViewController: TabmanViewController {
 //        }
 //    }
     
-    func getAllSelectedIngredients() -> String {
-        var allSelectedIngredients: [String] = []
-        viewControllers.forEach {
-            if let vc = $0 as? IngredientsViewController {
-                let ingredientNames = vc.selectedIngredients.map { $0.ingredientName }
-                allSelectedIngredients.append(contentsOf: ingredientNames)
-            }
-        }
+    func getAllSelectedIngredients() -> String { 
+        let allSelectedIngredients = SelectedIngredientsManager.shared.selectedIngredients
         let ingredientsString = allSelectedIngredients.joined(separator: ", ")
         return ingredientsString
     }
@@ -72,6 +66,8 @@ class AddIngredientViewController: TabmanViewController {
 
         let ingredientsString = getAllSelectedIngredients()
         let prompt = "단답형으로만 대답해. 다음 재료들로 만들 수 있는 음식을 10가지 미만으로 '-'을 이용해서 나열해: \(ingredientsString)."
+        print("입력한 재료: \(ingredientsString)")
+        print("엥")
             do {
                 let response = try await model.generateContent(prompt)
                 if let text = response.text {
@@ -83,7 +79,7 @@ class AddIngredientViewController: TabmanViewController {
                             .split(separator: "\n")
                             .map { String($0).trimmingCharacters(in: CharacterSet(charactersIn: "- ").union(.whitespaces)) }
 
-                        print(dishesArray)
+                        print("추천 음식: \(dishesArray)")
                     }
                 }
             } catch {

@@ -14,7 +14,6 @@ final class IngredientsViewController: BaseViewController {
     var ingredients: [Ingredient] = []
     var filteredIngredients: [Ingredient] = []  // 재료 검색
     var isFiltering: Bool = false
-    var selectedIngredients: [Ingredient] = [] // 선택된 재료
     
     init(ingredients: [Ingredient], title: String) {
         super.init(nibName: nil, bundle: nil)
