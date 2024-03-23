@@ -20,6 +20,7 @@
 		2E1005C42B99860100B9BED1 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 2E1005C32B99860000B9BED1 /* .gitignore */; };
 		2E116FA72BA713E700A3C3C5 /* TextFieldEffects in Frameworks */ = {isa = PBXBuildFile; productRef = 2E116FA62BA713E700A3C3C5 /* TextFieldEffects */; };
 		2E116FAA2BA73DA500A3C3C5 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = 2E116FA92BA73DA500A3C3C5 /* Toast */; };
+		2E11AB292BAF1C5D009E5DEC /* Animation - 1711202389333.json in Resources */ = {isa = PBXBuildFile; fileRef = 2E11AB282BAF1C5D009E5DEC /* Animation - 1711202389333.json */; };
 		2E14CDE92B9E14AA007A0A11 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E14CDE82B9E14AA007A0A11 /* CustomTabBarController.swift */; };
 		2E14CDEF2B9E1523007A0A11 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E14CDEE2B9E1523007A0A11 /* CalendarViewController.swift */; };
 		2E14CDFA2B9E1A66007A0A11 /* LikeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E14CDF92B9E1A66007A0A11 /* LikeViewController.swift */; };
@@ -92,6 +93,7 @@
 		2E1005BB2B99838900B9BED1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2E1005BD2B99838900B9BED1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2E1005C32B99860000B9BED1 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		2E11AB282BAF1C5D009E5DEC /* Animation - 1711202389333.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Animation - 1711202389333.json"; sourceTree = "<group>"; };
 		2E14CDE82B9E14AA007A0A11 /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
 		2E14CDEE2B9E1523007A0A11 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		2E14CDF92B9E1A66007A0A11 /* LikeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeViewController.swift; sourceTree = "<group>"; };
@@ -279,6 +281,7 @@
 			children = (
 				2E1005BA2B99838900B9BED1 /* LaunchScreen.storyboard */,
 				2EF5D10B2BA4A501006D2E9E /* Assets.xcassets */,
+				2E11AB282BAF1C5D009E5DEC /* Animation - 1711202389333.json */,
 				2E1005BD2B99838900B9BED1 /* Info.plist */,
 			);
 			path = Resources;
@@ -792,6 +795,7 @@
 			files = (
 				2EF17F112BAE0899004237D3 /* GenerativeAI-Info.plist in Resources */,
 				2E1005C42B99860100B9BED1 /* .gitignore in Resources */,
+				2E11AB292BAF1C5D009E5DEC /* Animation - 1711202389333.json in Resources */,
 				2EF5D10C2BA4A501006D2E9E /* Assets.xcassets in Resources */,
 				2E1005BC2B99838900B9BED1 /* LaunchScreen.storyboard in Resources */,
 			);
