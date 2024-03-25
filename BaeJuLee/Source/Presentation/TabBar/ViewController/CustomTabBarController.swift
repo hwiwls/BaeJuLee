@@ -121,7 +121,7 @@ final class CustomTabBarController: UITabBarController {
     @objc func middleButtonAction(sender: UIButton) {
         let vc = AddMealViewController()
         vc.modalPresentationStyle = .fullScreen
-        present(vc, animated:  true)
+        present(vc, animated: true)
     }
 }
 

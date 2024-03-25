@@ -10,6 +10,10 @@ import SnapKit
 import FSCalendar
 import RealmSwift
 
+protocol SavingCollectionViewCellDelegate: AnyObject {
+    func didTapRecordButton()
+}
+
 final class OverviewViewController: BaseViewController {
     
     private var viewModel = OverviewViewModel()
@@ -122,6 +126,7 @@ extension OverviewViewController: UICollectionViewDelegate, UICollectionViewData
                 calendarCell.calendar.dataSource = self
                 return calendarCell
             case .saving:
+                savingCell.delegate = self
                 savingCell.savingLabel.text = viewModel.savings.value
                 return savingCell
             case .orderCnt:
@@ -137,12 +142,8 @@ extension OverviewViewController: UICollectionViewDelegate, UICollectionViewData
                 return menuCell
             }
         }
-        
-        
         return UICollectionViewCell()
     }
-    
-    
 }
 
 extension OverviewViewController: FSCalendarDelegate, FSCalendarDataSource {
@@ -152,5 +153,13 @@ extension OverviewViewController: FSCalendarDelegate, FSCalendarDataSource {
             $0.height.equalTo(bounds.height)
         }
         self.view.layoutIfNeeded()
+    }
+}
+
+extension OverviewViewController: SavingCollectionViewCellDelegate {
+    func didTapRecordButton() {
+        let addMealVC = AddMealViewController()
+        addMealVC.modalPresentationStyle = .fullScreen 
+        present(addMealVC, animated: true, completion: nil)
     }
 }

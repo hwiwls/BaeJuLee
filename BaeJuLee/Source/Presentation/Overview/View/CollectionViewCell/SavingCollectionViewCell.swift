@@ -10,10 +10,14 @@ import SnapKit
 import Then
 
 final class SavingCollectionViewCell: BaseCollectionViewCell {
+    
+    weak var delegate: SavingCollectionViewCellDelegate?
+    
     private var containerView = UIView().then {
         $0.backgroundColor = .white
         $0.layer.cornerRadius = 10
         $0.layer.masksToBounds = true
+        $0.isUserInteractionEnabled = true
     }
     
     let savingLabel = UILabel().then {
@@ -39,6 +43,7 @@ final class SavingCollectionViewCell: BaseCollectionViewCell {
         $0.setTitle("오늘 식사 기록하기", for: .normal)
         $0.layer.cornerRadius = 8
         $0.clipsToBounds = true
+        $0.isUserInteractionEnabled = true
         $0.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
     }
     
@@ -47,10 +52,16 @@ final class SavingCollectionViewCell: BaseCollectionViewCell {
         backgroundColor = .clear
         
         setupLayout()
+        recordBtn.addTarget(self, action: #selector(recordBtnTapped), for: .touchUpInside)
+    }
+    
+    @objc func recordBtnTapped() {
+        print("클릭")
+        delegate?.didTapRecordButton()
     }
     
     override func configHierarchy() {
-        self.addSubview(containerView)
+        self.contentView.addSubview(containerView)
         containerView.addSubviews([
             savingLabel,
             riceImageView,
