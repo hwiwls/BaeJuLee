@@ -17,7 +17,7 @@ class MenuCollectionViewCell: BaseCollectionViewCell {
     }
     
     private let titleLabel = UILabel().then {
-        $0.text = "추천받기"
+        $0.text = "AI에게 음식\n추천받기"
         $0.textColor = .black
         $0.textAlignment = .left
         $0.font = .boldSystemFont(ofSize: 16)

@@ -16,11 +16,11 @@ enum CustomSearchAPI {
     }
     
     var apiKey: String {
-        return Bundle.main.CustomSearchJSONAPIKey
+        return Bundle.main.CustomSearchJSONAPIKey2
     }
     
     var cx: String {
-        return Bundle.main.CustomSearchJSONCx
+        return Bundle.main.CustomSearchJSONCx2
     }
     
     var endpoint: URL {

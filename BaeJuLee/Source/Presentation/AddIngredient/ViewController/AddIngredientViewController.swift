@@ -77,6 +77,7 @@ class AddIngredientViewController: TabmanViewController {
             }
     }
     
+    
     func generativeAIModel() async -> [String] {
         let model = GenerativeModel(name: "gemini-pro", apiKey: GeminiAPIKey.default)
         let ingredientsString = getAllSelectedIngredients()

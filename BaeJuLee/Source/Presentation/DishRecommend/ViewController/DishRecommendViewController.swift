@@ -23,7 +23,17 @@ final class DishRecommendViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        configNav()
+    }
+    
+    private func configNav() {
+        let backImage = UIImage(systemName: "chevron.left")?.withRenderingMode(.alwaysOriginal).withTintColor(.pointNavy)
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: backImage, style: .plain, target: self, action: #selector(backButtonTapped))
+    }
+
+    @objc private func backButtonTapped() {
+        // 뒤로 가기 동작 구현
+        navigationController?.popViewController(animated: true)
     }
     
     override func configView() {

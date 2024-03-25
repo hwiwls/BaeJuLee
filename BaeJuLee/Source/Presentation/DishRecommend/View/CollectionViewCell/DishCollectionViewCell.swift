@@ -14,9 +14,9 @@ class DishCollectionViewCell: BaseCollectionViewCell {
     let containerView = UIView().then {
         $0.backgroundColor = .white
         $0.layer.cornerRadius = 20
-        $0.layer.shadowColor = UIColor.gray.cgColor
-        $0.layer.shadowOpacity = 0.2
-        $0.layer.shadowRadius = 10
+//        $0.layer.shadowColor = UIColor.gray.cgColor
+//        $0.layer.shadowOpacity = 0.2
+//        $0.layer.shadowRadius = 10
         $0.clipsToBounds = true
     }
     
@@ -31,11 +31,16 @@ class DishCollectionViewCell: BaseCollectionViewCell {
         $0.text = "dish name"
         $0.font = .boldSystemFont(ofSize: 19)
         $0.textColor = .black
+        $0.numberOfLines = 2
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .white
+        backgroundColor = .clear
+        
+        layer.shadowColor = UIColor.gray.cgColor
+        layer.shadowOpacity = 0.2
+        layer.shadowRadius = 10
     }
     
     required init?(coder: NSCoder) {
@@ -63,7 +68,8 @@ class DishCollectionViewCell: BaseCollectionViewCell {
         
         dishNameLabel.snp.makeConstraints {
             $0.top.equalTo(dishImageView.snp.bottom).offset(16)
-            $0.leading.equalToSuperview().offset(16)
+            $0.leading.trailing.equalToSuperview().inset(16)
+            $0.height.equalTo(44)
         }
     }
     
