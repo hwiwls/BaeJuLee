@@ -45,19 +45,6 @@ class AddIngredientViewController: TabmanViewController {
     
     
     @objc func triggergenerativeAIModelCall() {
-//        // 로딩 화면으로 전환
-//        let loadingVC = DishRecommendViewController()
-//        navigationController?.pushViewController(loadingVC, animated: true)
-//
-//        // 비동기 네트워크 요청
-//        Task {
-//            let result = await performAPICall()
-//            // 요청 결과가 도착하면 메인 스레드에서 UI 업데이트
-//            DispatchQueue.main.async {
-//                // 네트워크 요청 완료 후, 로딩 화면에서 결과 처리
-//                loadingVC.handleNetworkResponse(result: result)
-//            }
-//        }
         let loadingVC = DishRecommendViewController()
             navigationController?.pushViewController(loadingVC, animated: true)
 
@@ -71,14 +58,13 @@ class AddIngredientViewController: TabmanViewController {
                     CustomSearchJSONAPIManager.shared.searchJSONImage(api: .search(query: dishName)) { result in
                         switch result {
                         case .success(let searchResult):
-                            print(searchResult)
                             if let imageUrl = searchResult.items.first?.pagemap.cseImage.first?.src {
                                 dishImages[dishName] = imageUrl
                             } else {
                                 print("No image found for \(dishName)")
                             }
                         case .failure(let error):
-                            print("Error fetching image for \(dishName): \(error.localizedDescription)")
+                            print("Error fetching image for \(dishName): \(error)")
                         }
                         group.leave()
                     }
@@ -94,7 +80,7 @@ class AddIngredientViewController: TabmanViewController {
     func generativeAIModel() async -> [String] {
         let model = GenerativeModel(name: "gemini-pro", apiKey: GeminiAPIKey.default)
         let ingredientsString = getAllSelectedIngredients()
-        let prompt = "단답형으로만 대답해. 다음 재료들로 만들수있는 유명한 음식을 5가지 미만으로 '-'을 이용해서 나열해: \(ingredientsString)."
+        let prompt = "단답형으로만 대답해. 다음 재료들로 만들수있는 유명한 음식을 3개 이상 5개 미만으로 '-'을 이용해서 나열해.: \(ingredientsString)."
 
         do {
             let response = try await model.generateContent(prompt)
