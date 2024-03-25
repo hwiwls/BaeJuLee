@@ -88,4 +88,10 @@ fastlane/test_output
 
 iOSInjectionProject/
 
+GenerativeAI-Info.plist
+CustomSearchJSON-info
+
 # End of https://www.toptal.com/developers/gitignore/api/swift
+Secrets.xcconfig
+Secrets.xcconfig
+BaeJuLee/Source/Network/APIKey/CustomSearchJSON-info.plist

@@ -9,6 +9,7 @@ import UIKit
 import Tabman
 import Pageboy
 import SnapKit
+import GoogleGenerativeAI
 
 class AddIngredientViewController: TabmanViewController {
 
@@ -23,19 +24,97 @@ class AddIngredientViewController: TabmanViewController {
         configSearchBar()
         configViewControllers()
         configTabman()
+//        configTapGesture()
     }
     
     func configSearchBar() {
         searchBar.delegate = self
         searchBar.placeholder = "검색"
         searchBar.sizeToFit()
-        searchBar.showsCancelButton = true
+        searchBar.showsCancelButton = false
         navigationItem.titleView = searchBar
+        let doneButton = UIBarButtonItem(title: "완료", style: .done, target: self, action: #selector(triggergenerativeAIModelCall))
+        navigationItem.rightBarButtonItem = doneButton
+    }
+    
+    func getAllSelectedIngredients() -> String {
+        let allSelectedIngredients = SelectedIngredientsManager.shared.selectedIngredients
+        let ingredientsString = allSelectedIngredients.joined(separator: ", ")
+        return ingredientsString
+    }
+    
+    
+    @objc func triggergenerativeAIModelCall() {
+//        // 로딩 화면으로 전환
+//        let loadingVC = DishRecommendViewController()
+//        navigationController?.pushViewController(loadingVC, animated: true)
+//
+//        // 비동기 네트워크 요청
+//        Task {
+//            let result = await performAPICall()
+//            // 요청 결과가 도착하면 메인 스레드에서 UI 업데이트
+//            DispatchQueue.main.async {
+//                // 네트워크 요청 완료 후, 로딩 화면에서 결과 처리
+//                loadingVC.handleNetworkResponse(result: result)
+//            }
+//        }
+        let loadingVC = DishRecommendViewController()
+            navigationController?.pushViewController(loadingVC, animated: true)
+
+            Task {
+                let dishNames = await generativeAIModel()
+                var dishImages: [String: String] = [:]
+                let group = DispatchGroup()
+
+                for dishName in dishNames {
+                    group.enter()
+                    CustomSearchJSONAPIManager.shared.searchJSONImage(api: .search(query: dishName)) { result in
+                        switch result {
+                        case .success(let searchResult):
+                            print(searchResult)
+                            if let imageUrl = searchResult.items.first?.pagemap.cseImage.first?.src {
+                                dishImages[dishName] = imageUrl
+                            } else {
+                                print("No image found for \(dishName)")
+                            }
+                        case .failure(let error):
+                            print("Error fetching image for \(dishName): \(error.localizedDescription)")
+                        }
+                        group.leave()
+                    }
+                }
+
+                group.notify(queue: .main) {
+                    // 모든 이미지 URL이 dishImages에 저장된 후에 handleNetworkResponse 호출
+                    loadingVC.handleNetworkResponse(result: dishImages)
+                }
+            }
+    }
+    
+    func generativeAIModel() async -> [String] {
+        let model = GenerativeModel(name: "gemini-pro", apiKey: GeminiAPIKey.default)
+        let ingredientsString = getAllSelectedIngredients()
+        let prompt = "단답형으로만 대답해. 다음 재료들로 만들수있는 유명한 음식을 5가지 미만으로 '-'을 이용해서 나열해: \(ingredientsString)."
+
+        do {
+            let response = try await model.generateContent(prompt)
+            if let text = response.text {
+                print("text: \(text)")
+                let dishesArray = text
+                    .split(separator: "\n")
+                    .map { String($0).trimmingCharacters(in: CharacterSet(charactersIn: "- ").union(.whitespaces)) }
+                return dishesArray
+            }
+        } catch {
+            print("API call failed: \(error)")
+            return []
+        }
+        return []
     }
     
     func configViewControllers() {
-        let categories = [
-            ("전체", allCategory),
+        // 개별 카테고리 배열
+        let categoriesData = [
             ("채소", vegetable),
             ("과일", fruits),
             ("정육/계란", meat),
@@ -51,10 +130,19 @@ class AddIngredientViewController: TabmanViewController {
             ("베이커리", bread),
             ("기타", etc)
         ]
+
+        // 모든 카테고리의 합집합을 계산하여 allCategory를 생성
+        let allCategory = Set(categoriesData.flatMap { $0.1 }).sorted(by: { $0.ingredientName < $1.ingredientName })
+
+        // '전체' 카테고리를 포함하여 viewControllers 배열 구성
+        var categories = [("전체", allCategory)]
+        categories.append(contentsOf: categoriesData)
+
         viewControllers = categories.map { title, ingredients in
             IngredientsViewController(ingredients: ingredients, title: title)
         }
     }
+
 
     
     func configTabman() {
@@ -74,14 +162,33 @@ class AddIngredientViewController: TabmanViewController {
         addBar(bar, dataSource: self, at: .top)
     }
     
+//    func configTapGesture() {
+//        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+//        tapGesture.cancelsTouchesInView = false
+//        view.addGestureRecognizer(tapGesture)
+//    }
+//
+//    @objc func dismissKeyboard() {
+//        view.endEditing(true)
+//    }
 }
 
 extension AddIngredientViewController: UISearchBarDelegate {
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-    }
     
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        searchBar.text = ""
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        // 현재 활성화된 탭의 ViewController를 찾습니다.
+        if let currentIndex = self.currentIndex,
+           let ingredientVC = viewControllers[currentIndex] as? IngredientsViewController {
+            print("currentIdx: \(currentIndex)")
+            if searchText.isEmpty {
+                ingredientVC.resetFilteredContent()
+            } else {
+                ingredientVC.filterContentForSearchText(searchText)
+            }
+        }
+    }
+
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
     }
 }
