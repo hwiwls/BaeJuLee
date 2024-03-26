@@ -25,6 +25,7 @@ class AddIngredientViewController: TabmanViewController {
         configViewControllers()
         configTabman()
 //        configTapGesture()
+        configNav()
     }
     
     func configSearchBar() {
@@ -147,6 +148,12 @@ class AddIngredientViewController: TabmanViewController {
         }
         bar.indicator.tintColor = .pointGreen
         addBar(bar, dataSource: self, at: .top)
+    }
+    
+    func configNav() {
+        navigationItem.hidesBackButton = true
+           
+        navigationController?.interactivePopGestureRecognizer?.isEnabled = true
     }
     
 //    func configTapGesture() {
