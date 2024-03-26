@@ -6,6 +6,9 @@
 //
 
 import UIKit
+import SnapKit
+import Then
+import TextFieldEffects
 
 final class OrderSpentView: BaseView {
     private let orderSpentTitleLabel = UILabel().then {
@@ -23,17 +26,15 @@ final class OrderSpentView: BaseView {
         $0.textAlignment = .left
     }
     
-    let orderSpentTextField = UITextField().then {
-        $0.placeholder = "금액"
-        $0.backgroundColor = .clear
-        $0.textColor = .black
+    let orderSpentTextField = HoshiTextField(frame: .zero).then {
         $0.keyboardType = .numberPad
-        $0.setPlaceholder(color: .pointRegularLightGray)
+        $0.borderActiveColor = .pointGreen
+        $0.borderInactiveColor = .pointRegularLightGray
+        $0.placeholder = "금액"
+        $0.placeholderColor = .pointRegularLightGray
+        $0.textColor = .black
     }
     
-    private let textfieldBorderView = UIView().then {
-        $0.backgroundColor = .pointRegularLightGray
-    }
     
     var completeBtn = UIButton().then {
         $0.isEnabled = false
@@ -66,7 +67,6 @@ final class OrderSpentView: BaseView {
             orderSpentTitleLabel,
             orderSpentsubtitleLabel,
             orderSpentTextField,
-            textfieldBorderView,
             completeBtn
         ])
     }
@@ -85,14 +85,9 @@ final class OrderSpentView: BaseView {
         orderSpentTextField.snp.makeConstraints {
             $0.top.equalTo(orderSpentsubtitleLabel.snp.bottom).offset(48)
             $0.leading.trailing.equalToSuperview().inset(20)
-            $0.height.equalTo(40)
+            $0.height.equalTo(60)
         }
         
-        textfieldBorderView.snp.makeConstraints {
-            $0.top.equalTo(orderSpentTextField.snp.bottom)
-            $0.leading.trailing.equalToSuperview().inset(20)
-            $0.height.equalTo(1)
-        }
         
         completeBtn.snp.makeConstraints {
             $0.leading.trailing.equalToSuperview().inset(20)

@@ -90,6 +90,7 @@ iOSInjectionProject/
 
 GenerativeAI-Info.plist
 CustomSearchJSON-info
+GoogleService-Info.plist
 
 # End of https://www.toptal.com/developers/gitignore/api/swift
 Secrets.xcconfig
