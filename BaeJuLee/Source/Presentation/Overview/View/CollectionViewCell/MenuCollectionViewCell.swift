@@ -16,12 +16,25 @@ class MenuCollectionViewCell: BaseCollectionViewCell {
         $0.layer.masksToBounds = true
     }
     
-    private let titleLabel = UILabel().then {
-        $0.text = "AI에게 음식\n추천받기"
-        $0.textColor = .black
-        $0.textAlignment = .left
-        $0.font = .boldSystemFont(ofSize: 16)
+    let titleLabel = UILabel().then {
+        let paragraphStyle = NSMutableParagraphStyle()
+            paragraphStyle.lineSpacing = 4
+        let attributedString = NSMutableAttributedString(
+            string: "AI에게 음식\n추천받기",
+            attributes: [
+                .paragraphStyle: paragraphStyle,
+                .font: UIFont.boldSystemFont(ofSize: 16),
+                .foregroundColor: UIColor.black
+            ]
+        )
+
+        $0.attributedText = attributedString
         $0.numberOfLines = 0
+    }
+    
+    let menuImageView = UIImageView().then {
+        $0.image = UIImage(systemName: "star")
+        $0.contentMode = .scaleAspectFit
     }
     
     override init(frame: CGRect) {
@@ -42,7 +55,8 @@ class MenuCollectionViewCell: BaseCollectionViewCell {
         self.addSubview(containerView)
         
         containerView.addSubviews([
-            titleLabel
+            titleLabel,
+            menuImageView
         ])
     }
     
@@ -53,6 +67,11 @@ class MenuCollectionViewCell: BaseCollectionViewCell {
         
         titleLabel.snp.makeConstraints {
             $0.top.leading.equalToSuperview().offset(16)
+        }
+        
+        menuImageView.snp.makeConstraints {
+            $0.trailing.bottom.equalToSuperview().inset(12)
+            $0.size.equalTo(48)
         }
     }
     

@@ -54,7 +54,7 @@ final class CustomTabBarController: UITabBarController {
         )
         
         overviewViewController.tabBarItem = UITabBarItem(
-            title: nil,
+            title: "홈",
             image: UIImage(systemName: "house")?
                 .withRenderingMode(.alwaysOriginal)
                 .withTintColor(.lightGray),
@@ -79,7 +79,7 @@ final class CustomTabBarController: UITabBarController {
         )
         
         addIngredintViewController.tabBarItem = UITabBarItem(
-            title: nil,
+            title: "재료입력",
             image: UIImage(systemName: "fork.knife")?
                 .withRenderingMode(.alwaysOriginal)
                 .withTintColor(.lightGray),
@@ -97,10 +97,10 @@ final class CustomTabBarController: UITabBarController {
         
         let tabItems = [
             overviewViewController,
-            calendarViewController,
+//            calendarViewController,
             addMealViewController,
             addIngredintViewController,
-            likeViewController
+//            likeViewController
         ]
         
         setViewControllers(tabItems, animated: true)

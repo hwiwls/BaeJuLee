@@ -139,10 +139,54 @@ extension OverviewViewController: UICollectionViewDelegate, UICollectionViewData
                         
                 return orderCntCell
             case .menu:
+                switch indexPath.item {
+                case 0:
+                    menuCell.menuImageView.image = UIImage(named: "Light")
+                    menuCell.titleLabel.text = "AI에게\n추천받는\n요리"
+                    menuCell.menuImageView.snp.remakeConstraints {
+                        $0.trailing.bottom.equalToSuperview().inset(20)
+                        $0.size.equalTo(80)
+                    }
+                case 1:
+                    menuCell.menuImageView.image = UIImage(named: "Charts")
+                    menuCell.titleLabel.text = "통계"
+                case 2:
+                    menuCell.menuImageView.image = UIImage(named: "Calendar")
+                    menuCell.titleLabel.text = "기록 확인하기"
+                default:
+                    menuCell.titleLabel.text = "기타"
+                }
                 return menuCell
             }
         }
         return UICollectionViewCell()
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        if let sectionType = OverviewCompositionalLayout(rawValue: indexPath.section) {
+            switch sectionType {
+            case .calendar:
+                break
+            case .saving:
+                break
+            case .orderCnt:
+                break
+            case .menu:
+                switch indexPath.item {
+                case 0:
+                    let vc = AddIngredientViewController()
+                    self.navigationController?.pushViewController(vc, animated: true)
+                case 1:
+                    self.view.makeToast("다음 업데이트 때 만나요!", duration: 2.0, position: .bottom)
+                case 2:
+                    self.view.makeToast("다음 업데이트 때 만나요!", duration: 2.0, position: .bottom)
+                default:
+                    break
+                }
+            }
+        }
     }
 }
 
