@@ -51,40 +51,6 @@ class AddIngredientViewController: TabmanViewController {
         SelectedIngredientsManager.shared.selectedIngredients = []
     }
     
-    
-//    @objc func triggergenerativeAIModelCall() {
-//        let loadingVC = DishRecommendViewController()
-//            navigationController?.pushViewController(loadingVC, animated: true)
-//
-//            Task {
-//                let dishNames = await generativeAIModel()
-//                var dishImages: [String: String] = [:]
-//                let group = DispatchGroup()
-//
-//                for dishName in dishNames {
-//                    group.enter()
-//                    CustomSearchJSONAPIManager.shared.searchJSONImage(api: .search(query: dishName)) { result in
-//                        switch result {
-//                        case .success(let searchResult):
-//                            if let imageUrl = searchResult.items.first?.pagemap.cseImage.first?.src {
-//                                dishImages[dishName] = imageUrl
-//                            } else {
-//                                print("No image found for \(dishName)")
-//                            }
-//                        case .failure(let error):
-//                            print("Error fetching image for \(dishName): \(error)")
-//                        }
-//                        group.leave()
-//                    }
-//                }
-//
-//                group.notify(queue: .main) {
-//                    // 모든 이미지 URL이 dishImages에 저장된 후에 handleNetworkResponse 호출
-//                    loadingVC.handleNetworkResponse(result: dishImages)
-//                }
-//            }
-//    }
-    
     @objc func triggergenerativeAIModelCall() {
         let loadingVC = DishRecommendViewController()
         navigationController?.pushViewController(loadingVC, animated: true)

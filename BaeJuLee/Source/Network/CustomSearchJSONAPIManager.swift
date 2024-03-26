@@ -12,14 +12,14 @@ class CustomSearchJSONAPIManager {
     static let shared = CustomSearchJSONAPIManager()
 
     private var apiKeys = [
-        Bundle.main.CustomSearchJSONAPIKey,
         Bundle.main.CustomSearchJSONAPIKey2,
+        Bundle.main.CustomSearchJSONAPIKey,
         Bundle.main.CustomSearchJSONAPIKey3,
         Bundle.main.CustomSearchJSONAPIKey4
     ]
     private var cxs = [
-        Bundle.main.CustomSearchJSONCx,
         Bundle.main.CustomSearchJSONCx2,
+        Bundle.main.CustomSearchJSONCx,
         Bundle.main.CustomSearchJSONCx3,
         Bundle.main.CustomSearchJSONCx4
     ]
