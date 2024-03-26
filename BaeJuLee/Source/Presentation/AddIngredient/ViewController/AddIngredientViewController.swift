@@ -57,8 +57,8 @@ class AddIngredientViewController: TabmanViewController {
             
         let count = UserDefaultsManager.shared.getRecommendationCount()
         
-        if count >= 3 {
-            self.view.makeToast("하루 추천 제한을 초과했습니다. 내일 다시 시도해주세요.")
+        if count >= 5 {
+            self.view.makeToast("하루 추천 제한을 초과했습니다.\n내일 다시 시도해주세요.")
             return
         }
         
