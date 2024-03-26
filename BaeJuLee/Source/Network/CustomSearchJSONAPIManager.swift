@@ -11,8 +11,18 @@ import Alamofire
 class CustomSearchJSONAPIManager {
     static let shared = CustomSearchJSONAPIManager()
 
-    private var apiKeys = [Bundle.main.CustomSearchJSONAPIKey, Bundle.main.CustomSearchJSONAPIKey2, Bundle.main.CustomSearchJSONAPIKey3]
-    private var cxs = [Bundle.main.CustomSearchJSONCx, Bundle.main.CustomSearchJSONCx2, Bundle.main.CustomSearchJSONCx3]
+    private var apiKeys = [
+        Bundle.main.CustomSearchJSONAPIKey,
+        Bundle.main.CustomSearchJSONAPIKey2,
+        Bundle.main.CustomSearchJSONAPIKey3,
+        Bundle.main.CustomSearchJSONAPIKey4
+    ]
+    private var cxs = [
+        Bundle.main.CustomSearchJSONCx,
+        Bundle.main.CustomSearchJSONCx2,
+        Bundle.main.CustomSearchJSONCx3,
+        Bundle.main.CustomSearchJSONCx4
+    ]
 
     func searchJSONImage(query: String, completionHandler: @escaping (Result<Search, AFError>) -> Void) {
         attemptSearch(query: query, apiKeyIndex: 0, completionHandler: completionHandler)
