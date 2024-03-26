@@ -64,6 +64,7 @@
 		2E5F643E2BA368EC004346E0 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5F643D2BA368EC004346E0 /* BaseCollectionViewCell.swift */; };
 		2E6310442BB2F476001FF215 /* OverviewCollectionFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6310432BB2F476001FF215 /* OverviewCollectionFooterView.swift */; };
 		2E6310472BB30C0F001FF215 /* CustomFSCalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6310462BB30C0F001FF215 /* CustomFSCalendarCell.swift */; };
+		2E63104B2BB31C00001FF215 /* PrivacyPolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E63104A2BB31C00001FF215 /* PrivacyPolicyViewController.swift */; };
 		2E7A79CD2BB2A1040046998F /* OverviewCollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7A79CC2BB2A1040046998F /* OverviewCollectionHeaderView.swift */; };
 		2E88CA5C2BA1D4BB0070F6C3 /* SavingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E88CA5B2BA1D4BB0070F6C3 /* SavingCollectionViewCell.swift */; };
 		2E88CA5E2BA1D4C40070F6C3 /* OrderCntCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E88CA5D2BA1D4C40070F6C3 /* OrderCntCollectionViewCell.swift */; };
@@ -138,6 +139,7 @@
 		2E5F643D2BA368EC004346E0 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
 		2E6310432BB2F476001FF215 /* OverviewCollectionFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewCollectionFooterView.swift; sourceTree = "<group>"; };
 		2E6310462BB30C0F001FF215 /* CustomFSCalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFSCalendarCell.swift; sourceTree = "<group>"; };
+		2E63104A2BB31C00001FF215 /* PrivacyPolicyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyViewController.swift; sourceTree = "<group>"; };
 		2E7A79CC2BB2A1040046998F /* OverviewCollectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewCollectionHeaderView.swift; sourceTree = "<group>"; };
 		2E88CA5B2BA1D4BB0070F6C3 /* SavingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingCollectionViewCell.swift; sourceTree = "<group>"; };
 		2E88CA5D2BA1D4C40070F6C3 /* OrderCntCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCntCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -363,6 +365,7 @@
 			children = (
 				2E14CDE02B9E0B28007A0A11 /* Base */,
 				2E14CDE12B9E0B35007A0A11 /* TabBar */,
+				2E6310482BB31B72001FF215 /* PrivacyPolicy */,
 				2E14CDF82B9E174C007A0A11 /* Overview */,
 				2ED30DCB2B9F59EF00786ACE /* Onboarding */,
 				2E14CE082B9E348F007A0A11 /* AddMeal */,
@@ -568,7 +571,7 @@
 			isa = PBXGroup;
 			children = (
 				2E6310452BB30BFE001FF215 /* FSCalendarCell */,
-				2E7A79CB2BB2A0D80046998F /* CollectionViewFooter */,
+				2E7A79CB2BB2A0D80046998F /* CollectionViewHeaderAndFooter */,
 				2E88CA582BA1C55C0070F6C3 /* CollectionViewCell */,
 			);
 			path = View;
@@ -668,13 +671,29 @@
 			path = FSCalendarCell;
 			sourceTree = "<group>";
 		};
-		2E7A79CB2BB2A0D80046998F /* CollectionViewFooter */ = {
+		2E6310482BB31B72001FF215 /* PrivacyPolicy */ = {
+			isa = PBXGroup;
+			children = (
+				2E6310492BB31BEB001FF215 /* ViewController */,
+			);
+			path = PrivacyPolicy;
+			sourceTree = "<group>";
+		};
+		2E6310492BB31BEB001FF215 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2E63104A2BB31C00001FF215 /* PrivacyPolicyViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		2E7A79CB2BB2A0D80046998F /* CollectionViewHeaderAndFooter */ = {
 			isa = PBXGroup;
 			children = (
 				2E7A79CE2BB2A2D70046998F /* Header */,
 				2E7A79CF2BB2A2DD0046998F /* Footer */,
 			);
-			path = CollectionViewFooter;
+			path = CollectionViewHeaderAndFooter;
 			sourceTree = "<group>";
 		};
 		2E7A79CE2BB2A2D70046998F /* Header */ = {
@@ -910,6 +929,7 @@
 				2E14CDE92B9E14AA007A0A11 /* CustomTabBarController.swift in Sources */,
 				2E88CA642BA1DE7F0070F6C3 /* UserRepository.swift in Sources */,
 				2ED30DD42B9F5D5500786ACE /* OrderCountView.swift in Sources */,
+				2E63104B2BB31C00001FF215 /* PrivacyPolicyViewController.swift in Sources */,
 				2E11AB312BAF51BB009E5DEC /* Search.swift in Sources */,
 				2E1005B22B99838800B9BED1 /* SceneDelegate.swift in Sources */,
 				2E7A79CD2BB2A1040046998F /* OverviewCollectionHeaderView.swift in Sources */,

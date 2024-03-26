@@ -17,23 +17,6 @@ enum OverviewCompositionalLayout: Int, CaseIterable {
         return allCases.count
     }
     
-//    static func create() -> UICollectionViewCompositionalLayout {
-//        return UICollectionViewCompositionalLayout { section, environment in
-//            guard let sectionType = OverviewCompositionalLayout(rawValue: section) else { return nil }
-//            switch sectionType {
-//            case .calendar:
-//                return createStyleCalendarSection()
-//            case .saving:
-//                return createStyleSavingSection()
-//            case .orderCnt:
-//                return createStyleOrderCntSection()
-//            case .menu:
-//                return createStyleMenuSection()
-//            }
-//           
-//        }
-//    }
-    
     static func create() -> UICollectionViewCompositionalLayout {
         return UICollectionViewCompositionalLayout { section, environment in
             guard let sectionType = OverviewCompositionalLayout(rawValue: section) else { return nil }
@@ -58,7 +41,7 @@ enum OverviewCompositionalLayout: Int, CaseIterable {
 //            }
 
             if section == OverviewCompositionalLayout.count - 1 {
-                let footerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(50))
+                let footerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(130))
                 let footer = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: footerSize, elementKind: UICollectionView.elementKindSectionFooter, alignment: .bottom)
                 sectionLayout?.boundarySupplementaryItems.append(footer)
             }

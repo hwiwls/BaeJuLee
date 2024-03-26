@@ -14,6 +14,10 @@ protocol SavingCollectionViewCellDelegate: AnyObject {
     func didTapRecordButton()
 }
 
+protocol OverviewCollectionFooterViewDelegate: AnyObject {
+    func privacyPolicyButtonDidTap()
+}
+
 final class OverviewViewController: BaseViewController {
     
     private var viewModel = OverviewViewModel()
@@ -159,12 +163,8 @@ extension OverviewViewController: UICollectionViewDelegate, UICollectionViewData
                     menuCell.menuImageView.image = UIImage(named: "Charts")
                     menuCell.titleLabel.text = "통계"
                 case 2:
-                    menuCell.menuImageView.image = UIImage(named: "Calendar")
+                    menuCell.menuImageView.image = UIImage(named: "HomeCalendar")
                     menuCell.titleLabel.text = "기록 확인하기"
-                    menuCell.menuImageView.snp.remakeConstraints {
-                        $0.trailing.bottom.equalToSuperview().inset(4)
-                        $0.size.equalTo(60)
-                    }
                 default:
                     menuCell.titleLabel.text = "기타"
                 }
@@ -202,39 +202,37 @@ extension OverviewViewController: UICollectionViewDelegate, UICollectionViewData
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-           // Header
+           
            if kind == UICollectionView.elementKindSectionHeader, indexPath.section == 0 {
                let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: OverviewCollectionHeaderView.identifier, for: indexPath) as! OverviewCollectionHeaderView
-               // Configure your header view
+               
                headerView.configure()
                return headerView
            }
-           // Footer
            else if kind == UICollectionView.elementKindSectionFooter, indexPath.section == OverviewCompositionalLayout.count - 1 {
                let footerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: OverviewCollectionFooterView.identifier, for: indexPath) as! OverviewCollectionFooterView
-               // Configure your footer view
+               
+               footerView.delegate = self
                footerView.configure()
                return footerView
            }
            
-           // Return a default view in case none of the above conditions meet
            return UICollectionReusableView()
        }
        
        func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-           // Return the header size for the first section
+           
            if section == 0 {
-               return CGSize(width: collectionView.bounds.width, height: 50) // Adjust your header height here
+               return CGSize(width: collectionView.bounds.width, height: 50)
            }
-           return .zero // No header for other sections
+           return .zero
        }
        
        func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
-           // Return the footer size for the last section
            if section == OverviewCompositionalLayout.count - 1 {
-               return CGSize(width: collectionView.bounds.width, height: 50) // Adjust your footer height here
+               return CGSize(width: collectionView.bounds.width, height: 130)
            }
-           return .zero // No footer for other sections
+           return .zero
        }
    
 }
@@ -277,5 +275,12 @@ extension OverviewViewController: SavingCollectionViewCellDelegate {
         let addMealVC = AddMealViewController()
         addMealVC.modalPresentationStyle = .fullScreen 
         present(addMealVC, animated: true, completion: nil)
+    }
+}
+
+extension OverviewViewController: OverviewCollectionFooterViewDelegate {
+    func privacyPolicyButtonDidTap() {
+        let privacyPolicyVC = PrivacyPolicyViewController() 
+        self.navigationController?.pushViewController(privacyPolicyVC, animated: true)
     }
 }
