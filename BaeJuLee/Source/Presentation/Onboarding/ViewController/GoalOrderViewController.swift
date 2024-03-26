@@ -47,7 +47,12 @@ final class GoalOrderViewController: BaseViewController {
         repository.updateUserOnboardingCompletion()
         
         let vc = CustomTabBarController()
-        self.navigationController?.pushViewController(vc, animated: true)
+        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+              let sceneDelegate = windowScene.delegate as? SceneDelegate else { return }
+        
+        UIView.transition(with: sceneDelegate.window!, duration: 0.3, options: .transitionCrossDissolve, animations: {
+            sceneDelegate.window?.rootViewController = vc
+        })
     }
     
     override func configHierarchy() {

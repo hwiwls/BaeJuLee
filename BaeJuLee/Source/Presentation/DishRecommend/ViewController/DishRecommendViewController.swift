@@ -32,12 +32,10 @@ final class DishRecommendViewController: BaseViewController {
     }
 
     @objc private func backButtonTapped() {
-        // 뒤로 가기 동작 구현
         navigationController?.popViewController(animated: true)
     }
     
     override func configView() {
-        // Lottie 애니메이션 설정
         animationView = LottieAnimationView(name: "Animation - 1711202389333")
         animationView.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
         animationView.center = view.center
@@ -94,7 +92,7 @@ extension DishRecommendViewController: UICollectionViewDelegate, UICollectionVie
         if let collectionView = scrollView as? UICollectionView {
             for cell in collectionView.visibleCells {
                 let baseOffset = cell.frame.midX - center.x
-                let scale = max(1 - abs(baseOffset / scrollView.bounds.width), 0.75) // 최소 스케일을 0.75로 설정
+                let scale = max(1 - abs(baseOffset / scrollView.bounds.width), 0.75)
                 cell.transform = CGAffineTransform(scaleX: scale, y: scale)
             }
         }

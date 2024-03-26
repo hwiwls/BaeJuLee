@@ -32,6 +32,11 @@ final class AddMealViewController: BaseViewController {
     // 편집 중인 텍스트 필드: dateTextField 입력시 완료 버튼 활성화를 피하려고
     private var activeTextField: UITextField?
     
+    let closeButton = UIButton().then {
+        $0.setImage(UIImage(systemName: "xmark"), for: .normal)
+        $0.tintColor = .black
+    }
+    
     let datePicker = UIDatePicker().then {
         $0.datePickerMode = .date
         $0.preferredDatePickerStyle = .wheels
@@ -114,8 +119,13 @@ final class AddMealViewController: BaseViewController {
         addMealDetailView.homeCookedButton.addTarget(self, action: #selector(mealTypeButtonPressed), for: .touchUpInside)
         addMealDetailView.deliveryButton.addTarget(self, action: #selector(mealTypeButtonPressed), for: .touchUpInside)
         addMealDetailView.diningOutButton.addTarget(self, action: #selector(mealTypeButtonPressed), for: .touchUpInside)
+        
+        closeButton.addTarget(self, action: #selector(closeButtonTapped), for: .touchUpInside)
     }
 
+    @objc func closeButtonTapped() {
+        dismiss(animated: true, completion: nil)
+    }
     
     @objc private func saveMealData() {
         viewModel.saveMealData(mealName: addMealDetailView.mealNameTextField.text, mealPrice: addMealDetailView.mealPriceTextField.text)
@@ -125,6 +135,7 @@ final class AddMealViewController: BaseViewController {
     
     override func configHierarchy() {
         view.addSubviews([
+            closeButton,
             addMealDateView,
             addMealDetailView,
             completeButton
@@ -132,9 +143,15 @@ final class AddMealViewController: BaseViewController {
     }
     
     override func configLayout() {
+        closeButton.snp.makeConstraints {
+            $0.top.equalTo(view.safeAreaLayoutGuide)
+            $0.leading.equalTo(view.safeAreaLayoutGuide.snp.leading).offset(20)
+            $0.width.height.equalTo(20)
+        }
+        
         addMealDateView.snp.makeConstraints {
             $0.height.equalTo(60)
-            $0.top.equalTo(view.safeAreaLayoutGuide).offset(36)
+            $0.top.equalTo(closeButton.snp.bottom).offset(32)
             $0.leading.trailing.equalTo(view.safeAreaLayoutGuide).inset(20)
         }
         

@@ -97,10 +97,10 @@ final class CustomTabBarController: UITabBarController {
         
         let tabItems = [
             overviewViewController,
-            calendarViewController,
+//            calendarViewController,
             addMealViewController,
             addIngredintViewController,
-            likeViewController
+//            likeViewController
         ]
         
         setViewControllers(tabItems, animated: true)
@@ -121,7 +121,7 @@ final class CustomTabBarController: UITabBarController {
     @objc func middleButtonAction(sender: UIButton) {
         let vc = AddMealViewController()
         vc.modalPresentationStyle = .fullScreen
-        present(vc, animated:  true)
+        present(vc, animated: true)
     }
 }
 

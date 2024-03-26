@@ -25,6 +25,7 @@ class AddIngredientViewController: TabmanViewController {
         configViewControllers()
         configTabman()
 //        configTapGesture()
+        configNav()
     }
     
     func configSearchBar() {
@@ -147,6 +148,24 @@ class AddIngredientViewController: TabmanViewController {
         }
         bar.indicator.tintColor = .pointGreen
         addBar(bar, dataSource: self, at: .top)
+    }
+    
+    func configNav() {
+        navigationItem.hidesBackButton = true
+        navigationController?.interactivePopGestureRecognizer?.isEnabled = true
+        
+        // 커스텀 버튼 생성
+        let customButton = UIButton(type: .system)
+        customButton.setTitle("완료", for: .normal)
+        customButton.setTitleColor(.white, for: .normal)
+        customButton.backgroundColor = .pointGreen
+        customButton.layer.cornerRadius = 15
+        customButton.titleLabel?.font = .boldSystemFont(ofSize: 14)
+        customButton.frame = CGRect(x: 0, y: 0, width: 60, height: 30)
+        customButton.addTarget(self, action: #selector(triggergenerativeAIModelCall), for: .touchUpInside)
+
+        let doneItem = UIBarButtonItem(customView: customButton)
+        navigationItem.rightBarButtonItem = doneItem
     }
     
 //    func configTapGesture() {

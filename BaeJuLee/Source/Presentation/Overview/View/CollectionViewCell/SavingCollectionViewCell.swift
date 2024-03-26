@@ -10,10 +10,14 @@ import SnapKit
 import Then
 
 final class SavingCollectionViewCell: BaseCollectionViewCell {
+    
+    weak var delegate: SavingCollectionViewCellDelegate?
+    
     private var containerView = UIView().then {
         $0.backgroundColor = .white
         $0.layer.cornerRadius = 10
         $0.layer.masksToBounds = true
+        $0.isUserInteractionEnabled = true
     }
     
     let savingLabel = UILabel().then {
@@ -22,7 +26,7 @@ final class SavingCollectionViewCell: BaseCollectionViewCell {
         $0.font = .boldSystemFont(ofSize: 18)
         $0.numberOfLines = 2
         let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.lineSpacing = 12
+        paragraphStyle.lineSpacing = 8
         let attributedString = NSMutableAttributedString(string: $0.text ?? "")
         attributedString.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragraphStyle, range: NSMakeRange(0, attributedString.length))
         $0.attributedText = attributedString
@@ -39,6 +43,7 @@ final class SavingCollectionViewCell: BaseCollectionViewCell {
         $0.setTitle("오늘 식사 기록하기", for: .normal)
         $0.layer.cornerRadius = 8
         $0.clipsToBounds = true
+        $0.isUserInteractionEnabled = true
         $0.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
     }
     
@@ -47,10 +52,16 @@ final class SavingCollectionViewCell: BaseCollectionViewCell {
         backgroundColor = .clear
         
         setupLayout()
+        recordBtn.addTarget(self, action: #selector(recordBtnTapped), for: .touchUpInside)
+    }
+    
+    @objc func recordBtnTapped() {
+        print("클릭")
+        delegate?.didTapRecordButton()
     }
     
     override func configHierarchy() {
-        self.addSubview(containerView)
+        self.contentView.addSubview(containerView)
         containerView.addSubviews([
             savingLabel,
             riceImageView,
@@ -64,18 +75,18 @@ final class SavingCollectionViewCell: BaseCollectionViewCell {
         }
         
         savingLabel.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(30)
+            $0.top.equalToSuperview().offset(24)
             $0.centerX.equalToSuperview()
         }
         
         riceImageView.snp.makeConstraints {
-            $0.size.equalTo(100)
-            $0.top.equalTo(savingLabel.snp.bottom)
+            $0.size.equalTo(92)
+            $0.top.equalTo(savingLabel.snp.bottom).offset(4)
             $0.centerX.equalToSuperview()
         }
         
         recordBtn.snp.makeConstraints {
-            $0.top.equalTo(riceImageView.snp.bottom).offset(20)
+            $0.top.equalTo(riceImageView.snp.bottom).offset(16)
             $0.centerX.equalToSuperview()
             $0.height.equalTo(35)
             $0.width.equalTo(150)
