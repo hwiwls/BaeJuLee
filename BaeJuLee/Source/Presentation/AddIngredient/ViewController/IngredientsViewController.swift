@@ -30,7 +30,9 @@ final class IngredientsViewController: BaseViewController {
 
         NotificationCenter.default.addObserver(self, selector: #selector(handleIngredientsChanged), name: .selectedIngredientsChanged, object: nil)
         
-        self.view.makeToast("재료를 입력하면 추천받을 수 있어요!", duration: 2.0, position: .center)
+        if self.title == "전체" {
+            self.view.makeToast("재료를 입력하면 추천받을 수 있어요!", duration: 2.0, position: .center)
+        }
     }
 
     @objc func handleIngredientsChanged() {

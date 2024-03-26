@@ -10,6 +10,7 @@ import Tabman
 import Pageboy
 import SnapKit
 import GoogleGenerativeAI
+import Toast
 
 class AddIngredientViewController: TabmanViewController {
 
@@ -44,39 +45,56 @@ class AddIngredientViewController: TabmanViewController {
         return ingredientsString
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+       
+        SelectedIngredientsManager.shared.selectedIngredients = []
+    }
     
     @objc func triggergenerativeAIModelCall() {
+        UserDefaultsManager.shared.resetRecommendationCountIfNeeded()
+            
+        let count = UserDefaultsManager.shared.getRecommendationCount()
+        
+        if count >= 3 {
+            self.view.makeToast("하루 추천 제한을 초과했습니다. 내일 다시 시도해주세요.")
+            return
+        }
+        
+        UserDefaultsManager.shared.incrementRecommendationCount()
+        
         let loadingVC = DishRecommendViewController()
-            navigationController?.pushViewController(loadingVC, animated: true)
+        navigationController?.pushViewController(loadingVC, animated: true)
 
-            Task {
-                let dishNames = await generativeAIModel()
-                var dishImages: [String: String] = [:]
-                let group = DispatchGroup()
+        Task {
+            let dishNames = await generativeAIModel()
+            var dishImages: [String: String] = [:]
+            let group = DispatchGroup()
 
-                for dishName in dishNames {
-                    group.enter()
-                    CustomSearchJSONAPIManager.shared.searchJSONImage(api: .search(query: dishName)) { result in
-                        switch result {
-                        case .success(let searchResult):
-                            if let imageUrl = searchResult.items.first?.pagemap.cseImage.first?.src {
-                                dishImages[dishName] = imageUrl
-                            } else {
-                                print("No image found for \(dishName)")
-                            }
-                        case .failure(let error):
-                            print("Error fetching image for \(dishName): \(error)")
+            for dishName in dishNames {
+                group.enter()
+                CustomSearchJSONAPIManager.shared.searchJSONImage(query: dishName) { result in
+                    switch result {
+                    case .success(let searchResult):
+                        if let imageUrl = searchResult.items.first?.pagemap.cseImage.first?.src {
+                            dishImages[dishName] = imageUrl
+                        } else {
+                            print("No image found for \(dishName)")
                         }
-                        group.leave()
+                    case .failure(let error):
+                        print("Error fetching image for \(dishName): \(error)")
                     }
-                }
-
-                group.notify(queue: .main) {
-                    // 모든 이미지 URL이 dishImages에 저장된 후에 handleNetworkResponse 호출
-                    loadingVC.handleNetworkResponse(result: dishImages)
+                    group.leave()
                 }
             }
+
+            group.notify(queue: .main) {
+                loadingVC.handleNetworkResponse(result: dishImages)
+            }
+        }
     }
+
     
     
     func generativeAIModel() async -> [String] {
