@@ -10,6 +10,7 @@ import Tabman
 import Pageboy
 import SnapKit
 import GoogleGenerativeAI
+import Toast
 
 class AddIngredientViewController: TabmanViewController {
 
@@ -52,6 +53,17 @@ class AddIngredientViewController: TabmanViewController {
     }
     
     @objc func triggergenerativeAIModelCall() {
+        UserDefaultsManager.shared.resetRecommendationCountIfNeeded()
+            
+        let count = UserDefaultsManager.shared.getRecommendationCount()
+        
+        if count >= 3 {
+            self.view.makeToast("하루 추천 제한을 초과했습니다. 내일 다시 시도해주세요.")
+            return
+        }
+        
+        UserDefaultsManager.shared.incrementRecommendationCount()
+        
         let loadingVC = DishRecommendViewController()
         navigationController?.pushViewController(loadingVC, animated: true)
 
@@ -62,7 +74,6 @@ class AddIngredientViewController: TabmanViewController {
 
             for dishName in dishNames {
                 group.enter()
-                // Update this line to match the updated method signature
                 CustomSearchJSONAPIManager.shared.searchJSONImage(query: dishName) { result in
                     switch result {
                     case .success(let searchResult):
@@ -79,7 +90,6 @@ class AddIngredientViewController: TabmanViewController {
             }
 
             group.notify(queue: .main) {
-                // 모든 이미지 URL이 dishImages에 저장된 후에 handleNetworkResponse 호출
                 loadingVC.handleNetworkResponse(result: dishImages)
             }
         }
