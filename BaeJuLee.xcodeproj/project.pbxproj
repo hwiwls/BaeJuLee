@@ -62,6 +62,9 @@
 		2E5F643A2BA2D464004346E0 /* OverviewCompositionalLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5F64392BA2D464004346E0 /* OverviewCompositionalLayout.swift */; };
 		2E5F643C2BA368D7004346E0 /* CalendarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5F643B2BA368D7004346E0 /* CalendarCollectionViewCell.swift */; };
 		2E5F643E2BA368EC004346E0 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5F643D2BA368EC004346E0 /* BaseCollectionViewCell.swift */; };
+		2E6310442BB2F476001FF215 /* OverviewCollectionFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6310432BB2F476001FF215 /* OverviewCollectionFooterView.swift */; };
+		2E6310472BB30C0F001FF215 /* CustomFSCalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6310462BB30C0F001FF215 /* CustomFSCalendarCell.swift */; };
+		2E7A79CD2BB2A1040046998F /* OverviewCollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7A79CC2BB2A1040046998F /* OverviewCollectionHeaderView.swift */; };
 		2E88CA5C2BA1D4BB0070F6C3 /* SavingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E88CA5B2BA1D4BB0070F6C3 /* SavingCollectionViewCell.swift */; };
 		2E88CA5E2BA1D4C40070F6C3 /* OrderCntCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E88CA5D2BA1D4C40070F6C3 /* OrderCntCollectionViewCell.swift */; };
 		2E88CA602BA1D4CA0070F6C3 /* MenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E88CA5F2BA1D4CA0070F6C3 /* MenuCollectionViewCell.swift */; };
@@ -133,6 +136,9 @@
 		2E5F64392BA2D464004346E0 /* OverviewCompositionalLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewCompositionalLayout.swift; sourceTree = "<group>"; };
 		2E5F643B2BA368D7004346E0 /* CalendarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCollectionViewCell.swift; sourceTree = "<group>"; };
 		2E5F643D2BA368EC004346E0 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
+		2E6310432BB2F476001FF215 /* OverviewCollectionFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewCollectionFooterView.swift; sourceTree = "<group>"; };
+		2E6310462BB30C0F001FF215 /* CustomFSCalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFSCalendarCell.swift; sourceTree = "<group>"; };
+		2E7A79CC2BB2A1040046998F /* OverviewCollectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewCollectionHeaderView.swift; sourceTree = "<group>"; };
 		2E88CA5B2BA1D4BB0070F6C3 /* SavingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingCollectionViewCell.swift; sourceTree = "<group>"; };
 		2E88CA5D2BA1D4C40070F6C3 /* OrderCntCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCntCollectionViewCell.swift; sourceTree = "<group>"; };
 		2E88CA5F2BA1D4CA0070F6C3 /* MenuCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -561,6 +567,8 @@
 		2E14CE032B9E324E007A0A11 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2E6310452BB30BFE001FF215 /* FSCalendarCell */,
+				2E7A79CB2BB2A0D80046998F /* CollectionViewFooter */,
 				2E88CA582BA1C55C0070F6C3 /* CollectionViewCell */,
 			);
 			path = View;
@@ -650,6 +658,39 @@
 				2E5670552BA8674D002E0046 /* AddMealDetailTableViewCell.swift */,
 			);
 			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		2E6310452BB30BFE001FF215 /* FSCalendarCell */ = {
+			isa = PBXGroup;
+			children = (
+				2E6310462BB30C0F001FF215 /* CustomFSCalendarCell.swift */,
+			);
+			path = FSCalendarCell;
+			sourceTree = "<group>";
+		};
+		2E7A79CB2BB2A0D80046998F /* CollectionViewFooter */ = {
+			isa = PBXGroup;
+			children = (
+				2E7A79CE2BB2A2D70046998F /* Header */,
+				2E7A79CF2BB2A2DD0046998F /* Footer */,
+			);
+			path = CollectionViewFooter;
+			sourceTree = "<group>";
+		};
+		2E7A79CE2BB2A2D70046998F /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				2E7A79CC2BB2A1040046998F /* OverviewCollectionHeaderView.swift */,
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
+		2E7A79CF2BB2A2DD0046998F /* Footer */ = {
+			isa = PBXGroup;
+			children = (
+				2E6310432BB2F476001FF215 /* OverviewCollectionFooterView.swift */,
+			);
+			path = Footer;
 			sourceTree = "<group>";
 		};
 		2E88CA582BA1C55C0070F6C3 /* CollectionViewCell */ = {
@@ -861,6 +902,7 @@
 				2E019B562BACA757008A4054 /* RefrigeratorViewController.swift in Sources */,
 				2ED30DD82B9F6AA400786ACE /* Observable.swift in Sources */,
 				2E54D6182BA9A7ED00197C03 /* currentDateTimeInKorea.swift in Sources */,
+				2E6310472BB30C0F001FF215 /* CustomFSCalendarCell.swift in Sources */,
 				2E56D3482BA0243C002B0A6C /* OrderSpentView.swift in Sources */,
 				2EF17F142BAE0912004237D3 /* GeminiAPIKey.swift in Sources */,
 				2EBCA99A2BA8A35000BD8AE8 /* CalculateWeekRange.swift in Sources */,
@@ -870,6 +912,7 @@
 				2ED30DD42B9F5D5500786ACE /* OrderCountView.swift in Sources */,
 				2E11AB312BAF51BB009E5DEC /* Search.swift in Sources */,
 				2E1005B22B99838800B9BED1 /* SceneDelegate.swift in Sources */,
+				2E7A79CD2BB2A1040046998F /* OverviewCollectionHeaderView.swift in Sources */,
 				2E56D3462BA0242D002B0A6C /* OrderSpentViewController.swift in Sources */,
 				2E18909A2BB1B52200A4B90A /* DishRecommendView.swift in Sources */,
 				2E5F643E2BA368EC004346E0 /* BaseCollectionViewCell.swift in Sources */,
@@ -903,6 +946,7 @@
 				2E5670562BA8674D002E0046 /* AddMealDetailTableViewCell.swift in Sources */,
 				2E14CDFA2B9E1A66007A0A11 /* LikeViewController.swift in Sources */,
 				2E11AB332BAF5722009E5DEC /* CustomSearchJSONAPIManager.swift in Sources */,
+				2E6310442BB2F476001FF215 /* OverviewCollectionFooterView.swift in Sources */,
 				2E019B482BAC8CDF008A4054 /* Ingredient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

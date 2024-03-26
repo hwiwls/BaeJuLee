@@ -19,7 +19,8 @@ class CalendarCollectionViewCell: BaseCollectionViewCell {
         $0.appearance.todayColor = .pointGreen
         $0.appearance.titleTodayColor = .white
         $0.appearance.weekdayTextColor = .black
-        $0.appearance.selectionColor = .pointPink
+        $0.appearance.selectionColor = .none
+        $0.appearance.titleSelectionColor = .black
         $0.headerHeight = 0
         $0.weekdayHeight = 48
         $0.backgroundColor = .clear
@@ -28,7 +29,7 @@ class CalendarCollectionViewCell: BaseCollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .pointBackground
+        backgroundColor = .clear
     }
     
     required init?(coder: NSCoder) {

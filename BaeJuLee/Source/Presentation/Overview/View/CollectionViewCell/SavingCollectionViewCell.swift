@@ -26,7 +26,7 @@ final class SavingCollectionViewCell: BaseCollectionViewCell {
         $0.font = .boldSystemFont(ofSize: 18)
         $0.numberOfLines = 2
         let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.lineSpacing = 12
+        paragraphStyle.lineSpacing = 8
         let attributedString = NSMutableAttributedString(string: $0.text ?? "")
         attributedString.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragraphStyle, range: NSMakeRange(0, attributedString.length))
         $0.attributedText = attributedString
@@ -75,18 +75,18 @@ final class SavingCollectionViewCell: BaseCollectionViewCell {
         }
         
         savingLabel.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(30)
+            $0.top.equalToSuperview().offset(24)
             $0.centerX.equalToSuperview()
         }
         
         riceImageView.snp.makeConstraints {
-            $0.size.equalTo(100)
-            $0.top.equalTo(savingLabel.snp.bottom)
+            $0.size.equalTo(92)
+            $0.top.equalTo(savingLabel.snp.bottom).offset(4)
             $0.centerX.equalToSuperview()
         }
         
         recordBtn.snp.makeConstraints {
-            $0.top.equalTo(riceImageView.snp.bottom).offset(20)
+            $0.top.equalTo(riceImageView.snp.bottom).offset(16)
             $0.centerX.equalToSuperview()
             $0.height.equalTo(35)
             $0.width.equalTo(150)

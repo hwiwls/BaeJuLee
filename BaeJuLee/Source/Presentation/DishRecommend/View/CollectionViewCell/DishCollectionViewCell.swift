@@ -14,9 +14,6 @@ class DishCollectionViewCell: BaseCollectionViewCell {
     let containerView = UIView().then {
         $0.backgroundColor = .white
         $0.layer.cornerRadius = 20
-//        $0.layer.shadowColor = UIColor.gray.cgColor
-//        $0.layer.shadowOpacity = 0.2
-//        $0.layer.shadowRadius = 10
         $0.clipsToBounds = true
     }
     

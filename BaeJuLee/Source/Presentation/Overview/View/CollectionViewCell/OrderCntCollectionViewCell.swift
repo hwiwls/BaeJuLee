@@ -91,7 +91,7 @@ final class OrderCntCollectionViewCell: BaseCollectionViewCell {
         }
         
         progressView.snp.makeConstraints {
-            $0.top.equalTo(orderCntLabel.snp.bottom).offset(20)
+            $0.top.equalTo(orderCntLabel.snp.bottom).offset(16)
             $0.leading.equalTo(imageContainerView.snp.trailing).offset(16)
             $0.trailing.equalToSuperview().offset(-20)
         }

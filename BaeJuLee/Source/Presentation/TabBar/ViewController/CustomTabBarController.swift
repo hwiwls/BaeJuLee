@@ -54,7 +54,7 @@ final class CustomTabBarController: UITabBarController {
         )
         
         overviewViewController.tabBarItem = UITabBarItem(
-            title: "홈",
+            title: nil,
             image: UIImage(systemName: "house")?
                 .withRenderingMode(.alwaysOriginal)
                 .withTintColor(.lightGray),
@@ -79,7 +79,7 @@ final class CustomTabBarController: UITabBarController {
         )
         
         addIngredintViewController.tabBarItem = UITabBarItem(
-            title: "재료입력",
+            title: nil,
             image: UIImage(systemName: "fork.knife")?
                 .withRenderingMode(.alwaysOriginal)
                 .withTintColor(.lightGray),
