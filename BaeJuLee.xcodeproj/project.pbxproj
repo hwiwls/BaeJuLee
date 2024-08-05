@@ -48,6 +48,7 @@
 		2E18909A2BB1B52200A4B90A /* DishRecommendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1890992BB1B52200A4B90A /* DishRecommendView.swift */; };
 		2E28F3302BA49A7C00C0B1EB /* AddMealViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E28F32F2BA49A7C00C0B1EB /* AddMealViewModel.swift */; };
 		2E410F032BAB49E0008E3C24 /* OverviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E410F022BAB49E0008E3C24 /* OverviewViewModel.swift */; };
+		2E47C0402BB3940100354D34 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 2E47C03F2BB3940100354D34 /* PrivacyInfo.xcprivacy */; };
 		2E54D6182BA9A7ED00197C03 /* currentDateTimeInKorea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E54D6172BA9A7ED00197C03 /* currentDateTimeInKorea.swift */; };
 		2E5670512BA856A6002E0046 /* AddMealDateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5670502BA856A6002E0046 /* AddMealDateTableViewCell.swift */; };
 		2E5670542BA85A7E002E0046 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5670532BA85A7E002E0046 /* BaseTableViewCell.swift */; };
@@ -124,6 +125,7 @@
 		2E1890992BB1B52200A4B90A /* DishRecommendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishRecommendView.swift; sourceTree = "<group>"; };
 		2E28F32F2BA49A7C00C0B1EB /* AddMealViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMealViewModel.swift; sourceTree = "<group>"; };
 		2E410F022BAB49E0008E3C24 /* OverviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewViewModel.swift; sourceTree = "<group>"; };
+		2E47C03F2BB3940100354D34 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		2E54D6172BA9A7ED00197C03 /* currentDateTimeInKorea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = currentDateTimeInKorea.swift; sourceTree = "<group>"; };
 		2E5670502BA856A6002E0046 /* AddMealDateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMealDateTableViewCell.swift; sourceTree = "<group>"; };
 		2E5670532BA85A7E002E0046 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
@@ -296,6 +298,7 @@
 			children = (
 				2E14CDD82B9E0AAC007A0A11 /* Resources */,
 				2E14CDD92B9E0AB6007A0A11 /* Source */,
+				2E47C03F2BB3940100354D34 /* PrivacyInfo.xcprivacy */,
 			);
 			path = BaeJuLee;
 			sourceTree = "<group>";
@@ -902,6 +905,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2E1890912BB1A46500A4B90A /* GenerativeAI-Info.plist in Resources */,
+				2E47C0402BB3940100354D34 /* PrivacyInfo.xcprivacy in Resources */,
 				2E1005C42B99860100B9BED1 /* .gitignore in Resources */,
 				2E11AB292BAF1C5D009E5DEC /* Animation - 1711202389333.json in Resources */,
 				2EF5D10C2BA4A501006D2E9E /* Assets.xcassets in Resources */,

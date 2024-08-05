@@ -24,7 +24,7 @@ final class GoalOrderView: BaseView {
         $0.keyboardType = .numberPad
         $0.borderActiveColor = .pointGreen
         $0.borderInactiveColor = .pointRegularLightGray
-        $0.placeholder = "금액"
+        $0.placeholder = "횟수"
         $0.placeholderColor = .pointRegularLightGray
         $0.textColor = .black
     }

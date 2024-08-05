@@ -23,7 +23,10 @@ class DishRecommendView: BaseView {
         $0.textColor = .lightGray
     }
     
-    lazy var dishCollectionView = UICollectionView(frame: .zero, collectionViewLayout: configureCollectionViewLayout())
+    lazy var dishCollectionView = UICollectionView(frame: .zero, collectionViewLayout: configureCollectionViewLayout()).then {
+        $0.isPagingEnabled = false
+        $0.showsHorizontalScrollIndicator = false
+    }
 
     
     override init(frame: CGRect) {

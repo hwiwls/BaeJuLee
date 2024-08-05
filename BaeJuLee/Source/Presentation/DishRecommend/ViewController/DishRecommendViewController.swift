@@ -61,32 +61,21 @@ final class DishRecommendViewController: BaseViewController {
     
     // 네트워크 요청 결과 처리
     func handleNetworkResponse(result: [String: String]) {
-//        animationView.stop()
-//        animationView.isHidden = true
-//        dishView.isHidden = false
-//
-//        print("네트워크 요청 결과:", result)
-//        
-//        dishes = result.map { (name: $0.key, imageUrl: $0.value) }
-//        dishView.dishCollectionView.reloadData()
-        
         if result.isEmpty {
-                // Stop any loading animations as necessary
-                animationView.stop()
-                animationView.isHidden = true
-                
-                // Show a toast message
-                self.view.makeToast("네트워크 연결에 실패했습니다. 나중에 다시 시도해주세요.")
-            } else {
-                animationView.stop()
-                animationView.isHidden = true
-                dishView.isHidden = false
-                
-                print("네트워크 요청 결과:", result)
-                
-                dishes = result.map { (name: $0.key, imageUrl: $0.value) }
-                dishView.dishCollectionView.reloadData()
-            }
+            animationView.stop()
+            animationView.isHidden = true
+            
+            self.view.makeToast("네트워크 연결에 실패했습니다. 나중에 다시 시도해주세요.")
+        } else {
+            animationView.stop()
+            animationView.isHidden = true
+            dishView.isHidden = false
+            
+            print("네트워크 요청 결과:", result)
+            
+            dishes = result.map { (name: $0.key, imageUrl: $0.value) }
+            dishView.dishCollectionView.reloadData()
+        }
     }
 }
 
@@ -101,6 +90,7 @@ extension DishRecommendViewController: UICollectionViewDelegate, UICollectionVie
         let dish = dishes[indexPath.row]
         cell.dishNameLabel.text = dish.name
         cell.dishImageView.kf.setImage(with: URL(string: dish.imageUrl))
+        print(URL(string: dish.imageUrl))
         
         return cell
     }
