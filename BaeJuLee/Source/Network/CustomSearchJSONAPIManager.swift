@@ -15,13 +15,15 @@ class CustomSearchJSONAPIManager {
         Bundle.main.CustomSearchJSONAPIKey2,
         Bundle.main.CustomSearchJSONAPIKey,
         Bundle.main.CustomSearchJSONAPIKey3,
-        Bundle.main.CustomSearchJSONAPIKey4
+        Bundle.main.CustomSearchJSONAPIKey4,
+        Bundle.main.CustomSearchJSONAPIKey5
     ]
     private var cxs = [
         Bundle.main.CustomSearchJSONCx2,
         Bundle.main.CustomSearchJSONCx,
         Bundle.main.CustomSearchJSONCx3,
-        Bundle.main.CustomSearchJSONCx4
+        Bundle.main.CustomSearchJSONCx4,
+        Bundle.main.CustomSearchJSONCx5
     ]
 
     func searchJSONImage(query: String, completionHandler: @escaping (Result<Search, AFError>) -> Void) {
