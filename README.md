@@ -1,6 +1,6 @@
 
-<img width="1000" alt="스크린샷 2024-08-05 오전 4 49 51" src="https://github.com/user-attachments/assets/5d2196a0-6934-4a78-9129-26ef07aaf042">
 
+<img width="1024" alt="스크린샷 2024-08-05 오후 11 49 35" src="https://github.com/user-attachments/assets/1ee226e9-5de1-48d7-b04f-312ad6959352">
 
 <br/><br/>
 
