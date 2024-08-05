@@ -27,6 +27,9 @@ class AddIngredientViewController: TabmanViewController {
         configTabman()
 //        configTapGesture()
         configNav()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(updateDoneButtonState), name: .selectedIngredientsChanged, object: nil)
+        updateDoneButtonState()
     }
     
     func configSearchBar() {
@@ -54,7 +57,7 @@ class AddIngredientViewController: TabmanViewController {
     
     @objc func triggergenerativeAIModelCall() {
         UserDefaultsManager.shared.resetRecommendationCountIfNeeded()
-            
+                    
         let count = UserDefaultsManager.shared.getRecommendationCount()
         
         if count >= 5 {
@@ -63,6 +66,7 @@ class AddIngredientViewController: TabmanViewController {
         }
         
         UserDefaultsManager.shared.incrementRecommendationCount()
+
         
         let loadingVC = DishRecommendViewController()
         navigationController?.pushViewController(loadingVC, animated: true)
@@ -80,10 +84,10 @@ class AddIngredientViewController: TabmanViewController {
                         if let imageUrl = searchResult.items.first?.pagemap.cseImage.first?.src {
                             dishImages[dishName] = imageUrl
                         } else {
-                            print("No image found for \(dishName)")
+                            print("음식 이미지가 애초에 존재하지 않음: \(dishName)")
                         }
                     case .failure(let error):
-                        print("Error fetching image for \(dishName): \(error)")
+                        print("음식 이미지 fetch 실패: \(dishName): \(error)")
                     }
                     group.leave()
                 }
@@ -95,12 +99,10 @@ class AddIngredientViewController: TabmanViewController {
         }
     }
 
-    
-    
     func generativeAIModel() async -> [String] {
         let model = GenerativeModel(name: "gemini-pro", apiKey: GeminiAPIKey.default)
         let ingredientsString = getAllSelectedIngredients()
-        let prompt = "단답형으로만 대답해. 다음 재료들로 만들수있는 유명한 음식을 3개 이상 5개 미만으로 '-'을 이용해서 나열해.: \(ingredientsString)."
+        let prompt = "단답형으로만 대답해. '\(ingredientsString)'로 만들수있는 5개 미만의 요리를 '-'을 이용해서 나열해. 이상한 요리 이름 가지고 오지마. 실제로 한국인들이 자주먹는 요리만 추천해. 예를 들어 '스팸', '계란'이 주어지면 '스팸 계란 볶음밥', '계란말이', '계란국'을 추천하면 돼."
 
         do {
             let response = try await model.generateContent(prompt)
@@ -117,6 +119,7 @@ class AddIngredientViewController: TabmanViewController {
         }
         return []
     }
+    
     
     func configViewControllers() {
         // 개별 카테고리 배열
@@ -149,7 +152,18 @@ class AddIngredientViewController: TabmanViewController {
         }
     }
 
-
+    @objc func updateDoneButtonState() {
+        let isEnabled = SelectedIngredientsManager.shared.selectedIngredients.count > 0
+        if let customButton = navigationItem.rightBarButtonItem?.customView as? UIButton {
+            customButton.isEnabled = isEnabled
+            customButton.backgroundColor = isEnabled ? .pointGreen : .superLightGray
+            customButton.setTitleColor(isEnabled ? .white : .gray, for: .normal)
+        }
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
     
     func configTabman() {
         self.dataSource = self
