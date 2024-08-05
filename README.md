@@ -69,9 +69,8 @@
 사용자가 선택한 날짜, 식사 시간, 식사 타입 및 가격을 Realm에 저장합니다. Realm Notification를 통해 
 데이터 변경 시 절약 금액과 배달 횟수가 자동으로 업데이트되며, 이 정보는 Observable을 통해 UI에 즉시 반영됩니다.
 
+<img width="232" alt="BJE Main" src="https://github.com/hwiwls/BaeJuLee/blob/main/ReadmeAssets/bje_main.gif?raw=true">
 
-
-https://github.com/user-attachments/assets/f30c8553-ff21-4374-a4d3-4dedb0a478c6
 
 
 
@@ -81,9 +80,7 @@ https://github.com/user-attachments/assets/f30c8553-ff21-4374-a4d3-4dedb0a478c6
 - 재료 선택의 경우, Singleton Pattern을 사용하여 선택된 재료 목록을 중앙에서 관리하고, 최대 선택 가능 수를 제한하여 유효성을 검사하도록 구현하였습니다. 상태 변경 시 NotificationCenter를 통해 관련 UI를 업데이트하였습니다.
 - 레시피 추천의 경우, AI 모델에서 추천 요리 목록을 받아온 후, REST API를 이용하여 CustomSearchAPI를 통해 요리 이미지를 요청합니다. 응답값을 UICollectionView에 반영하며, 로딩 중에는 LottieAnimation로 로딩 애니메이션을 보여주도록 구현하였습니다.
 
-
-
-https://github.com/user-attachments/assets/e809ea75-26d5-4024-819a-499645a39005
+<img width="232" alt="BJE Recipe" src="https://github.com/hwiwls/BaeJuLee/blob/main/ReadmeAssets/bje_recipe.gif?raw=true">
 
 
 
